@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "charlsensideas:bornite_ore"
+    },
+    "result": "charlsensideas:bornite",
+    "count": 2
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iRi",
+        "RAR",
+        "iRi"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "A": {
+            "item": "charlsensideas:bornite"
+        }
+    },
+    "result": {
+        "item": "charlsensideas:secure_chest_module",
+        "count": 1
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#MN",
+    "EJX",
+    "ARY"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:music_disc_strad"
+    },
+    "M": {
+      "item": "minecraft:music_disc_13"
+    },
+    "N": {
+      "item": "minecraft:music_disc_cat"
+    },
+    "E": {
+      "item": "minecraft:music_disc_pigstep"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "X": {
+      "item": "minecraft:music_disc_stal"
+    },
+    "A": {
+      "item": "minecraft:music_disc_wait"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "Y": {
+      "item": "minecraft:music_disc_blocks"
+    }
+  },
+  "result": {
+    "item": "charlsensideas:musicplayer",
+    "count": 1
+  }
+}
