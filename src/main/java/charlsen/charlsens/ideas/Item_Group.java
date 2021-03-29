@@ -26,7 +26,7 @@ public class Item_Group implements ModInitializer {
 
 			public static final ItemGroup ITEM_GROUP_MUSIC = FabricItemGroupBuilder.build(
 				new Identifier("charlsensideas", "music"),
-				() -> new ItemStack(charlsensideas.MUSICPLAYER));
+				() -> new ItemStack(CharlsensIdeasClientModInitializer.MUSICPLAYER));
 
 	        public static final ItemGroup ITEM_GROUP_NATURE = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "nature"),

@@ -35,8 +35,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.dimension.DimensionOptions;
-import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
@@ -69,7 +67,6 @@ public class charlsensideas implements ModInitializer {
 	public static final Item Secure_Chest_Module = new Item(new Settings().group(Item_Group.ITEM_GROUP_SECCHESTS));
 	public static final Item Bornite = new Item(new Settings().group(Item_Group.ITEM_GROUP_ORES));
     public static final Item CHIP = new Item(new Item.Settings().group(Item_Group.ITEM_GROUP_FOOD).food(ChipFoodComponents.CHIP));
-	public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1));
 	public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, charlsensideas.Dog_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15, Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, charlsensideas.Revenge_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
@@ -91,24 +88,29 @@ public class charlsensideas implements ModInitializer {
 
 	private static final Feature<DefaultFeatureConfig> STONE_SPIRAL = new StoneSpiralFeature(DefaultFeatureConfig.CODEC);
 
-	private static ConfiguredFeature<?, ?> BORNITE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, Bornite_Ore.getDefaultState(), 4)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 20))).spreadHorizontally().repeat(7);
+	private static final ConfiguredFeature<?, ?> BORNITE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, Bornite_Ore.getDefaultState(), 4)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 20))).spreadHorizontally().repeat(7);
 	private static final ConfiguredFeature<?, ?> DEEPSTONE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, DeepStone.getDefaultState(), 60)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 25))).repeat(60);
 	public static final ConfiguredFeature<?, ?> STONE_SPIRAL_CONFIGURED = STONE_SPIRAL.configure(FeatureConfig.DEFAULT).decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(40)));
-	public static final ConfiguredFeature<?, ?> AZALEA_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(charlsensideas.PineLog.getDefaultState()), new SimpleBlockStateProvider(charlsensideas.PineLeaves.getDefaultState()),new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(5), 7), new StraightTrunkPlacer(4, 2, 10), new TwoLayersFeatureSize(1, 4, 5))).build());
-	public static final ConfiguredFeature<?, ?> AZALEA_FLORES = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(AZALEA_TREE.withChance(0.0F), AZALEA_TREE.withChance(0.2F), AZALEA_TREE.withChance(0)), AZALEA_TREE)).decorate(Decorator.DARK_OAK_TREE.configure(DecoratorConfig.DEFAULT));
+	public static final ConfiguredFeature<?, ?> PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(charlsensideas.PineLog.getDefaultState()), new SimpleBlockStateProvider(charlsensideas.PineLeaves.getDefaultState()),new BlobFoliagePlacer(UniformIntDistribution.of(3), UniformIntDistribution.of(4), 5), new StraightTrunkPlacer(4, 2, 2), new TwoLayersFeatureSize(1, 4, 6))).build());
+	public static final ConfiguredFeature<?, ?> PINE_FLORES = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(PINE_TREE.withChance(0.0F), PINE_TREE.withChance(0.2F), PINE_TREE.withChance(0)), PINE_TREE)).decorate(Decorator.DARK_OAK_TREE.configure(DecoratorConfig.DEFAULT));
+	public static final ConfiguredFeature<?, ?> TALL_PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(charlsensideas.PineLog.getDefaultState()), new SimpleBlockStateProvider(charlsensideas.PineLeaves.getDefaultState()),new BlobFoliagePlacer(UniformIntDistribution.of(3), UniformIntDistribution.of(4), 5), new StraightTrunkPlacer(4, 2, 15), new TwoLayersFeatureSize(1, 1, 1))).build());
+	public static final ConfiguredFeature<?, ?> TALL_PINE_FLORES = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(TALL_PINE_TREE.withChance(0.6F), TALL_PINE_TREE.withChance(0.3F), PINE_TREE.withChance(0.2F)), TALL_PINE_TREE)).decorate(Decorator.DARK_OAK_TREE.configure(DecoratorConfig.DEFAULT));
 
-	private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> OBSIDIAN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.LAPIS_BLOCK.getDefaultState()));
+	private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> PINE_FOREST_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.STONE.getDefaultState()));
+	private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> TALL_PINE_FOREST_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), charlsensideas.MuddedDirt.getDefaultState()));
 
-	private static final Biome OBSILAND = createObsiland();
 
-	private static Biome createObsiland() {
+	private static final Biome PINE_FOREST = createPineForest();
+	private static final Biome TALL_PINE_FOREST = createTallPineForest();
+
+	private static Biome createPineForest() {
 
 		SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
 		DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
 		DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
 
 		GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-		generationSettings.surfaceBuilder(OBSIDIAN_SURFACE_BUILDER);
+		generationSettings.surfaceBuilder(PINE_FOREST_SURFACE_BUILDER);
 		DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
 		DefaultBiomeFeatures.addLandCarvers(generationSettings);
 		DefaultBiomeFeatures.addSweetBerryBushes(generationSettings);
@@ -120,11 +122,39 @@ public class charlsensideas implements ModInitializer {
 		DefaultBiomeFeatures.addSprings(generationSettings);
 		DefaultBiomeFeatures.addDefaultFlowers(generationSettings);
 		DefaultBiomeFeatures.addForestGrass(generationSettings);
+		DefaultBiomeFeatures.addInfestedStone(generationSettings);
 
-		return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.JUNGLE).depth(0.125F).scale(0.05F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+		return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.TAIGA).depth(0.035F).scale(0.05F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
 	}
 
-	public static final RegistryKey<Biome> OBSILAND_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "mixed_forest"));
+	private static Biome createTallPineForest() {
+
+		SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+		DefaultBiomeFeatures.addFarmAnimals(spawnSettings);
+		DefaultBiomeFeatures.addMonsters(spawnSettings, 95, 5, 100);
+
+		GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
+		generationSettings.surfaceBuilder(TALL_PINE_FOREST_SURFACE_BUILDER);
+		DefaultBiomeFeatures.addDefaultUndergroundStructures(generationSettings);
+		DefaultBiomeFeatures.addLandCarvers(generationSettings);
+		DefaultBiomeFeatures.addSweetBerryBushes(generationSettings);
+		DefaultBiomeFeatures.addDefaultDisks(generationSettings);
+		DefaultBiomeFeatures.addDefaultLakes(generationSettings);
+		DefaultBiomeFeatures.addDungeons(generationSettings);
+		DefaultBiomeFeatures.addMineables(generationSettings);
+		DefaultBiomeFeatures.addDefaultDisks(generationSettings);
+		DefaultBiomeFeatures.addSprings(generationSettings);
+		DefaultBiomeFeatures.addDefaultFlowers(generationSettings);
+		DefaultBiomeFeatures.addForestGrass(generationSettings);
+		DefaultBiomeFeatures.addInfestedStone(generationSettings);
+		DefaultBiomeFeatures.addLargeFerns(generationSettings);
+        DefaultBiomeFeatures.addMossyRocks(generationSettings);
+
+		return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.TAIGA).depth(0.005F).scale(0.01F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+	}
+
+	public static final RegistryKey<Biome> PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "pine_forest"));
+	public static final RegistryKey<Biome> TALL_PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "tall_pine_forest"));
 
 
 	@Override
@@ -151,7 +181,6 @@ public class charlsensideas implements ModInitializer {
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chip"), CHIP);
 
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 
 		RegistryKey<ConfiguredFeature<?,?>> borniteOreOverwolrd = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","bornite_ore"));
 	    Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, borniteOreOverwolrd.getValue(), BORNITE_ORE_OVERWORLD);
@@ -186,37 +215,52 @@ public class charlsensideas implements ModInitializer {
 
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_pickaxe"), Bornite_Pickaxe);
 
-		Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("charlsensideas", "mxfo_surface_builder"), OBSIDIAN_SURFACE_BUILDER);
-		Registry.register(BuiltinRegistries.BIOME, OBSILAND_KEY.getValue(), OBSILAND);
-		OverworldBiomes.addContinentalBiome(OBSILAND_KEY, OverworldClimate.TEMPERATE, 2D);
-		OverworldBiomes.addContinentalBiome(OBSILAND_KEY, OverworldClimate.COOL, 2D);
+		Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("charlsensideas", "pine_forest_surface_builder"), PINE_FOREST_SURFACE_BUILDER);
+		Registry.register(BuiltinRegistries.BIOME, PINE_FOREST_KEY.getValue(), PINE_FOREST);
+		OverworldBiomes.addContinentalBiome(PINE_FOREST_KEY, OverworldClimate.TEMPERATE, 2D);
+		OverworldBiomes.addContinentalBiome(PINE_FOREST_KEY, OverworldClimate.COOL, 2D);
 
 		Registry.register(Registry.FEATURE, new Identifier("charlsensideas", "stone_spiral"), STONE_SPIRAL);
 
 		RegistryKey<ConfiguredFeature<?, ?>> stoneSpiral = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas", "stone_spiral"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, stoneSpiral.getValue(), STONE_SPIRAL_CONFIGURED);
 
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.OBSILAND_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, stoneSpiral);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, stoneSpiral);
 		CustomPortalApiRegistry.addPortal(charlsensideas.Adrian_Block, PortalIgnitionSource.FluidSource(Fluids.LAVA), new Identifier("charlsensideas", "void"), 51, 52, 49);
 		CustomPortalApiRegistry.addPortal(Blocks.DIAMOND_BLOCK, PortalIgnitionSource.FluidSource(Fluids.WATER), new Identifier("charlsensideas", "testdim"), 0, 255, 255);
 
-		RegistryKey<ConfiguredFeature<?, ?>> azaleaTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","azalea_tree"));
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, azaleaTreeOverworld.getValue(), AZALEA_TREE);
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.OBSILAND_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, azaleaTreeOverworld);
+		RegistryKey<ConfiguredFeature<?, ?>> pineTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","pine_tree"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineTreeOverworld.getValue(), PINE_TREE);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, pineTreeOverworld);
 
-
-		RegistryKey<ConfiguredFeature<?, ?>> azaleaFloweresTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","azalea_tree_flo"));
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, azaleaFloweresTreeOverworld.getValue(), AZALEA_FLORES);
-		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.OBSILAND_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, azaleaFloweresTreeOverworld);
+		RegistryKey<ConfiguredFeature<?, ?>> pineFloresTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","pine_tree_flores"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineFloresTreeOverworld.getValue(), PINE_FLORES);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, pineFloresTreeOverworld);
 
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "test_sapling"), TestSapling);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "test_sapling"), new BlockItem(TestSapling, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+
 
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_leaves"), PineLeaves);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_leaves"), new BlockItem(PineLeaves, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
 	    Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_log"), PineLog);
 	    Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_log"), new BlockItem(PineLog, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+
+		Registry.register(BuiltinRegistries.BIOME, TALL_PINE_FOREST_KEY.getValue(), TALL_PINE_FOREST);
+		OverworldBiomes.addContinentalBiome(TALL_PINE_FOREST_KEY, OverworldClimate.TEMPERATE, 2D);
+		OverworldBiomes.addContinentalBiome(TALL_PINE_FOREST_KEY, OverworldClimate.COOL, 2D);
+
+		RegistryKey<ConfiguredFeature<?, ?>> tallPineTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","tall_pine_tree"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineTreeOverworld.getValue(), TALL_PINE_TREE);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineTreeOverworld);
+
+		Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("charlsensideas", "tall_pine_forest_surface_builder"), TALL_PINE_FOREST_SURFACE_BUILDER);
+		RegistryKey<ConfiguredFeature<?, ?>> tallPineFloresTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","tall_pine_tree_flores"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineFloresTreeOverworld.getValue(), TALL_PINE_FLORES);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineFloresTreeOverworld);
+
+
 	}
 
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "charlsensideas:block/test_sapling"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "charlsensideas:block/test_sapling"
+  }
 }

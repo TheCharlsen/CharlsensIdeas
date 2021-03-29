@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "charlsensideas:blocks/pine_log_top",
-    "side": "charlsensideas:blocks/pine_log"
+    "end": "charlsensideas:block/pine_log_top",
+    "side": "charlsensideas:block/pine_log"
   }
 }

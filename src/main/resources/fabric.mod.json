@@ -21,15 +21,11 @@
   "entrypoints": {
     "main": [
       "charlsen.charlsens.ideas.charlsensideas"
+    ],
+    "client": [
+      "charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer"
     ]
-
-    
-  
-  
-
   },
-
-
 
   "mixins": [
     "charlsensideas.mixins.json"
@@ -40,6 +36,7 @@
     "fabric": "*",
     "minecraft": "1.16.x"
   },
+
   "suggests": {
     "another-mod": "*"
   }

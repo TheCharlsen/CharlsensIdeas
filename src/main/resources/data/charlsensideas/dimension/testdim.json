@@ -52,7 +52,7 @@
       },
       "biomes": [
         {
-          "biome": "charlsensideas:mixed_forest",
+          "biome": "charlsensideas:pine_forest",
           "parameters": {
             "altitude": 1,
             "temperature": 0,
