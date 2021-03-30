@@ -2,6 +2,7 @@ package charlsen.charlsens.ideas;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -26,7 +27,7 @@ public class Item_Group implements ModInitializer {
 
 			public static final ItemGroup ITEM_GROUP_MUSIC = FabricItemGroupBuilder.build(
 				new Identifier("charlsensideas", "music"),
-				() -> new ItemStack(CharlsensIdeasClientModInitializer.MUSICPLAYER));
+				() -> new ItemStack(Blocks.ACACIA_LEAVES));
 
 	        public static final ItemGroup ITEM_GROUP_NATURE = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "nature"),

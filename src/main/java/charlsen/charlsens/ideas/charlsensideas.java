@@ -10,6 +10,9 @@ import charlsen.charlsens.ideas.protectedacces.SaplingBlocks;
 import charlsen.charlsens.ideas.tools.BornitePickaxeItem;
 import charlsen.charlsens.ideas.tools.BornitePickaxeMaterial;
 import com.google.common.collect.ImmutableList;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -51,8 +54,8 @@ import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 
-
-public class charlsensideas implements ModInitializer {
+@Environment(EnvType.CLIENT)
+public class charlsensideas implements ClientModInitializer {
 
 	public static final Identifier Dog = new Identifier("charlsensideas:dog");
 	public static final Identifier Discord_Special_Call_Music = new Identifier("charlsensideas:discord_special_call_music");
@@ -71,6 +74,8 @@ public class charlsensideas implements ModInitializer {
 	public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15, Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, charlsensideas.Revenge_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, charlsensideas.Da_Coconut_nut_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.EPIC));
+
+	public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1));
 
 	public static final Block MuddedDirt = new Block(FabricBlockSettings.of(Material.SOIL).strength(1F, 1F).sounds(BlockSoundGroup.GRAVEL));
     public static final Block HardenedMuddedDirt = new Block(FabricBlockSettings.of(Material.STONE).strength(2F, 2F).sounds(BlockSoundGroup.STONE));
@@ -156,9 +161,8 @@ public class charlsensideas implements ModInitializer {
 	public static final RegistryKey<Biome> PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "pine_forest"));
 	public static final RegistryKey<Biome> TALL_PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "tall_pine_forest"));
 
-
-	@Override
-	public void onInitialize() {
+   @Override
+	public void onInitializeClient() {
 		
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "secure_chest_module"), Secure_Chest_Module);
 
@@ -260,7 +264,7 @@ public class charlsensideas implements ModInitializer {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineFloresTreeOverworld.getValue(), TALL_PINE_FLORES);
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineFloresTreeOverworld);
 
-
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 	}
 
 }

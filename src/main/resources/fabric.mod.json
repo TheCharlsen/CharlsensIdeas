@@ -19,11 +19,10 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "charlsen.charlsens.ideas.charlsensideas"
-    ],
     "client": [
-      "charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer"
+      "charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer",
+      "charlsen.charlsens.ideas.charlsensideas"
+
     ]
   },
 
