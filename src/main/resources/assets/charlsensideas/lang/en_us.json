@@ -12,7 +12,7 @@
     "itemGroup.charlsensideas.food": "Charlsens Ideas: Food",
     "itemGroup.charlsensideas.ores": "Charlsens Ideas: Ores",
     "item.charlsensideas.musicplayer": "§6§lMusicplayer",
-    "itemGroup.charlsensideas.music": "Music",
+    "itemGroup.charlsensideas.music": "Charlsens Ideas: Music",
     "item.charlsensideas.dog_music_disc": "§bMusic Disc",
     "item.charlsensideas.dog_music_disc.desc": "C418 - Dog",
     "item.charlsensideas.discord_remix_music_disc": "§bMusic Disc",
@@ -23,7 +23,18 @@
     "item.charlsensideas.bornite_pickaxe": "Bornite Pickaxe",
     "itemGroup.charlsensideas.building_blocks": "Charlsens Ideas: Building Blocks",
     "itemGroup.charlsensideas.tools": "Charlsens Ideas: Tools",
-    "biome.charlsensideas.obsiland": "Obsiland"
+    "biome.charlsensideas.pine_forest": "Pine Forest",
+    "biome.charlsensideas.tall_pine_forest": "Tall pine Forest",
+    "item.charlsensideas.da_coconut_nut_music_disc": "§bMusic Disc",
+    "item.charlsensideas.da_coconut_nut_music_disc.desc": "Smokey Mountain - The Coconut Song",
+    "block.charlsensideas.mudded_dirt": "Mudded Dirt",
+    "block.charlsensideas.hardened_mudded_dirt": "Hardened Mudded Dirt",
+    "block.charlsensideas.deepstone": "Deepstone",
+    "block.charlsensideas.pine_sapling": "Pine Sapling",
+    "block.charlsensideas.pine_leaves": "Pine Leaves",
+    "block.charlsensideas.pine_log": "Pine Log",
+    "itemGroup.charlsensideas.nature": "Charlsens Ideas: Nature"
+
 }
 
     

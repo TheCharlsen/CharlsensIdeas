@@ -1,8 +1,7 @@
 package charlsen.charlsens.ideas;
 
 import charlsen.charlsens.ideas.FoodComponents.ChipFoodComponents;
-import charlsen.charlsens.ideas.Generators.TestTreeGenerator;
-import charlsen.charlsens.ideas.MusicPlayer.MusicPlayerGuiItem;
+import charlsen.charlsens.ideas.Generators.PineTreeGenerator;
 import charlsen.charlsens.ideas.Ores.BorniteOreBlock;
 import charlsen.charlsens.ideas.features.StoneSpiralFeature;
 import charlsen.charlsens.ideas.protectedacces.MusicDiscItems;
@@ -10,9 +9,6 @@ import charlsen.charlsens.ideas.protectedacces.SaplingBlocks;
 import charlsen.charlsens.ideas.tools.BornitePickaxeItem;
 import charlsen.charlsens.ideas.tools.BornitePickaxeMaterial;
 import com.google.common.collect.ImmutableList;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -54,8 +50,7 @@ import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 
-@Environment(EnvType.CLIENT)
-public class charlsensideas implements ClientModInitializer {
+public class charlsensideas implements ModInitializer {
 
 	public static final Identifier Dog = new Identifier("charlsensideas:dog");
 	public static final Identifier Discord_Special_Call_Music = new Identifier("charlsensideas:discord_special_call_music");
@@ -69,25 +64,23 @@ public class charlsensideas implements ClientModInitializer {
 
 	public static final Item Secure_Chest_Module = new Item(new Settings().group(Item_Group.ITEM_GROUP_SECCHESTS));
 	public static final Item Bornite = new Item(new Settings().group(Item_Group.ITEM_GROUP_ORES));
-    public static final Item CHIP = new Item(new Item.Settings().group(Item_Group.ITEM_GROUP_FOOD).food(ChipFoodComponents.CHIP));
+	public static final Item CHIP = new Item(new Item.Settings().group(Item_Group.ITEM_GROUP_FOOD).food(ChipFoodComponents.CHIP));
 	public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, charlsensideas.Dog_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15, Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, charlsensideas.Revenge_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
 	public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, charlsensideas.Da_Coconut_nut_Sound_Event, new FabricItemSettings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.EPIC));
 
-	public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1));
-
 	public static final Block MuddedDirt = new Block(FabricBlockSettings.of(Material.SOIL).strength(1F, 1F).sounds(BlockSoundGroup.GRAVEL));
-    public static final Block HardenedMuddedDirt = new Block(FabricBlockSettings.of(Material.STONE).strength(2F, 2F).sounds(BlockSoundGroup.STONE));
-	public static final Block Bornite_Ore = new BorniteOreBlock(FabricBlockSettings.of(Material.STONE).strength(1F, 1F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
+	public static final Block HardenedMuddedDirt = new Block(FabricBlockSettings.of(Material.STONE).strength(2F, 2F).sounds(BlockSoundGroup.STONE));
+	public static final Block Bornite_Ore = new BorniteOreBlock(FabricBlockSettings.of(Material.STONE).strength(1F, 1F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().luminance((state) -> { return 15;}));
 	public static final Block Adrian_Block = new Block(FabricBlockSettings.of(Material.CAKE).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block Charlie_Block = new Block(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block Julian_Block = new Block(FabricBlockSettings.of(Material.PISTON).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block Emil_Block = new Block(FabricBlockSettings.of(Material.CACTUS).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block DeepStone = new Block(FabricBlockSettings.of(Material.STONE).strength(13F, 12F).sounds(BlockSoundGroup.STONE));
 	public static final Block PineLeaves = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).strength(1.0F, 1.0F).nonOpaque());
-	public static final SaplingBlock TestSapling = new SaplingBlocks(new TestTreeGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS));
-    public static final Block PineLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(1.5F, 1.5F).sounds(BlockSoundGroup.WOOD));
+	public static final SaplingBlock PineSapling = new SaplingBlocks(new PineTreeGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS));
+	public static final Block PineLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(1.5F, 1.5F).sounds(BlockSoundGroup.WOOD));
 
 	public static final ToolItem Bornite_Pickaxe = new BornitePickaxeItem(BornitePickaxeMaterial.INSTANCEBOPICK, 3, 7.0F, new Item.Settings().group(Item_Group.ITEM_GROUP_TOOLS));
 
@@ -153,7 +146,7 @@ public class charlsensideas implements ClientModInitializer {
 		DefaultBiomeFeatures.addForestGrass(generationSettings);
 		DefaultBiomeFeatures.addInfestedStone(generationSettings);
 		DefaultBiomeFeatures.addLargeFerns(generationSettings);
-        DefaultBiomeFeatures.addMossyRocks(generationSettings);
+		DefaultBiomeFeatures.addMossyRocks(generationSettings);
 
 		return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.TAIGA).depth(0.005F).scale(0.01F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
 	}
@@ -161,9 +154,9 @@ public class charlsensideas implements ClientModInitializer {
 	public static final RegistryKey<Biome> PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "pine_forest"));
 	public static final RegistryKey<Biome> TALL_PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "tall_pine_forest"));
 
-   @Override
-	public void onInitializeClient() {
-		
+	@Override
+	public void onInitialize() {
+
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "secure_chest_module"), Secure_Chest_Module);
 
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite"), Bornite);
@@ -171,38 +164,38 @@ public class charlsensideas implements ClientModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "bornite_ore"), Bornite_Ore);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new Settings().group(Item_Group.ITEM_GROUP_ORES)));
 
-	    Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "adrian_block"), Adrian_Block);
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "adrian_block"), new BlockItem(Adrian_Block, new Settings().group(Item_Group.ITEM_GROUP_MEME)));
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "adrian_block"), Adrian_Block);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "adrian_block"), new BlockItem(Adrian_Block, new Settings()));
 
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "charlie_block"), Charlie_Block);
-	    Registry.register(Registry.ITEM, new Identifier("charlsensideas", "charlie_block"), new BlockItem(Charlie_Block, new Settings().group(Item_Group.ITEM_GROUP_MEME)));
-	
-		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "julian_block"), Julian_Block);
-	    Registry.register(Registry.ITEM, new Identifier("charlsensideas", "julian_block"), new BlockItem(Julian_Block, new Settings().group(Item_Group.ITEM_GROUP_MEME)));
-	    
-		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "emil_block"), Emil_Block);
-		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "emil_block"), new BlockItem(Emil_Block, new Settings().group(Item_Group.ITEM_GROUP_MEME)));
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "charlie_block"), new BlockItem(Charlie_Block, new Settings()));
 
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chip"), CHIP);
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "julian_block"), Julian_Block);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "julian_block"), new BlockItem(Julian_Block, new Settings()));
+
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "emil_block"), Emil_Block);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "emil_block"), new BlockItem(Emil_Block, new Settings()));
+
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chip"), CHIP);
 
 
 		RegistryKey<ConfiguredFeature<?,?>> borniteOreOverwolrd = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","bornite_ore"));
-	    Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, borniteOreOverwolrd.getValue(), BORNITE_ORE_OVERWORLD);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, borniteOreOverwolrd);
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, borniteOreOverwolrd.getValue(), BORNITE_ORE_OVERWORLD);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, borniteOreOverwolrd);
 
 		Registry.register(Registry.SOUND_EVENT, charlsensideas.Dog, Dog_Sound_Event);
 		Registry.register(Registry.SOUND_EVENT, charlsensideas.Discord_Special_Call_Music, Discord_Special_Call_Music_Sound_Event);
 
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas","dog_music_disc"), Dog_Music_Disc);
 
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "discord_remix_music_disc"), Discord_Remix_Music_Disc);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "discord_remix_music_disc"), Discord_Remix_Music_Disc);
 
-        Registry.register(Registry.SOUND_EVENT, charlsensideas.Revenge, Revenge_Sound_Event);
+		Registry.register(Registry.SOUND_EVENT, charlsensideas.Revenge, Revenge_Sound_Event);
 
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "revenge_music_disc"), Revenge_Music_Disc);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "revenge_music_disc"), Revenge_Music_Disc);
 
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "mudded_dirt"), MuddedDirt);
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "mudded_dirt"), new BlockItem(MuddedDirt, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "mudded_dirt"), MuddedDirt);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "mudded_dirt"), new BlockItem(MuddedDirt, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "hardened_mudded_dirt"), HardenedMuddedDirt);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "hardened_mudded_dirt"), new BlockItem(HardenedMuddedDirt, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
@@ -210,8 +203,8 @@ public class charlsensideas implements ClientModInitializer {
 		Registry.register(Registry.SOUND_EVENT, charlsensideas.Da_Coconut_nut, Da_Coconut_nut_Sound_Event);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "da_coconut_nut_music_disc"), Da_Coconut_nut_Music_Disc);
 
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "deepstone"), DeepStone);
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "deepstone"), new BlockItem(DeepStone, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "deepstone"), DeepStone);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "deepstone"), new BlockItem(DeepStone, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
 		RegistryKey<ConfiguredFeature<?,?>> deepStoneOreOverwolrd = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","deepstone"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, deepStoneOreOverwolrd.getValue(), DEEPSTONE_ORE_OVERWORLD);
@@ -241,15 +234,15 @@ public class charlsensideas implements ClientModInitializer {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineFloresTreeOverworld.getValue(), PINE_FLORES);
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, pineFloresTreeOverworld);
 
-		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "test_sapling"), TestSapling);
-		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "test_sapling"), new BlockItem(TestSapling, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_sapling"), PineSapling);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_sapling"), new BlockItem(PineSapling, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
 
 		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_leaves"), PineLeaves);
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_leaves"), new BlockItem(PineLeaves, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
-	    Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_log"), PineLog);
-	    Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_log"), new BlockItem(PineLog, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_log"), PineLog);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_log"), new BlockItem(PineLog, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
 
 		Registry.register(BuiltinRegistries.BIOME, TALL_PINE_FOREST_KEY.getValue(), TALL_PINE_FOREST);
 		OverworldBiomes.addContinentalBiome(TALL_PINE_FOREST_KEY, OverworldClimate.TEMPERATE, 2D);
@@ -264,7 +257,6 @@ public class charlsensideas implements ClientModInitializer {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineFloresTreeOverworld.getValue(), TALL_PINE_FLORES);
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineFloresTreeOverworld);
 
-		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 	}
 
 }

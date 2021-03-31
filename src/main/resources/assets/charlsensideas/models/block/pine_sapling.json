@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "charlsensideas:block/test_sapling"
+    "cross": "charlsensideas:block/pine_sapling"
   }
 }

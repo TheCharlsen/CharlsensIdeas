@@ -20,7 +20,7 @@ public abstract class TitleScreenButtonMixin extends Screen {
 
     @Inject(at = @At("HEAD"), method = "initWidgetsNormal")
     private void addCustomButton(int y, int spacingY, CallbackInfo ci) {
-        this.addButton(new ButtonWidget(this.width / 4 - 100, y + spacingY * -5,200, 20, Text.of("CharlsensIdeas!"), (buttonWidget) -> {
+        this.addButton(new ButtonWidget(this.width / 9 - 100, y + spacingY * 12,150, 20, Text.of("CharlsensIdeas!"), (buttonWidget) -> {
            MinecraftClient.getInstance().openScreen(new SelectWorldScreen(this));
         }));
     }

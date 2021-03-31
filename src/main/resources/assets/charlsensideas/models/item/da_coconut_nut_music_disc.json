@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "charlsensideas:block/test_sapling"
+    "layer0": "charlsensideas:item/da_coconut_nut_music_disc"
   }
 }

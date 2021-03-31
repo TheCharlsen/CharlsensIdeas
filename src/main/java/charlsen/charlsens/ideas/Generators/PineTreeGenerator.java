@@ -1,5 +1,6 @@
 package charlsen.charlsens.ideas.Generators;
 
+
 import charlsen.charlsens.ideas.charlsensideas;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -8,8 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-public class TestTreeGenerator extends SaplingGenerator {
-public TestTreeGenerator() {
+public class PineTreeGenerator extends SaplingGenerator {
+public PineTreeGenerator() {
 
 }
 

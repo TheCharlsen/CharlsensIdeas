@@ -18,13 +18,16 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
+@Environment(EnvType.CLIENT)
 public class  CharlsensIdeasClientModInitializer implements ClientModInitializer {
 
+    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1));
 
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(charlsensideas.TestSapling, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(charlsensideas.PineSapling, RenderLayer.getCutout());
 
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
     }
 
 
