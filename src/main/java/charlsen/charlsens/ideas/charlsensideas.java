@@ -1,13 +1,19 @@
 package charlsen.charlsens.ideas;
 
 import charlsen.charlsens.ideas.FoodComponents.ChipFoodComponents;
+import charlsen.charlsens.ideas.Generators.MyTestGenerator;
+import charlsen.charlsens.ideas.Generators.MyTestPiece;
 import charlsen.charlsens.ideas.Generators.PineTreeGenerator;
 import charlsen.charlsens.ideas.Ores.BorniteOreBlock;
+import charlsen.charlsens.ideas.Ores.WeirdlyDeepStoneBlock;
 import charlsen.charlsens.ideas.features.StoneSpiralFeature;
+import charlsen.charlsens.ideas.features.TestFeature;
 import charlsen.charlsens.ideas.protectedacces.MusicDiscItems;
 import charlsen.charlsens.ideas.protectedacces.SaplingBlocks;
 import charlsen.charlsens.ideas.tools.BornitePickaxeItem;
 import charlsen.charlsens.ideas.tools.BornitePickaxeMaterial;
+import charlsen.charlsens.ideas.tools.BorniteSwordItem;
+import charlsen.charlsens.ideas.tools.BorniteSwordMaterial;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -16,6 +22,7 @@ import net.fabricmc.fabric.api.biome.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biome.v1.OverworldClimate;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
@@ -25,6 +32,7 @@ import net.minecraft.item.*;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -78,11 +86,13 @@ public class charlsensideas implements ModInitializer {
 	public static final Block Julian_Block = new Block(FabricBlockSettings.of(Material.PISTON).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block Emil_Block = new Block(FabricBlockSettings.of(Material.CACTUS).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
 	public static final Block DeepStone = new Block(FabricBlockSettings.of(Material.STONE).strength(13F, 12F).sounds(BlockSoundGroup.STONE));
-	public static final Block PineLeaves = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).strength(1.0F, 1.0F).nonOpaque());
+	public static final Block PineLeaves = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).strength(0.5F, 0.5F).nonOpaque());
 	public static final SaplingBlock PineSapling = new SaplingBlocks(new PineTreeGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS));
 	public static final Block PineLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(1.5F, 1.5F).sounds(BlockSoundGroup.WOOD));
+	public static final Block WeirdlyDeepStone = new WeirdlyDeepStoneBlock(FabricBlockSettings.of(Material.STONE).strength(14F, 13F).sounds(BlockSoundGroup.STONE).luminance((state) -> { return 4;}));
 
 	public static final ToolItem Bornite_Pickaxe = new BornitePickaxeItem(BornitePickaxeMaterial.INSTANCEBOPICK, 3, 7.0F, new Item.Settings().group(Item_Group.ITEM_GROUP_TOOLS));
+	public static final ToolItem Bornite_Sword = new BorniteSwordItem(BorniteSwordMaterial.INSTANCEBOSWORD, 10, 15.0F, new Item.Settings().group(Item_Group.ITEM_GROUP_TOOLS));
 
 	private static final Feature<DefaultFeatureConfig> STONE_SPIRAL = new StoneSpiralFeature(DefaultFeatureConfig.CODEC);
 
@@ -154,6 +164,11 @@ public class charlsensideas implements ModInitializer {
 	public static final RegistryKey<Biome> PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "pine_forest"));
 	public static final RegistryKey<Biome> TALL_PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "tall_pine_forest"));
 
+	public static final StructurePieceType MY_TEST_PIECE = MyTestPiece::new;
+	private static final StructureFeature<DefaultFeatureConfig> MY_STRUCTURE = new TestFeature(DefaultFeatureConfig.CODEC);
+	private static final ConfiguredStructureFeature<?, ?> MY_CONFIGURED = MY_STRUCTURE.configure(DefaultFeatureConfig.DEFAULT);
+
+
 	@Override
 	public void onInitialize() {
 
@@ -212,6 +227,8 @@ public class charlsensideas implements ModInitializer {
 
 		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_pickaxe"), Bornite_Pickaxe);
 
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_sword"), Bornite_Sword);
+
 		Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("charlsensideas", "pine_forest_surface_builder"), PINE_FOREST_SURFACE_BUILDER);
 		Registry.register(BuiltinRegistries.BIOME, PINE_FOREST_KEY.getValue(), PINE_FOREST);
 		OverworldBiomes.addContinentalBiome(PINE_FOREST_KEY, OverworldClimate.TEMPERATE, 2D);
@@ -221,10 +238,11 @@ public class charlsensideas implements ModInitializer {
 
 		RegistryKey<ConfiguredFeature<?, ?>> stoneSpiral = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas", "stone_spiral"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, stoneSpiral.getValue(), STONE_SPIRAL_CONFIGURED);
-
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, stoneSpiral);
+
 		CustomPortalApiRegistry.addPortal(charlsensideas.Adrian_Block, PortalIgnitionSource.FluidSource(Fluids.LAVA), new Identifier("charlsensideas", "void"), 51, 52, 49);
 		CustomPortalApiRegistry.addPortal(Blocks.DIAMOND_BLOCK, PortalIgnitionSource.FluidSource(Fluids.WATER), new Identifier("charlsensideas", "testdim"), 0, 255, 255);
+        CustomPortalApiRegistry.addPortal(charlsensideas.WeirdlyDeepStone, PortalIgnitionSource.FluidSource(Fluids.WATER), new Identifier("charlsensideas","farlands"), 1, 42, 54);
 
 		RegistryKey<ConfiguredFeature<?, ?>> pineTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("charlsensideas","pine_tree"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineTreeOverworld.getValue(), PINE_TREE);
@@ -257,6 +275,22 @@ public class charlsensideas implements ModInitializer {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineFloresTreeOverworld.getValue(), TALL_PINE_FLORES);
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(charlsensideas.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineFloresTreeOverworld);
 
+		Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "weirdly_deep_stone"), WeirdlyDeepStone);
+		Registry.register(Registry.ITEM, new Identifier("charlsensideas", "weirdly_deep_stone"), new BlockItem(WeirdlyDeepStone, new Settings().group(Item_Group.ITEM_GROUP_NATURE)));
+
+		Registry.register(Registry.STRUCTURE_PIECE, new Identifier("charlsensideas", "my_piece"), MY_TEST_PIECE);
+		FabricStructureBuilder.create(new Identifier("charlsensideas", "my_structure"), MY_STRUCTURE)
+				.step(GenerationStep.Feature.SURFACE_STRUCTURES)
+				.defaultConfig(32, 8, 12345)
+				.adjustsSurface()
+				.register();
+
+		RegistryKey<ConfiguredStructureFeature<?, ?>> myConfigured = RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_WORLDGEN,
+				new Identifier("charlsensideas", "my_structure"));
+		BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, myConfigured.getValue(), MY_CONFIGURED);
+
+		BiomeModifications.addStructure(BiomeSelectors.all(), myConfigured);
+	
 	}
 
 }
