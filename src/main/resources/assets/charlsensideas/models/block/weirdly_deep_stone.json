@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "charlsensideas:block/weirdly_deep_stone"
+  }
+}

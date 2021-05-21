@@ -33,8 +33,9 @@
     "block.charlsensideas.pine_sapling": "Pine Sapling",
     "block.charlsensideas.pine_leaves": "Pine Leaves",
     "block.charlsensideas.pine_log": "Pine Log",
-    "itemGroup.charlsensideas.nature": "Charlsens Ideas: Nature"
-
+    "itemGroup.charlsensideas.nature": "Charlsens Ideas: Nature",
+    "item.charlsensideas.bornite_sword": "Bornite Sword",
+    "block.charlsensideas.weirdly_deep_stone": "Weirdly Deepstone"
 }
 
     
