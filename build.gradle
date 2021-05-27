@@ -36,7 +36,7 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 
-    modImplementation include("io.github.cottonmc:LibGui:4.0.0-alpha.1+21w11a")
+    modImplementation include("io.github.cottonmc:LibGui:3.4.0+1.16.5")
 
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta18-1.16'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta18-1.16'

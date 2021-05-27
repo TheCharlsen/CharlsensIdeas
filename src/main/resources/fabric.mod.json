@@ -4,14 +4,16 @@
   "version": "${version}",
 
   "name": "Charlsen's Ideas",
-  "description": "Yup, when you found this Text. THEN YOU ARE REALLY COOL lmao",
+  "description":
+    "                                                                This is cool                                                :dumbfaceemoji                                                                                                            CHARLSEN'S                                                                                                                          ahh very serius                                                                                                                                             yup                                                                                   Very stupid                                  Also very stupid                                                                                                                                                       whyyyyyyy                                                                                    c'mon                               Very Stupid                                                                                                                                                                                                            u are rlly reading this                                                                                                                                                                     WOW so dumb                                                                                                                                                                                                    huh                                                                     haha                                               IDEAS                                                                      why?!                                                                                                                                                    WHAT DA FORK                                                        stupit                                                                                                                                                    pepe the frog is impressed                                                                                                                                                                                         ;) <-- crazy face",
+
   "authors": [
     "Charlsen",
     "Why am i doing this again?"
   ],
   "contact": {
     "homepage": "https://www.youtube.com/channel/UCzBj08FS4tDr3Lyf9zWM3kg",
-    "sources": ""
+    "sources": "https://github.com/TheCharlsen/CharlsensIdeas"
   },
 
   "license": "CC BY-NC-SA 3.0",

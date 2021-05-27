@@ -35,7 +35,11 @@
     "block.charlsensideas.pine_log": "Pine Log",
     "itemGroup.charlsensideas.nature": "Charlsens Ideas: Nature",
     "item.charlsensideas.bornite_sword": "Bornite Sword",
-    "block.charlsensideas.weirdly_deep_stone": "Weirdly Deepstone"
+    "block.charlsensideas.weirdly_deep_stone": "Weirdly Deepstone",
+    "enchantment.charlsensideas.flower_walker": "Flower Walker",
+    "block.charlsensideas.box_block": "Box",
+    "item.charlsensideas.bucket_of_weird_water": "Bucket of Weird Water"
+
 }
 
     

@@ -9,7 +9,7 @@ import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPanel;
 import io.github.cottonmc.cotton.gui.widget.WScrollPanel;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
-import net.fabricmc.fabric.api.util.TriState;
+import net.fabricmc.fabric.api.util.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.item.Items;

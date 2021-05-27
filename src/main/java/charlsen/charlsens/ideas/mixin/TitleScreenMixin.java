@@ -12,9 +12,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TitleScreen.class)
-public abstract class TitleScreenButtonMixin extends Screen {
+public abstract class TitleScreenMixin extends Screen {
 
-    protected TitleScreenButtonMixin(Text title) {
+    protected TitleScreenMixin(Text title) {
         super(title);
     }
 

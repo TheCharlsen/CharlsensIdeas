@@ -21,13 +21,13 @@
       "name": "minecraft:farlands",
       "bedrock_roof_position": -10,
       "bedrock_floor_position": -10,
-      "sea_level": 50,
+      "sea_level": 0,
       "disable_mob_generation": false,
       "default_block": {
         "Name": "minecraft:stone"
       },
       "default_fluid": {
-        "Name": "minecraft:air",
+        "Name": "charlsensideas:still_weird_water",
         "Properties": {
           "level": "8"
         }
