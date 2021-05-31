@@ -1,6 +1,6 @@
 package charlsen.charlsens.ideas.Generators;
 
-import charlsen.charlsens.ideas.charlsensideas;
+import charlsen.charlsens.ideas.CharlsensideasStructures;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.structure.*;
 import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
@@ -18,14 +18,14 @@ public class MyTestPiece extends SimpleStructurePiece {
     private final Identifier template;
 
     public MyTestPiece(StructureManager structureManager, CompoundTag compoundTag) {
-        super(charlsensideas.MY_TEST_PIECE, compoundTag);
+        super(CharlsensideasStructures.MY_TEST_PIECE, compoundTag);
         this.template = new Identifier(compoundTag.getString("Template"));
         this.rotation = BlockRotation.valueOf(compoundTag.getString("Rot"));
         this.initializeStructureData(structureManager);
     }
 
     public MyTestPiece(StructureManager structureManager, BlockPos pos, Identifier template, BlockRotation rotation) {
-        super(charlsensideas.MY_TEST_PIECE, 0);
+        super(CharlsensideasStructures.MY_TEST_PIECE, 0);
         this.pos = pos;
         this.rotation = rotation;
         this.template = template;

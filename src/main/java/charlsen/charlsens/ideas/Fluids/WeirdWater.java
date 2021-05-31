@@ -1,6 +1,7 @@
 package charlsen.charlsens.ideas.Fluids;
 
-import charlsen.charlsens.ideas.charlsensideas;
+import charlsen.charlsens.ideas.CharlsensideasBlocks;
+import charlsen.charlsens.ideas.CharlsensideasFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
@@ -12,23 +13,23 @@ public class WeirdWater extends WeirdWaterFluid{
 
     @Override
     public Fluid getStill() {
-        return charlsensideas.Still_Weird_Water;
+        return CharlsensideasFluids.Still_Weird_Water;
     }
 
     @Override
     public Fluid getFlowing() {
-        return charlsensideas.Flowing_Weird_Water;
+        return CharlsensideasFluids.Flowing_Weird_Water;
     }
 
     @Override
     public Item getBucketItem() {
-        return charlsensideas.Bucket_Of_Weird_Water;
+        return CharlsensideasFluids.Bucket_Of_Weird_Water;
     }
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
-        return charlsensideas.Weird_Water.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
+        return CharlsensideasBlocks.Weird_Water.getDefaultState().with(Properties.LEVEL_15, method_15741(fluidState));
     }
 
     public static class Flowing extends WeirdWater{

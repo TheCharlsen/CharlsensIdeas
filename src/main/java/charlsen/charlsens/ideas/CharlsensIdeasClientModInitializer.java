@@ -1,7 +1,7 @@
 package charlsen.charlsens.ideas;
 
-import charlsen.charlsens.ideas.Chests.BoxScreen;
-import charlsen.charlsens.ideas.MusicPlayer.MusicPlayerGuiItem;
+import charlsen.charlsens.ideas.Screens.BoxScreen;
+import charlsen.charlsens.ideas.Items.MusicPlayerGuiItem;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -31,22 +31,22 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 public class CharlsensIdeasClientModInitializer implements ClientModInitializer {
 
-    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Item_Group.ITEM_GROUP_MUSIC).maxCount(1));
+    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1));
 
 
 
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(charlsensideas.PineSapling, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.PineSapling, RenderLayer.getCutout());
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 
-        ScreenRegistry.register(charlsensideas.BOX_SCREEN_HANDLER, BoxScreen::new);
+        ScreenRegistry.register(CharlsensideasChests.BOX_SCREEN_HANDLER, BoxScreen::new);
 
 
       //Weird Water
-        setupFluidRendering(charlsensideas.Still_Weird_Water, charlsensideas.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), charlsensideas.Still_Weird_Water, charlsensideas.Flowing_Weird_Water);
+        setupFluidRendering(CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water);
 
         // ...
     }
