@@ -1,5 +1,6 @@
 package charlsen.charlsens.ideas.Screens;
 
+import charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer;
 import charlsen.charlsens.ideas.Charlsensideas;
 import charlsen.charlsens.ideas.CharlsensideasChests;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,7 +24,7 @@ public class BoxScreenHandler extends ScreenHandler {
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
     public BoxScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(CharlsensideasChests.BOX_SCREEN_HANDLER, syncId);
+        super(CharlsensIdeasClientModInitializer.BOX_SCREEN_HANDLER, syncId);
         checkSize(inventory, 27);
         this.inventory = inventory;
         //some inventories do custom logic when a player opens it.

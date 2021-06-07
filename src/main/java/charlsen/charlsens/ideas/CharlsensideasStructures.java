@@ -25,7 +25,7 @@ public class CharlsensideasStructures {
 
     public static void structuresInit(){
 
-        Registry.register(Registry.STRUCTURE_PIECE, new Identifier("charlsensideas", "my_piece"), MY_TEST_PIECE);
+       /* Registry.register(Registry.STRUCTURE_PIECE, new Identifier("charlsensideas", "my_piece"), MY_TEST_PIECE);
 
         FabricStructureBuilder.create(new Identifier("charlsensideas", "my_structure"), MY_STRUCTURE).step(GenerationStep.Feature.SURFACE_STRUCTURES).defaultConfig(32, 8, 12345).adjustsSurface().register();
 
@@ -33,7 +33,7 @@ public class CharlsensideasStructures {
 
         BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, myConfigured.getValue(), MY_CONFIGURED);
 
-        BiomeModifications.addStructure(BiomeSelectors.all(), myConfigured);
+        BiomeModifications.addStructure(BiomeSelectors.all(), myConfigured);*/
 
     }
 }

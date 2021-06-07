@@ -16,7 +16,7 @@
     "sources": "https://github.com/TheCharlsen/CharlsensIdeas"
   },
 
-  "license": "CC BY-NC-SA 3.0",
+  "license": "CC BY-NC-SA 4.0",
   "icon": "assets/charlsensideas/icon.png",
 
   "environment": "*",
@@ -42,5 +42,6 @@
 
   "suggests": {
     "another-mod": "*"
-  }
+  },
+  "accessWidener" : "charlsensideas.accesswidener"
 }

@@ -18,21 +18,7 @@ import net.minecraft.util.registry.Registry;
 
 public class CharlsensideasChests {
 
-    public static final Identifier BOX = new Identifier("charlsensideas", "box_block");
 
-    public static final Block BOX_BLOCK;
-
-    public static final BlockItem BOX_BLOCK_ITEM;
-    public static final BlockEntityType<BoxBlockEntity> BOX_BLOCK_ENTITY;
-    public static final ScreenHandlerType<BoxScreenHandler> BOX_SCREEN_HANDLER;
-
-
-    static {
-        BOX_BLOCK = Registry.register(Registry.BLOCK, BOX, new BoxBlock(FabricBlockSettings.of(Material.SHULKER_BOX).strength(2.0f, 2.0f).sounds(BlockSoundGroup.METAL).breakByTool(FabricToolTags.PICKAXES)));
-        BOX_BLOCK_ITEM = Registry.register(Registry.ITEM, BOX, new BlockItem(BOX_BLOCK, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_SECCHESTS)));
-        BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(BOX, BoxScreenHandler::new);
-        BOX_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, BOX, BlockEntityType.Builder.create(BoxBlockEntity::new, BOX_BLOCK).build(null));
-    }
 
 
 }

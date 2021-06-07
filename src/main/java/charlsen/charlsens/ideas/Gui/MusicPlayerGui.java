@@ -4,13 +4,9 @@ package charlsen.charlsens.ideas.Gui;
 import charlsen.charlsens.ideas.CharlsensideasItems;
 import charlsen.charlsens.ideas.CharlsensideasSoundEvents;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
-import io.github.cottonmc.cotton.gui.widget.WButton;
-import io.github.cottonmc.cotton.gui.widget.WGridPanel;
-import io.github.cottonmc.cotton.gui.widget.WLabel;
-import io.github.cottonmc.cotton.gui.widget.WPanel;
-import io.github.cottonmc.cotton.gui.widget.WScrollPanel;
+import io.github.cottonmc.cotton.gui.widget.*;
+import io.github.cottonmc.cotton.gui.widget.data.Axis;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
-import net.fabricmc.fabric.api.util.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.item.Items;
@@ -20,21 +16,20 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
 public class MusicPlayerGui extends LightweightGuiDescription {
+
     public MusicPlayerGui() {
-        
+        final WBox box;
+
         WGridPanel root = new WGridPanel();
         setRootPanel(root);
-        root.setSize(400, 300);
-    
-        WLabel  musicplayerlabel = new WLabel(new TranslatableText("§8§lMusicplayer"));
-        root.add(musicplayerlabel, 0, 0, 4, 1);
-        
-        WPanel myTallPanel = new WPanel(){
-        };
-        WScrollPanel scrollPanel = new WScrollPanel(myTallPanel);
-        root.add(scrollPanel, 18, 1, 4, 7);
+        root.setSize(300, 200);
 
-        scrollPanel.setScrollingVertically(TriState.TRUE);
+        box = new WBox(Axis.HORIZONTAL);
+        WScrollPanel scrollPanel = new WScrollPanel(box);
+        root.add(scrollPanel, 18, 1, 15, 13);
+
+        WLabel  musicplayerlabel = new WLabel(new TranslatableText("§8§lMusicplayer"));
+        root.add(musicplayerlabel, 0, 0, 4, 7);
 
         WButton stalbutton = new WButton(new LiteralText(" Stal "));
         stalbutton.setOnClick(() -> {
@@ -44,7 +39,6 @@ public class MusicPlayerGui extends LightweightGuiDescription {
         stalbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_STAL));
         root.add(stalbutton, 1, 15, 4, 1);
         // (x, y, int width, int height)
-
 
         WButton catbutton = new WButton(new LiteralText(" Cat "));
         catbutton.setOnClick(() -> {

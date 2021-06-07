@@ -8,7 +8,8 @@
   ],
   "client": [
     "ExampleMixin",
-    "TitleScreenMixin"
+    "TitleScreenMixin",
+    "BrewingRecipeRegistryMixin"
 
   ],
   "injectors": {

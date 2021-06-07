@@ -1,0 +1,17 @@
+{
+  "type": "nbtcrafting:brewing",
+  "base": {
+    "item": "minecraft:potion",
+    "data": {
+      "require": {
+        "Potion": "minecraft:awkward"
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "charlsensideas:potion_of_blossom_ingredients"
+  },
+  "result": {
+    "item": "charlsensideas:potion_of_blossom"
+  }
+}

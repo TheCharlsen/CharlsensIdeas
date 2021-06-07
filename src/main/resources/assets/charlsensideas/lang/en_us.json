@@ -36,10 +36,12 @@
     "itemGroup.charlsensideas.nature": "Charlsens Ideas: Nature",
     "item.charlsensideas.bornite_sword": "Bornite Sword",
     "block.charlsensideas.weirdly_deep_stone": "Weirdly Deepstone",
-    "enchantment.charlsensideas.flower_walker": "Flower Walker",
     "block.charlsensideas.box_block": "Box",
     "item.charlsensideas.bucket_of_weird_water": "Bucket of Weird Water",
-    "effect.charlsensideas.blossomed": "Blossomed"
+    "effect.charlsensideas.blossomed": "Blossomed",
+    "item.charlsensideas.potion_of_blossom": "Potion of Blossom",
+    "item.minecraft.potion.effect.potion_of_blossom": "Potion of Blossom",
+    "block.charlsensideas.pompon": "Pompon"
 
 }
 

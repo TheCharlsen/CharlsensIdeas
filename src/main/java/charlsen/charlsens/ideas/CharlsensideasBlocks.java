@@ -28,6 +28,7 @@ public class CharlsensideasBlocks {
     public static final Block PineLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(1.5F, 1.5F).sounds(BlockSoundGroup.WOOD));
     public static final Block WeirdlyDeepStone = new WeirdlyDeepStoneBlock(FabricBlockSettings.of(Material.STONE).strength(14F, 13F).sounds(BlockSoundGroup.STONE).luminance((state) -> { return 4;}));
     public static Block Weird_Water;
+    public static final Block Pompon = new FlowerBlock(CharlsensideasStatusEffects.Blossomed, 9, FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS));
 
     public static void blocksInit(){
         //Blocks
@@ -43,6 +44,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_leaves"), PineLeaves);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_log"), PineLog);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "weirdly_deep_stone"), WeirdlyDeepStone);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pompon"), Pompon);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES)));
@@ -57,6 +59,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_leaves"), new BlockItem(PineLeaves, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_log"), new BlockItem(PineLog, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "weirdly_deep_stone"), new BlockItem(WeirdlyDeepStone, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pompon"), new BlockItem(CharlsensideasBlocks.Pompon, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
 
     }
 }

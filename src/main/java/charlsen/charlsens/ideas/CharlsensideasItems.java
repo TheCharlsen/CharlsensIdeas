@@ -1,10 +1,14 @@
 package charlsen.charlsens.ideas;
 
 import charlsen.charlsens.ideas.FoodComponents.ChipFoodComponents;
+import charlsen.charlsens.ideas.Items.PotionOfBlossomItem;
 import charlsen.charlsens.ideas.ProtectedAcces.MusicDiscItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.MusicDiscItem;
+import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -18,7 +22,7 @@ public class CharlsensideasItems {
     public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15,CharlsensideasSoundEvents.Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
     public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Revenge_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
     public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Da_Coconut_nut_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.EPIC));
-
+    public static final Potion Potion_Of_Blossom = new Potion(new StatusEffectInstance(CharlsensideasStatusEffects.Blossomed, 3600));
     public static void itemsInit(){
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "secure_chest_module"), Secure_Chest_Module);
@@ -28,6 +32,8 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "discord_remix_music_disc"), Discord_Remix_Music_Disc);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "revenge_music_disc"), Revenge_Music_Disc);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "da_coconut_nut_music_disc"), Da_Coconut_nut_Music_Disc);
+        Registry.register(Registry.POTION, new Identifier("charlsensideas", "potion_of_blossom"), Potion_Of_Blossom);
+
 
     }
 }

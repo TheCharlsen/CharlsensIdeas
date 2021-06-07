@@ -1,6 +1,7 @@
 package charlsen.charlsens.ideas.mixin;
 
 import charlsen.charlsens.ideas.CharlsensideasEnchantments;
+import charlsen.charlsens.ideas.CharlsensideasStatusEffects;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
@@ -40,7 +41,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         if (itemStack != null) {
             int x = EnchantmentHelper.getLevel(CharlsensideasEnchantments.FlowerWalker, itemStack);
             tickCounter++;
-            if ((x > 0) && (tickCounter >= 20)) {
+            if ((x > 0) && (tickCounter >= 30)) {
                 tickCounter = 0;
             if (this.world.getBlockState(this.getBlockPos().down()).getBlock().equals(Blocks.GRASS_BLOCK)) {
                 world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.ALLIUM.getDefaultState());
@@ -64,6 +65,30 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 System.out.println(x);
 
                 }
+            }
+        }
+        tickCounter++;
+        if (this.hasStatusEffect(CharlsensideasStatusEffects.Blossomed) & tickCounter >= 30) {
+            tickCounter = 0;
+            if (this.world.getBlockState(this.getBlockPos().down()).getBlock().equals(Blocks.GRASS_BLOCK)) {
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.ALLIUM.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.AZURE_BLUET.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.DANDELION.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.POPPY.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.BLUE_ORCHID.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.LILY_OF_THE_VALLEY.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.PINK_TULIP.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.WHITE_TULIP.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.ORANGE_TULIP.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.RED_TULIP.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.CORNFLOWER.getDefaultState());
+                world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.OXEYE_DAISY.getDefaultState());
+
+                world.addParticle(ParticleTypes.HAPPY_VILLAGER, (double) getPos().getX() + randomD(random), (double) getPos().getY() + randomD(random), (double) getPos().getZ() + randomD(random), randomD(random), randomD(random), randomD(random));
+                world.addParticle(ParticleTypes.HAPPY_VILLAGER, (double) getPos().getX() + randomD(random), (double) getPos().getY() + randomD(random), (double) getPos().getZ() + randomD(random), randomD(random), randomD(random), randomD(random));
+                world.addParticle(ParticleTypes.HAPPY_VILLAGER, (double) getPos().getX() + randomD(random), (double) getPos().getY() + randomD(random), (double) getPos().getZ() + randomD(random), randomD(random), randomD(random), randomD(random));
+
+                System.out.println("GrasssssB");
             }
         }
     }

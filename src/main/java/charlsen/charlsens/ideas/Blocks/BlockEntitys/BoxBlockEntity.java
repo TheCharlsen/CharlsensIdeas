@@ -1,5 +1,6 @@
 package charlsen.charlsens.ideas.Blocks.BlockEntitys;
 
+import charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer;
 import charlsen.charlsens.ideas.CharlsensideasChests;
 import charlsen.charlsens.ideas.CharlsensideasImplementedInventory;
 import charlsen.charlsens.ideas.Screens.BoxScreenHandler;
@@ -20,7 +21,7 @@ public class BoxBlockEntity extends BlockEntity implements NamedScreenHandlerFac
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
 
     public BoxBlockEntity() {
-        super(CharlsensideasChests.BOX_BLOCK_ENTITY);
+        super(CharlsensIdeasClientModInitializer.BOX_BLOCK_ENTITY);
     }
 
 
