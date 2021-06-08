@@ -7,6 +7,7 @@ import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
 import io.github.cottonmc.cotton.gui.widget.*;
 import io.github.cottonmc.cotton.gui.widget.data.Axis;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
+import net.fabricmc.fabric.api.util.TriState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.item.Items;
@@ -18,15 +19,15 @@ import net.minecraft.text.TranslatableText;
 public class MusicPlayerGui extends LightweightGuiDescription {
 
     public MusicPlayerGui() {
-        final WBox box;
 
         WGridPanel root = new WGridPanel();
         setRootPanel(root);
-        root.setSize(300, 200);
+        root.setSize(130, 200);
 
-        box = new WBox(Axis.HORIZONTAL);
+        WBox box = new WBox(Axis.VERTICAL);
         WScrollPanel scrollPanel = new WScrollPanel(box);
-        root.add(scrollPanel, 18, 1, 15, 13);
+        root.add(scrollPanel, 0, 1, 8 , 10);
+        scrollPanel.setScrollingVertically(TriState.TRUE);
 
         WLabel  musicplayerlabel = new WLabel(new TranslatableText("§8§lMusicplayer"));
         root.add(musicplayerlabel, 0, 0, 4, 7);
@@ -37,7 +38,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Stal"), true);
         });
         stalbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_STAL));
-        root.add(stalbutton, 1, 15, 4, 1);
+        box.add(stalbutton, 120, 15);
         // (x, y, int width, int height)
 
         WButton catbutton = new WButton(new LiteralText(" Cat "));
@@ -46,16 +47,16 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Cat"), true);
         });
         catbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_CAT));
-        root.add(catbutton, 1, 3, 4, 1);
+        box.add(catbutton, 120, 15);
 
-       
+
         WButton thirteenbutton = new WButton(new LiteralText(" 13 "));
         thirteenbutton.setOnClick(() -> {
             MinecraftClient.getInstance().getSoundManager().play(THIRTEENSOUND);
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - 13"), true);
         });
         thirteenbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_13));
-        root.add(thirteenbutton, 1, 1, 4, 1);
+        box.add(thirteenbutton, 120, 15);
 
         WButton blocksbutton = new WButton(new LiteralText(" Blocks "));
         blocksbutton.setOnClick(() -> {
@@ -63,7 +64,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Blocks"), true);
         });
         blocksbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_BLOCKS));
-        root.add(blocksbutton, 1, 5, 4, 1);
+        box.add(blocksbutton, 120, 15);
 
         WButton chirpbutton = new WButton(new LiteralText(" Chirp "));
         chirpbutton.setOnClick(() -> {
@@ -71,7 +72,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Chirp"), true);
         });
         chirpbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_CHIRP));
-        root.add(chirpbutton, 1, 7, 4, 1);
+        box.add(chirpbutton, 120, 15);
 
 
         WButton farbutton = new WButton(new LiteralText(" Far "));
@@ -80,7 +81,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Far"), true);
         });
         farbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_FAR));
-        root.add(farbutton, 1, 9, 4, 1);
+        box.add(farbutton, 120, 15);
 
 
         WButton mallbutton = new WButton(new LiteralText(" Mall "));
@@ -89,7 +90,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Mall"), true);
         });
         mallbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_MALL));
-        root.add(mallbutton, 1, 11, 4, 1);
+        box.add(mallbutton, 120, 15);
 
 
         WButton mellohibutton = new WButton(new LiteralText(" Mellohi "));
@@ -98,7 +99,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Mellohi"), true);
         });
         mellohibutton.setIcon(new ItemIcon(Items.MUSIC_DISC_MELLOHI));
-        root.add(mellohibutton, 1, 13, 4, 1);
+        box.add(mellohibutton, 120, 15);
 
 
         WButton stradbutton = new WButton(new LiteralText(" Strad "));
@@ -107,7 +108,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Strad"), true);
         });
         stradbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_STRAD));
-        root.add(stradbutton, 6, 1, 4, 1);
+        box.add(stradbutton, 120, 15);
 
         WButton wardbutton = new WButton(new LiteralText(" Ward "));
         wardbutton.setOnClick(() -> {
@@ -115,7 +116,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Ward"), true);
         });
         wardbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_WARD));
-        root.add(wardbutton, 6, 3, 4, 1);
+        box.add(wardbutton, 120, 15);
 
         WButton elevenbutton = new WButton(new LiteralText(" 11 "));
         elevenbutton.setOnClick(() -> {
@@ -123,7 +124,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - 11"), true);
         });
         elevenbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_11));
-        root.add(elevenbutton, 6, 5, 4, 1);
+        box.add(elevenbutton, 120, 15);
 
         WButton waitbutton = new WButton(new LiteralText(" Wait "));
         waitbutton.setOnClick(() -> {
@@ -131,7 +132,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Wait"), true);
         });
         waitbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_WAIT));
-        root.add(waitbutton, 6, 7, 4, 1);
+        box.add(waitbutton, 120, 15);
 
         WButton pigstepbutton = new WButton(new LiteralText(" Pigstep "));
         pigstepbutton.setOnClick(() -> {
@@ -139,7 +140,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: Lena Raine - Pigstep"), true);
         });
         pigstepbutton.setIcon(new ItemIcon(Items.MUSIC_DISC_PIGSTEP));
-        root.add(pigstepbutton, 6, 9, 4, 1);
+        box.add(pigstepbutton, 120, 15);
 
         WButton dogbutton = new WButton(new LiteralText(" Dog "));
         dogbutton.setOnClick(() -> {
@@ -147,14 +148,31 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: C418 - Dog"), true);
         });
         dogbutton.setIcon(new ItemIcon(CharlsensideasItems.Dog_Music_Disc));
-        root.add(dogbutton, 6, 11, 4, 1);
+        box.add(dogbutton, 120, 15);
 
         WButton discordbutton = new WButton(new LiteralText(" DiscordRemix "));
         discordbutton.setOnClick(() -> {
             MinecraftClient.getInstance().getSoundManager().play(DISCORDSOUND);
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: Discord - Discord Remix"), true);
         });
-        root.add(discordbutton, 6, 13, 4, 1);
+        discordbutton.setIcon(new ItemIcon(CharlsensideasItems.Discord_Remix_Music_Disc));
+        box.add(discordbutton, 120, 15);
+
+        WButton revengebutton = new WButton(new LiteralText(" Revenge "));
+        revengebutton.setOnClick(() -> {
+            MinecraftClient.getInstance().getSoundManager().play(REVENGESOUND);
+            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: CaptainSparklez, TryHardNinja - Revenge"), true);
+        });
+        revengebutton.setIcon(new ItemIcon(CharlsensideasItems.Revenge_Music_Disc));
+        box.add(revengebutton, 120, 15);
+
+        WButton coconutbutton = new WButton(new LiteralText(" The Coconut Song "));
+        coconutbutton.setOnClick(() -> {
+            MinecraftClient.getInstance().getSoundManager().play(COCONUTSOUND);
+            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Now Playing: Smokey Mountain - The Coconut Song"), true);
+        });
+        coconutbutton.setIcon(new ItemIcon(CharlsensideasItems.Da_Coconut_nut_Music_Disc));
+        box.add(coconutbutton, 120, 15);
 
         WButton stopbutton = new WButton(new LiteralText(" StopSound "));
         stopbutton.setOnClick(() -> {
@@ -172,11 +190,13 @@ public class MusicPlayerGui extends LightweightGuiDescription {
             MinecraftClient.getInstance().getSoundManager().stop(ELEVENSOUND);
             MinecraftClient.getInstance().getSoundManager().stop(WAITSOUND);
             MinecraftClient.getInstance().getSoundManager().stop(PIGSTEPSOUND);
-            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Stopped"), true);
             MinecraftClient.getInstance().getSoundManager().stop(DOGSOUND);
             MinecraftClient.getInstance().getSoundManager().stop(DISCORDSOUND);
+            MinecraftClient.getInstance().getSoundManager().stop(REVENGESOUND);
+            MinecraftClient.getInstance().getSoundManager().stop(COCONUTSOUND);
+            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.of("Stopped"), true);
         });
-        root.add(stopbutton, 17, 1, 4, 1);
+        box.add(stopbutton, 120, 15);
         //(x, y, int width, int height)
     }
         private static final PositionedSoundInstance STALSOUND = PositionedSoundInstance.master(SoundEvents.MUSIC_DISC_STAL, 1.0F);
@@ -189,7 +209,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
         MinecraftClient.getInstance().getSoundManager().stop(STALSOUND);
     }
 
-   
+
         private static final PositionedSoundInstance CATSOUND = PositionedSoundInstance.master(SoundEvents.MUSIC_DISC_CAT, 1.0F);
 
         public void playcatSound() {
@@ -271,7 +291,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
 
         public void playstradSound() {
         MinecraftClient.getInstance().getSoundManager().play(STRADSOUND);
-} 
+}
 
         public void stopstradSound() {
         MinecraftClient.getInstance().getSoundManager().stop(STRADSOUND);
@@ -282,7 +302,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
 
         public void playwardSound() {
         MinecraftClient.getInstance().getSoundManager().play(WARDSOUND);
-} 
+}
 
         public void stopwardSound() {
         MinecraftClient.getInstance().getSoundManager().stop(WARDSOUND);
@@ -293,7 +313,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
 
         public void playelevenSound() {
         MinecraftClient.getInstance().getSoundManager().play(ELEVENSOUND);
-} 
+}
 
         public void stopelevenSound() {
         MinecraftClient.getInstance().getSoundManager().stop(ELEVENSOUND);
@@ -304,7 +324,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
 
         public void playwaitSound() {
         MinecraftClient.getInstance().getSoundManager().play(WAITSOUND);
-} 
+}
 
         public void stopwaitSound() {
         MinecraftClient.getInstance().getSoundManager().stop(WAITSOUND);
@@ -315,7 +335,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
 
         public void playpigstepSound() {
         MinecraftClient.getInstance().getSoundManager().play(PIGSTEPSOUND);
-} 
+}
 
         public void stoppigstepSound() {
         MinecraftClient.getInstance().getSoundManager().stop(PIGSTEPSOUND);
@@ -342,4 +362,9 @@ public class MusicPlayerGui extends LightweightGuiDescription {
         public void stopdiscordSound() {
         MinecraftClient.getInstance().getSoundManager().stop(DISCORDSOUND);
     }
+
+        private static final PositionedSoundInstance COCONUTSOUND = PositionedSoundInstance.master(CharlsensideasSoundEvents.Da_Coconut_nut_Sound_Event, 1.0F);
+
+        private static final PositionedSoundInstance REVENGESOUND = PositionedSoundInstance.master(CharlsensideasSoundEvents.Revenge_Sound_Event, 1.0F);
+
 }
