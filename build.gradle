@@ -16,13 +16,8 @@ repositories {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
 	}
-   
-	maven{
-		url = 'https://maven.blamejared.com'
-	}
-	maven {
-		url "https://maven.shedaniel.me/"
-	}
+
+	maven { url 'https://jitpack.io' }
 
 }
 
@@ -40,9 +35,7 @@ dependencies {
 
     modImplementation include("io.github.cottonmc:LibGui:4.0.0+1.17")
 
-	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-		exclude(group: "net.fabricmc.fabric-api")
-	}
+	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.config_version}")
 
 }
 
@@ -101,6 +94,7 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+
 	}
 }
 
