@@ -21,7 +21,12 @@
     "sounds": [
       "charlsensideas:da_coconut_nut"
     ]
-  }
+  },
 
+  "adrian_block": {
+    "sounds": [
+      "charlsensideas:adrian_block"
+    ]
+  }
 }
 
