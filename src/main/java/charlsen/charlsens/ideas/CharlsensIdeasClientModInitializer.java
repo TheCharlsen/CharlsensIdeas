@@ -43,6 +43,8 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 
 
+        ParticleFactories.initialize();
+        CharlsensideasParticleFactories.initialize();
 
       //Weird Water
         setupFluidRendering(CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );

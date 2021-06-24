@@ -35,7 +35,7 @@ public class Charlsensideas implements ModInitializer {
     @SuppressWarnings("deprecation")
 	public void onInitialize() {
 
-        Registry.register(Registry.PARTICLE_TYPE, new Identifier(MODID, "textures/particle/spark.png"), spark);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(MODID, "spark"), spark);
 
         CharlsensideasBlocks.blocksInit();
         CharlsensideasItems.itemsInit();
