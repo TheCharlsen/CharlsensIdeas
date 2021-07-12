@@ -1,28 +1,51 @@
 package charlsen.charlsens.ideas;
 
-import charlsen.charlsens.ideas.FoodComponents.ChipFoodComponents;
-import charlsen.charlsens.ideas.Items.PotionOfBlossomItem;
 import charlsen.charlsens.ideas.ProtectedAcces.MusicDiscItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.Block;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.MusicDiscItem;
+import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
+import java.util.Optional;
+
 public class CharlsensideasItems {
 
     public static final Item Secure_Chest_Module = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_SECCHESTS));
     public static final Item Bornite = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES));
-    public static final Item CHIP = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD).food(ChipFoodComponents.CHIP));
+    public static final Item CHIP = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD).food(CharlsensideasFoodComponents.CHIP));
     public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, CharlsensideasSoundEvents.Dog_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
     public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15,CharlsensideasSoundEvents.Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
     public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Revenge_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.RARE));
     public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Da_Coconut_nut_Sound_Event, new FabricItemSettings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1).rarity(Rarity.EPIC));
     public static final Potion Potion_Of_Blossom = new Potion(new StatusEffectInstance(CharlsensideasStatusEffects.Blossomed, 3600));
+    public static final Item Alpine_Strawberry = new AliasedBlockItem(CharlsensideasBlocks.Alpine_Strawberry_Bush, (new Item.Settings()).group(CharlsensideasItemGroup.ITEM_GROUP_FOOD).food(CharlsensideasFoodComponents.Alpine_Strawberry));
+    public static final Item Black_Tourmaline_Gem = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES));
+    public static Item Pompon;
+
+
+    private static Item register(Block block, ItemGroup group) {
+        return register(new BlockItem(block, (new Item.Settings()).group(group)));
+    }
+    private static Item register(BlockItem item) {
+        return register((Block)item.getBlock(), (Item)item);
+    }
+
+    protected static Item register(Block block, Item item) {
+        return register(Registry.BLOCK.getId(block), item);
+    }
+
+    private static Item register(Identifier id, Item item) {
+        if (item instanceof BlockItem) {
+            ((BlockItem)item).appendBlocks(Item.BLOCK_ITEMS, item);
+        }
+
+        return (Item)Registry.register(Registry.ITEM, id, item);
+    }
+
     public static void itemsInit(){
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "secure_chest_module"), Secure_Chest_Module);
@@ -33,7 +56,9 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "revenge_music_disc"), Revenge_Music_Disc);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "da_coconut_nut_music_disc"), Da_Coconut_nut_Music_Disc);
         Registry.register(Registry.POTION, new Identifier("charlsensideas", "potion_of_blossom"), Potion_Of_Blossom);
-
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry"), Alpine_Strawberry);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_gem"), Black_Tourmaline_Gem);
+        Pompon = register(CharlsensideasBlocks.Pompon, CharlsensideasItemGroup.ITEM_GROUP_NATURE);
 
     }
 }

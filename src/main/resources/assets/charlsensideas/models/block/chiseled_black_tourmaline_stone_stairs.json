@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "charlsensideas:block/chiseled_black_tourmaline_stone",
+    "top": "charlsensideas:block/chiseled_black_tourmaline_stone",
+    "side": "charlsensideas:block/chiseled_black_tourmaline_stone"
+  }
+}

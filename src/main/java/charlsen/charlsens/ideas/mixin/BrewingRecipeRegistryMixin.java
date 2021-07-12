@@ -24,7 +24,7 @@ public abstract class BrewingRecipeRegistryMixin {
 
     @Inject(method = "registerDefaults", at = @At("TAIL"), cancellable = true)
     private static void hook_registerDefaults(CallbackInfo ci) {
-        hook_registerPotionRecipe(Potions.AWKWARD, Items.OXEYE_DAISY, CharlsensideasItems.Potion_Of_Blossom);
+        hook_registerPotionRecipe(Potions.AWKWARD, CharlsensideasItems.Pompon, CharlsensideasItems.Potion_Of_Blossom);
     }
 
     private static void hook_registerPotionRecipe(Potion input, Item item, Potion output) {

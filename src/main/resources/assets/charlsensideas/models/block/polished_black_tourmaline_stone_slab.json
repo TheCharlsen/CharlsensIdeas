@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "charlsensideas:block/polished_black_tourmaline_stone",
+    "top": "charlsensideas:block/polished_black_tourmaline_stone",
+    "side": "charlsensideas:block/polished_black_tourmaline_stone"
+  }
+}

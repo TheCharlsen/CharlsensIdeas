@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "charlsensideas:block/weirdly_black_tourmaline_stone"
+  }
+}

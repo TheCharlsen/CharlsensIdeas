@@ -33,7 +33,7 @@ public class MusicPlayerGui extends LightweightGuiDescription {
         root.add(scrollPanel, 0, 1, 8 , 10);
         scrollPanel.setScrollingVertically(TriState.TRUE);
 
-        WLabel  musicplayerlabel = new WLabel(new TranslatableText("§8§lMusicplayer"));
+        WLabel  musicplayerlabel = new WLabel(new TranslatableText("gui.text.label.musicplayer"));
         root.add(musicplayerlabel, 0, 0, 4, 1);
 
         WButton stalbutton = new WButton(new LiteralText(" Stal "));

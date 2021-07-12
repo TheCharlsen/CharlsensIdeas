@@ -10,6 +10,8 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
+import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.server.MinecraftServer;
@@ -26,7 +28,6 @@ import java.util.Map;
 
 public class Charlsensideas implements ModInitializer {
 
-    public static final DefaultParticleType spark = new DefaultParticleTypes(true);
 
     public static final String MODID = "charlsensideas";
     public static final Logger LOGGER = LogManager.getLogger();
@@ -34,8 +35,6 @@ public class Charlsensideas implements ModInitializer {
     @Override
     @SuppressWarnings("deprecation")
 	public void onInitialize() {
-
-        Registry.register(Registry.PARTICLE_TYPE, new Identifier(MODID, "spark"), spark);
 
         CharlsensideasBlocks.blocksInit();
         CharlsensideasItems.itemsInit();
@@ -49,6 +48,8 @@ public class Charlsensideas implements ModInitializer {
         CharlsensideasStructures.setupAndRegisterStructureFeatures();
         CharlsensideasStructureFeature.registerConfiguredStructures();
         CharlsensideasConfiguredFeatures.configuredFeaturesInit();
+
+        CustomPortalApiRegistry.addPortal(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks, PortalIgnitionSource.FluidSource(CharlsensideasFluids.Still_Weird_Water),  new Identifier("charlsensideas","tenebris"), 1, 42, 54);
 
         BiomeModifications.create(new Identifier(MODID, "diamond_cascade_addition"))
                 .add(   // Describes what we are doing. SInce we are adding a structure, we choose ADDITIONS.

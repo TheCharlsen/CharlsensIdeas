@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "charlsensideas:block/black_tourmaline_stone_pillar_top",
+    "side": "charlsensideas:block/black_tourmaline_stone_pillar"
+  }
+}

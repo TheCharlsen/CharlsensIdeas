@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_azalea",
+  "textures": {
+    "top": "charlsensideas:block/alpine_strawberry_bush_stage2_top",
+    "side": "charlsensideas:block/alpine_strawberry_bush_stage2_side",
+    "plant": "charlsensideas:block/alpine_strawberry_bush_plant"
+  }
+}

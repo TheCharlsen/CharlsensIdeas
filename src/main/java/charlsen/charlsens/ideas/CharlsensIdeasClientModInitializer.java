@@ -7,10 +7,13 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.*;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -39,14 +42,24 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.PineSapling, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Pompon, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.CloudBlock, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Alpine_Strawberry_Bush, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Weird_Grass_Block, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Umbra_Sapling, RenderLayer.getCutout());
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 
+        ColorProviderRegistry.BLOCK.register((state , view, pos, tintIndex) ->
+        view != null && pos != null
+                ? BiomeColors.getFoliageColor(view, pos)
+                : FoliageColors.getDefaultColor(), CharlsensideasBlocks.Weird_Grass_Block);
 
-        ParticleFactories.initialize();
-        CharlsensideasParticleFactories.initialize();
+        ColorProviderRegistry.BLOCK.register((state , view, pos, tintIndex) ->
+                view != null && pos != null
+                        ? BiomeColors.getFoliageColor(view, pos)
+                        : FoliageColors.getDefaultColor(), CharlsensideasBlocks.Umbra_Leaves);
 
-      //Weird Water
+
+        //Weird Water
         setupFluidRendering(CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water);
 

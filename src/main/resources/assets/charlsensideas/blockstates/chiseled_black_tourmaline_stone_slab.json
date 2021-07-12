@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "charlsensideas:block/chiseled_black_tourmaline_stone_slab"
+    },
+    "type=double": {
+      "model": "charlsensideas:block/chiseled_black_tourmaline_stone"
+    },
+    "type=top": {
+      "model": "charlsensideas:block/chiseled_black_tourmaline_stone_slab_top"
+    }
+  }
+}

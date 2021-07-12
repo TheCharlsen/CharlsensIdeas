@@ -4,15 +4,15 @@
   "package": "charlsen.charlsens.ideas.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "PlayerEntityMixin",
     "BiomeLayerSamplerAccessor",
+    "LivingEntityMixin",
+    "PlayerEntityMixin",
     "StructuresConfigAccessor"
   ],
   "client": [
+    "BrewingRecipeRegistryMixin",
     "ExampleMixin",
-    "TitleScreenMixin",
-    "BrewingRecipeRegistryMixin"
-
+    "TitleScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

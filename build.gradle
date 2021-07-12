@@ -19,6 +19,8 @@ repositories {
 
 	maven { url 'https://jitpack.io' }
 
+	maven {url = "https://maven.kyrptonaught.dev"}
+
 }
 
 
@@ -37,6 +39,8 @@ dependencies {
 
 	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.config_version}")
 
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
 }
 
 
