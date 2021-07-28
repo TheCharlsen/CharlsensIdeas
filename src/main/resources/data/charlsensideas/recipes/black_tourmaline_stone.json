@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "charlsensideas:cobbled_black_tourmaline_stone"
+  },
+  "result": "charlsensideas:black_tourmaline_stone",
+  "experience": 0.1,
+  "cookingtime": 110
+}

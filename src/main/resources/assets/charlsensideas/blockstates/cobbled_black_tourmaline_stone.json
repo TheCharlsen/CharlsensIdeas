@@ -1,9 +1,13 @@
 {
 
   "variants": {
-    "":{
+    "dirtotp=false":[
+      {
       "model": "charlsensideas:block/cobbled_black_tourmaline_stone"
-
+    }
+      ],
+    "dirtotp=true": {
+      "model": "charlsensideas:block/weird_dirt"
     }
   }
 }

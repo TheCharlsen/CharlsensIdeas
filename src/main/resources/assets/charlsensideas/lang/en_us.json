@@ -68,7 +68,12 @@
     "block.charlsensideas.black_tourmaline_stone_brick_slab": "Black Tourmaline Stone Brick Slab",
     "block.charlsensideas.black_tourmaline_stone_cracked_brick_slab": "Black Tourmaline Stone Cracked Brick Slab",
     "block.charlsensideas.chiseled_black_tourmaline_stone_slab": "Chiseled Black Tourmaline Stone Slab",
-    "block.charlsensideas.polished_black_tourmaline_stone_slab": "Polished Black Tourmaline Stone Slab"
+    "block.charlsensideas.polished_black_tourmaline_stone_slab": "Polished Black Tourmaline Stone Slab",
+    "item.charlsensideas.jar": "Jar",
+    "item.charlsensideas.alpine_strawberry_jam_jar": "Jar of Alpine Strawberry Jam",
+    "block.charlsensideas.black_tourmaline_stone_pillar": "Black Tourmaline Stone Pillar",
+    "block.charlsensideas.alpine_strawberry_cake": "Alpine Strawberry Cake",
+    "charlsensideas.dimension.tenebris.enter.error.1": "Error Entering Tenebris. More info in the log"
 }
 
 

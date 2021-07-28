@@ -1,36 +1,77 @@
 package charlsen.charlsens.ideas;
 
+import charlsen.charlsens.ideas.Blocks.BlockEntitys.DummyDataStorage;
 import charlsen.charlsens.ideas.ProtectedAcces.DefaultParticleTypes;
 import charlsen.charlsens.ideas.World.CharlsensideasConfiguredFeatures;
 import charlsen.charlsens.ideas.World.CharlsensideasStructureFeature;
 import charlsen.charlsens.ideas.World.CharlsensideasStructures;
+import charlsen.charlsens.ideas.World.Dimension.TenebrisDimension;
+import charlsen.charlsens.ideas.World.SurfaceBuilders.TenebrisSurfacesBuilderRegistery;
 import charlsen.charlsens.ideas.mixin.StructuresConfigAccessor;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionOptions;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.gen.chunk.FlatChunkGenerator;
 import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import xyz.nucleoid.fantasy.Fantasy;
+import xyz.nucleoid.fantasy.RuntimeWorldConfig;
+import xyz.nucleoid.fantasy.RuntimeWorldHandle;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Charlsensideas implements ModInitializer {
 
+    @Deprecated@SuppressWarnings({"unused"})
+    private static final MinecraftServer server = null;
+    public static final Logger LOGGER = LogManager.getLogger("charlsensideas");
+
+    @NotNull
+    @Deprecated
+    public static MinecraftServer getServer() {
+      throw new UnsupportedOperationException();
+  }
+
+    public static final BlockEntityType<DummyDataStorage> DUMMY_DATA_STORAGE;
+    static {
+        DUMMY_DATA_STORAGE = Registry.register(
+                Registry.BLOCK_ENTITY_TYPE, "atlantis:dummydatastorage",
+                FabricBlockEntityTypeBuilder.create(
+                        DummyDataStorage::new, CharlsensideasBlocks.TenebrisPortal).build(null));
+    }
+
+    public static RegistryKey<World> getOverworldKey() {
+        Identifier OVERWORLD_ID = DimensionOptions.OVERWORLD.getValue();
+        return RegistryKey.of(Registry.WORLD_KEY, OVERWORLD_ID);
+    }
 
     public static final String MODID = "charlsensideas";
-    public static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     @SuppressWarnings("deprecation")
@@ -48,6 +89,10 @@ public class Charlsensideas implements ModInitializer {
         CharlsensideasStructures.setupAndRegisterStructureFeatures();
         CharlsensideasStructureFeature.registerConfiguredStructures();
         CharlsensideasConfiguredFeatures.configuredFeaturesInit();
+        CharlsensideasBlockTags.initBlockTags();
+        TenebrisDimension.init();
+        TenebrisDimension.setupSurfaceBuilders();
+        TenebrisDimension.registerBiomeSources();
 
         CustomPortalApiRegistry.addPortal(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks, PortalIgnitionSource.FluidSource(CharlsensideasFluids.Still_Weird_Water),  new Identifier("charlsensideas","tenebris"), 1, 42, 54);
 
@@ -90,5 +135,6 @@ public class Charlsensideas implements ModInitializer {
             // Set the new modified map of structure spacing to the dimension's chunkgenerator.
             ((StructuresConfigAccessor)serverWorld.getChunkManager().getChunkGenerator().getStructuresConfig()).setStructures(tempMap);
         });
+
     }
 }

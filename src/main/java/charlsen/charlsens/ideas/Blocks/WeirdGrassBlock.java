@@ -58,7 +58,7 @@ public class WeirdGrassBlock extends SpreadableBlock implements Fertilizable {
 
                 for (int i = 0; i < 4; ++i) {
                     BlockPos blockPos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
-                    if (world.getBlockState(blockPos).isOf(Blocks.DIRT) && canSpread(blockState, world, blockPos)) {
+                    if (world.getBlockState(blockPos).isOf(CharlsensideasBlocks.Weird_Dirt) && canSpread(blockState, world, blockPos)) {
                         world.setBlockState(blockPos, (BlockState) blockState.with(SNOWY, world.getBlockState(blockPos.up()).isOf(Blocks.SNOW)));
                     }
                 }

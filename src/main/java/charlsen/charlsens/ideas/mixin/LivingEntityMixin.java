@@ -59,7 +59,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(at = @At("TAIL"), method = "method_26318")
     public void  method_26318(Vec3d vec3d, float f, CallbackInfoReturnable<Vec3d> cir) {
-        if ((this.horizontalCollision || this.jumping) && (this.isClimbing() || this.getBlockStateAtPos().isOf(CharlsensideasBlocks.CloudBlock) && CloudBlock.canWalkOnCloud(this))) {
+        if ((this.horizontalCollision || this.jumping) && (this.isClimbing() || this.getBlockStateAtPos().isOf(CharlsensideasBlocks.CloudBlock))) {
             vec3d2 = new Vec3d(vec3d2.x, 0.2D, vec3d2.z);
             System.out.println("CHID ERROR");
         }

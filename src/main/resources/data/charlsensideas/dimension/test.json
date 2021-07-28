@@ -1,0 +1,77 @@
+{
+  "type": {
+    "name": "minecraft:test",
+    "ultrawarm": false,
+    "natural": true,
+    "piglin_safe": false,
+    "respawn_anchor_works": false,
+    "bed_works": true,
+    "has_raids": true,
+    "has_skylight": true,
+    "has_ceiling": false,
+    "coordinate_scale": 1,
+    "ambient_light": 0,
+    "logical_height": 256,
+    "infiniburn": "minecraft:infiniburn_overworld",
+    "min_y": 0,
+    "height": 256
+  },
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 0,
+    "settings": {
+      "name": "minecraft:testgen",
+      "bedrock_roof_position": -10,
+      "bedrock_floor_position": -10,
+      "sea_level": 0,
+      "min_surface_level": 0,
+      "disable_mob_generation": false,
+      "noise_caves_enabled": false,
+      "noodle_caves_enabled": false,
+      "aquifers_enabled": false,
+      "deepslate_enabled": false,
+      "ore_veins_enabled": false,
+      "default_block": {
+        "Name": "minecraft:stone"
+      },
+      "default_fluid": {
+        "Name": "minecraft:stone"
+      },
+      "noise": {
+        "min_y": -32,
+        "height": 288,
+        "density_factor": 2,
+        "density_offset": 2,
+        "size_horizontal": 2,
+        "size_vertical": 2,
+        "simplex_surface_noise": false,
+        "random_density_offset": false,
+        "island_noise_override": true,
+        "amplified": false,
+        "sampling": {
+          "xz_scale": 2,
+          "y_scale": 1,
+          "xz_factor": 1,
+          "y_factor": 4
+        },
+        "bottom_slide": {
+          "target": 1,
+          "size": 4,
+          "offset": 1
+        },
+        "top_slide": {
+          "target": 1,
+          "size": 2,
+          "offset": 1
+        }
+      },
+      "structures": {
+        "structures": {}
+      }
+    },
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:plains"
+    }
+  }
+}

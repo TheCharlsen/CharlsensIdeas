@@ -1,0 +1,23 @@
+{
+      "textures": {
+                  "particle": "charlsensideas:block/alpine_strawberry_cake_side",
+                  "bottom": "charlsensideas:block/alpine_strawberry_cake_bottom",
+                  "top": "charlsensideas:block/alpine_strawberry_cake_top",
+                  "side": "charlsensideas:block/alpine_strawberry_cake_side",
+                  "inside": "charlsensideas:block/alpine_strawberry_cake_inner"
+      },
+          "elements": [
+              {   "from": [ 7, 0, 1 ],
+                  "to": [ 15, 8, 15 ],
+                  "faces": {
+                      "down":  { "texture": "#bottom", "cullface": "down" },
+                      "up":    { "texture": "#top" },
+                      "north": { "texture": "#side" },
+                      "south": { "texture": "#side" },
+                      "west":  { "texture": "#inside" },
+                      "east":  { "texture": "#side" }
+                  }
+              }
+          ]
+      }
+

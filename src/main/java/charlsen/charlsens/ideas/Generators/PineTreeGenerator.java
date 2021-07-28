@@ -15,7 +15,7 @@ public PineTreeGenerator() {
 }
 
     @Nullable
-    protected ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+    protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bl) {
         return (ConfiguredFeature<TreeFeatureConfig, ?>) CharlsensideasConfiguredFeatures.PINE_TREE;
     }
 }

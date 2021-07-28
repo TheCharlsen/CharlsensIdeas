@@ -1,5 +1,6 @@
 package charlsen.charlsens.ideas;
 
+import charlsen.charlsens.ideas.Items.FilledJamJarItem;
 import charlsen.charlsens.ideas.ProtectedAcces.MusicDiscItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
@@ -9,8 +10,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
-
-import java.util.Optional;
 
 public class CharlsensideasItems {
 
@@ -25,7 +24,8 @@ public class CharlsensideasItems {
     public static final Item Alpine_Strawberry = new AliasedBlockItem(CharlsensideasBlocks.Alpine_Strawberry_Bush, (new Item.Settings()).group(CharlsensideasItemGroup.ITEM_GROUP_FOOD).food(CharlsensideasFoodComponents.Alpine_Strawberry));
     public static final Item Black_Tourmaline_Gem = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES));
     public static Item Pompon;
-
+    public static final Item Jar = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD));
+    public static final Item Alpine_Strawberry_Jam_Jar = new FilledJamJarItem(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD));
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -59,6 +59,8 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry"), Alpine_Strawberry);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_gem"), Black_Tourmaline_Gem);
         Pompon = register(CharlsensideasBlocks.Pompon, CharlsensideasItemGroup.ITEM_GROUP_NATURE);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "jar"), Jar);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_jam_jar"), Alpine_Strawberry_Jam_Jar);
 
     }
 }

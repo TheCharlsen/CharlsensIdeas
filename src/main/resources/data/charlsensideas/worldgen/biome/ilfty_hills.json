@@ -1,0 +1,35 @@
+{
+  "surface_builder": "minecraft:grass",
+  "depth": -1.75,
+  "scale": 0.05,
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "precipitation": "rain",
+  "category": "none",
+  "player_spawn_friendly": true,
+  "creature_spawn_probability": 0.3,
+  "effects": {
+    "sky_color": 14990738,
+    "fog_color": 16643521,
+    "water_color": 10699523,
+    "water_fog_color": 3420675,
+    "grass_color": 14990738,
+    "foliage_color": 16225079,
+    "grass_color_modifier": "none",
+    "music": {
+      "sound": "minecraft:nuance",
+      "min_delay": 0,
+      "max_delay": 0,
+      "replace_current_music": false
+    }
+  },
+  "starts": [],
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [
+      "charlsensideas:umbra_tree"
+    ]
+  ]
+}

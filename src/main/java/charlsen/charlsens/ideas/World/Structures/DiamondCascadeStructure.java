@@ -170,7 +170,7 @@ public class DiamondCascadeStructure extends StructureFeature<DefaultFeatureConf
                     10);
 
             // All a structure has to do is call this method to turn it into a jigsaw based structure!
-            StructurePoolBasedGenerator.method_30419(
+            StructurePoolBasedGenerator.generate(
                     dynamicRegistryManager,
                     structureSettingsAndStartPool,
                     PoolStructurePiece::new,

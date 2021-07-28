@@ -10,5 +10,8 @@ public class CharlsensideasIdentifiers {
     public static final Identifier Revenge = new Identifier("charlsensideas:revenge");
     public static final Identifier POTION_OF_BLOSSOM_INGREDIENTS = new Identifier("charlsensideas:potion_of_blossom_ingredients");
     public static final Identifier ADRIAN_BLOCK_SOUND = new Identifier("charlsensideas:adrian_block");
-
+    public static final Identifier ATLANTIS_BIOME = new Identifier(Charlsensideas.MODID, "atlantis_biome");
+    public static final Identifier JELLYFISH_FIELDS = new Identifier(Charlsensideas.MODID, "jellyfish_fields");
+    public static final Identifier ATLANTEAN_ISLANDS = new Identifier(Charlsensideas.MODID, "atlantean_islands_biome");
+    public static final Identifier VOLCANIC_DARKSEA = new Identifier(Charlsensideas.MODID, "volcanic_darksea");
 }

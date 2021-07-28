@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "charlsensideas:black_tourmaline_stone"
+  },
+  "result": "charlsensideas:chiseled_black_tourmaline_stone",
+  "count": 1
+}

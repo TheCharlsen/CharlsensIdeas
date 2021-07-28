@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "charlsensideas:black_tourmaline_stone"
+    }
+  },
+  "result": {
+    "item": "charlsensideas:black_tourmaline_stone_bricks",
+    "count": "4"
+  }
+}

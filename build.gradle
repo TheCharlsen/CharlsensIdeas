@@ -21,16 +21,20 @@ repositories {
 
 	maven {url = "https://maven.kyrptonaught.dev"}
 
+	maven { url = 'https://maven.nucleoid.xyz/' }
+
+	maven {url "https://maven.quiltmc.org/repository/release/"}
 }
 
 
+
 dependencies {
-	minecraft "com.mojang:minecraft:1.17"
-	mappings "net.fabricmc:yarn:1.17+build.6:v2"
-	modImplementation "net.fabricmc:fabric-loader:0.11.3"
+	minecraft "com.mojang:minecraft:1.17.1"
+	mappings "net.fabricmc:yarn:1.17.1+build.31:v2"
+	modImplementation "net.fabricmc:fabric-loader:0.11.6"
 
 	//Fabric api
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.34.10+1.17"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.37.1+1.17"
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
@@ -41,6 +45,12 @@ dependencies {
 
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
+
+	modImplementation 'xyz.nucleoid:fantasy:0.4.2+1.17'
+
+	modImplementation("com.github.Mysticpasta1:OpenWorlds:cce9fed") {
+		exclude module: "fabric-api"
+	}
 }
 
 

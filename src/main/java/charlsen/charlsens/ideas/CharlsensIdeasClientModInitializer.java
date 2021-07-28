@@ -1,6 +1,9 @@
 package charlsen.charlsens.ideas;
 
 import charlsen.charlsens.ideas.Items.MusicPlayerGuiItem;
+import charlsen.charlsens.ideas.Render.TenebrisSkyRenderer;
+import charlsen.charlsens.ideas.World.Dimension.TenebrisDimension;
+import io.github.waterpicker.openworlds.OpenWorlds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -15,6 +18,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.fluid.Fluid;
@@ -24,6 +28,7 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockRenderView;
 
@@ -47,6 +52,22 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Umbra_Sapling, RenderLayer.getCutout());
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
+
+        SkyProperties tenebris = new SkyProperties(255.0F, true, SkyProperties.SkyType.NORMAL, false, false) {
+            @Override
+            public Vec3d adjustFogColor(Vec3d color, float sunHeight) {
+                return color;
+            }
+
+            @Override
+            public boolean useThickFog(int camX, int camY) {
+                return false;
+            }
+        };
+
+        OpenWorlds.registerSkyProperty(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, tenebris);
+        OpenWorlds.registerSkyRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, new TenebrisSkyRenderer());
+        OpenWorlds.registerCloudRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, (client, matrices, matrix4f, tickDelta, cameraX, cameraY, cameraZ) -> {});
 
         ColorProviderRegistry.BLOCK.register((state , view, pos, tintIndex) ->
         view != null && pos != null
