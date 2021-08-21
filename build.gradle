@@ -39,12 +39,12 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 
-    modImplementation include("io.github.cottonmc:LibGui:4.0.0+1.17")
+    modImplementation include("io.github.cottonmc:LibGui:4.1.5+1.17.1")
 
 	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.config_version}")
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta32-1.17'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta39-1.17'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta39-1.17'
 
 	modImplementation 'xyz.nucleoid:fantasy:0.4.2+1.17'
 

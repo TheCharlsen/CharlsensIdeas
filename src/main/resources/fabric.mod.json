@@ -22,10 +22,10 @@
   "environment": "*",
   "entrypoints": {
    "main": [
-     "charlsen.charlsens.ideas.Charlsensideas"
+     "com.github.thecharlsen.charlsensideas.Charlsensideas"
    ],
     "client": [
-      "charlsen.charlsens.ideas.CharlsensIdeasClientModInitializer"
+      "com.github.thecharlsen.charlsensideas.CharlsensIdeasClientModInitializer"
 
     ]
   },

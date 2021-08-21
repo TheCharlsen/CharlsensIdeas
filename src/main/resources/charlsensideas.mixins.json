@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "charlsen.charlsens.ideas.mixin",
+  "package": "com.github.thecharlsen.charlsensideas.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "BiomeLayerSamplerAccessor",

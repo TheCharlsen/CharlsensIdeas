@@ -36,7 +36,7 @@
         "size_vertical": 2,
         "simplex_surface_noise": true,
         "random_density_offset": true,
-        "island_noise_override": true,
+        "island_noise_override": false,
         "amplified": false,
         "sampling": {
           "xz_scale": 1000,
