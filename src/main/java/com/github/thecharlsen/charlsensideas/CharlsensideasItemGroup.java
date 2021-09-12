@@ -14,7 +14,7 @@ public class CharlsensideasItemGroup implements ModInitializer {
 
 			public static final ItemGroup ITEM_GROUP_FOOD = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "food"),
-			() -> new ItemStack(CharlsensideasItems.CHIP));
+			() -> new ItemStack(CharlsensideasBlocks.Alpine_Strawberry_Cake));
 
 			public static final ItemGroup ITEM_GROUP_ORES = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "ores"),
@@ -30,7 +30,7 @@ public class CharlsensideasItemGroup implements ModInitializer {
 
 	        public static final ItemGroup ITEM_GROUP_BUILDING_BLOCKS = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "building_blocks"),
-			() -> new ItemStack(CharlsensideasBlocks.Emil_Block));
+			() -> new ItemStack(CharlsensideasBlocks.Chiseled_Black_Tourmaline_Stone));
 
 	        public static final ItemGroup ITEM_GROUP_TOOLS = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "tools"),

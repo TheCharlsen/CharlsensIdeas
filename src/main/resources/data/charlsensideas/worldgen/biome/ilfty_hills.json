@@ -1,15 +1,15 @@
 {
-  "scale": 0.5,
+  "scale": 0.727,
   "effects": {
-    "sky_color": 14990738,
-    "fog_color": 16643521,
-    "water_color": 10699523,
-    "water_fog_color": 3420675,
-    "grass_color": 14990738,
-    "foliage_color": 16225079,
+    "sky_color": 14145739,
+    "fog_color": 11579558,
+    "water_color": 4159136,
+    "water_fog_color": 329011,
+    "grass_color": 10463365,
+    "foliage_color": 10792816,
     "particle": {
       "options": {
-        "type": "sweep_attack"
+        "type": "cloud"
       },
       "probability": 0.001
     }
@@ -25,8 +25,8 @@
     [],
     [
       "minecraft:lake_lava",
-      "charlsensideas:tenebris/ilfty/lake",
-      "charlsensideas:tenebris/ilfty/ilfty_v_lake"
+      "charlsensideas:lake_m",
+      "charlsensideas:lake_v_m"
     ],
     [],
     [
@@ -54,21 +54,12 @@
       "minecraft:prototype_ore_lapis_buried",
       "minecraft:prototype_ore_copper",
       "minecraft:prototype_underwater_magma",
-      "charlsensideas:tenebris/blockgen/disk_podzol",
-      "charlsensideas:tenebris/blockgen/disk_terracotta",
-      "charlsensideas:tenebris/blockgen/tuff",
-      "charlsensideas:tenebris/blockgen/tuff_lake"
+      "charlsensideas:tuff",
+      "charlsensideas:tuff_lake"
     ],
     [],
     [
       "minecraft:patch_tall_grass",
-      "charlsensideas:tenebris/trees/trees_mid",
-      "charlsensideas:tenebris/trees/trees_base",
-      "charlsensideas:tenebris/trees/trees_top",
-      "charlsensideas:tenebris/trees/trees_birch",
-      "charlsensideas:tenebris/trees/v2/small_trees",
-      "charlsensideas:tenebris/trees/v2/tiny_trees",
-      "charlsensideas:tenebris/trees/v2/cone_trees",
       "minecraft:flower_warm",
       "minecraft:patch_grass_savanna",
       "minecraft:brown_mushroom_normal",
@@ -77,7 +68,14 @@
       "minecraft:patch_pumpkin",
       "minecraft:prototype_glow_lichen",
       "minecraft:prototype_spring_water",
-      "minecraft:prototype_spring_lava"
+      "minecraft:prototype_spring_lava",
+      "charlsensideas:cloud",
+      "charlsensideas:tree",
+      "charlsensideas:tree2",
+      "charlsensideas:tree3",
+      "charlsensideas:tree4b",
+      "charlsensideas:tree5ss",
+      "charlsensideas:tree6c"
     ],
     [
       "minecraft:freeze_top_layer"

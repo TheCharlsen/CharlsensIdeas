@@ -4,9 +4,12 @@ import com.github.thecharlsen.charlsensideas.Blocks.BlockEntitys.DummyDataStorag
 import com.github.thecharlsen.charlsensideas.Charlsensideas;
 import com.github.thecharlsen.charlsensideas.CharlsensideasBlocks;
 import com.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -21,6 +24,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 import org.jetbrains.annotations.Nullable;
@@ -82,7 +88,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                 }
                 worldIn.setBlockState(pos, this.asBlock().getDefaultState(), 2);
             } else {
-                player.sendMessage(new TranslatableText("charlsensideas.dimension.tenebris.enter.error.1"), true);
+                player.sendMessage(new TranslatableText("Welcome To Tenebris!!!"), true);
                 return ActionResult.FAIL;
             }
         } else {
@@ -133,7 +139,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                 }
             }
         }
-        player.sendMessage(new TranslatableText("NO PASSING THE GATES OF TENEBRIS!!!"), true);
+        player.sendMessage(new TranslatableText("We Hope You Enjoyed Tenebris, Come Back Soon!"), true);
         return ActionResult.PASS;
     }
 
@@ -173,5 +179,21 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new DummyDataStorage(pos, state);
+    }
+
+    @Override
+    @Environment(EnvType.CLIENT)
+    public float getAmbientOcclusionLightLevel(BlockState state, BlockView worldIn, BlockPos pos) {
+        return 1.0F;
+    }
+
+    @Override
+    public boolean isTranslucent(BlockState state, BlockView reader, BlockPos pos) {
+        return true;
+    }
+
+    @Override
+    public VoxelShape getCameraCollisionShape(BlockState state, BlockView reader, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.empty();
     }
 }

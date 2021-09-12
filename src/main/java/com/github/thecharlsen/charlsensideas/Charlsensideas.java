@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
+import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -96,7 +97,18 @@ public class Charlsensideas implements ModInitializer {
                             context.getGenerationSettings().addBuiltInStructure(CharlsensideasStructureFeature.CONFIGURED_DIAMOND_CASCADE);
                         });
 
-	}
+
+        BiomeModifications.create(new Identifier(MODID, "ilfty_house_addition"))
+                .add(
+                        ModificationPhase.ADDITIONS,
+                        BiomeSelectors.includeByKey(CharlsensideasBiomes.ILFTY_HILLS_KEY),
+                        context -> {
+                            context.getGenerationSettings().addBuiltInStructure(CharlsensideasStructureFeature.CONFIGURED_ILFTY_HOUSE);
+                        });
+
+
+    }
+
     /**
 	  * || OPTIONAL ||
             *  This is optional as Fabric API already adds your structure to all dimension.
@@ -104,7 +116,7 @@ public class Charlsensideas implements ModInitializer {
             *  manually remove your structure from the chunkgenerator's structure spacing map.
             * If the spacing or our structure is not added, the structure doesn't spawn in that dimension.
             */
-    public static void removeStructureSpawningFromSelectedDimension() {
+     public static void removeStructureSpawningFromSelectedDimension() {
         // Controls the dimension blacklisting
         ServerWorldEvents.LOAD.register((MinecraftServer minecraftServer, ServerWorld serverWorld)->{
 

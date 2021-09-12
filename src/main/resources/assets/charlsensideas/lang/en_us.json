@@ -73,7 +73,10 @@
     "item.charlsensideas.alpine_strawberry_jam_jar": "Jar of Alpine Strawberry Jam",
     "block.charlsensideas.black_tourmaline_stone_pillar": "Black Tourmaline Stone Pillar",
     "block.charlsensideas.alpine_strawberry_cake": "Alpine Strawberry Cake",
-    "charlsensideas.dimension.tenebris.enter.error.1": "Error Entering Tenebris. More info in the log"
+    "charlsensideas.dimension.tenebris.enter.error.1": "Error Entering Tenebris. More info in the log",
+    "block.charlsensideas.ancient_groats": "Ancient Groats",
+    "item.charlsensideas.ancient_meal": "Ancient Meal",
+    "block.charlsensideas.tenebris_portal_block": "Tenebris Portal Block"
 }
 
 

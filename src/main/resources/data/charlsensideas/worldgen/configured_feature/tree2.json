@@ -18,28 +18,27 @@
           "type": "minecraft:decorated",
           "config": {
             "decorator": {
-              "type": "minecraft:nope",
-              "config": {}
+              "type": "minecraft:count",
+              "config": {
+                "count": 4
+              }
             },
             "feature": {
               "type": "minecraft:decorated",
               "config": {
                 "decorator": {
-                  "type": "minecraft:range",
-                  "config": {
-                    "height": {
-                      "absolute": 192
-                    }
-                  }
+                  "type": "minecraft:nope",
+                  "config": {}
                 },
                 "feature": {
                   "type": "minecraft:decorated",
                   "config": {
                     "decorator": {
-                      "type": "minecraft:cave_surface",
+                      "type": "minecraft:range",
                       "config": {
-                        "surface": "floor",
-                        "floor_to_ceiling_search_range": 128
+                        "height": {
+                          "absolute": 192
+                        }
                       }
                     },
                     "feature": {
@@ -96,7 +95,7 @@
                                   "type": "minecraft:weighted_state_provider",
                                   "entries": [
                                     {
-                                      "weight": 2,
+                                      "weight": 1,
                                       "data": {
                                         "Name": "minecraft:oak_leaves",
                                         "Properties": {
@@ -104,18 +103,12 @@
                                           "persistent": "false"
                                         }
                                       }
-                                    },
-                                    {
-                                      "weight": 1,
-                                      "data": {
-                                        "Name": "minecraft:air"
-                                      }
                                     }
                                   ]
                                 },
                                 "trunk_placer": {
                                   "type": "minecraft:straight_trunk_placer",
-                                  "base_height": 4,
+                                  "base_height": 5,
                                   "height_rand_a": 7,
                                   "height_rand_b": 7
                                 },

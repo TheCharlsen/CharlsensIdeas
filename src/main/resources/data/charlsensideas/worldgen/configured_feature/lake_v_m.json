@@ -53,14 +53,12 @@
                     "max_inclusive": 8
                   }
                 },
-                "replaceable": "terralith:soil",
+                "replaceable": "charlsensideas:soil",
                 "ground_state": {
                   "type": "minecraft:simple_state_provider",
                   "state": {
                     "Name": "minecraft:air",
-                    "Properties": {
-                      "level": "0"
-                    }
+                    "Properties": {}
                   }
                 },
                 "vegetation_feature": {

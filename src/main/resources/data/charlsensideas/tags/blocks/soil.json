@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "charlsensideas:weird_dirt",
+    "charlsensideas:weird_grass_block"
+  ]
+}

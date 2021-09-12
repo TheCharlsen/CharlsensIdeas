@@ -61,7 +61,7 @@
                             "max_inclusive": 8
                           }
                         },
-                        "replaceable": "terralith:taiga/soil_stone",
+                        "replaceable": "charlsensideas:soil_stone",
                         "ground_state": {
                           "type": "minecraft:simple_state_provider",
                           "state": {
@@ -87,7 +87,7 @@
                               {
                                 "target": {
                                   "predicate_type": "minecraft:random_block_match",
-                                  "block": "minecraft:grass_block",
+                                  "block": "charlsensideas:weird_grass_block",
                                   "probability": 1
                                 },
                                 "state": {

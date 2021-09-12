@@ -51,18 +51,19 @@
                         "lower_size": 0,
                         "upper_size": 0
                       },
-                      "sapling_provider": {
-                      "type": "minecraft:simple_state_provider",
-                      "state": {
-                        "Name": "minecraft:oak_sapling",
-                        "Properties": {
-                          "stage": "0"
-                        }
-                      }
-                    },"dirt_provider": {
+                      "dirt_provider": {
                         "type": "minecraft:simple_state_provider",
                         "state": {
                           "Name": "minecraft:dirt"
+                        }
+                      },
+                      "sapling_provider": {
+                        "type": "minecraft:simple_state_provider",
+                        "state": {
+                          "Name": "minecraft:oak_sapling",
+                          "Properties": {
+                            "stage": "0"
+                          }
                         }
                       },
                       "trunk_provider": {
@@ -85,12 +86,6 @@
                                 "distance": "7",
                                 "persistent": "false"
                               }
-                            }
-                          },
-                          {
-                            "weight": 1,
-                            "data": {
-                              "Name": "minecraft:air"
                             }
                           }
                         ]

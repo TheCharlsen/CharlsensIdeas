@@ -75,7 +75,7 @@ public class CharlsensideasBiomes {
         DefaultBiomeFeatures.addLargeFerns(generationSettings);
         DefaultBiomeFeatures.addMossyRocks(generationSettings);
 
-        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.TAIGA).depth(0.005F).scale(0.01F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+        return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.TAIGA).depth(0.005F).scale(0.03F).temperature(1.1F).downfall(0.4F).effects((new BiomeEffects.Builder()).waterColor(0x2cd0f5).waterFogColor(0xb1e4f0).fogColor(0xbbd1f0).skyColor(0x52bdf2).build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
 
     private static Biome createUmbraForest() {
@@ -106,6 +106,7 @@ public class CharlsensideasBiomes {
     public static final RegistryKey<Biome> PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "pine_forest"));
     public static final RegistryKey<Biome> TALL_PINE_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "tall_pine_forest"));
     public static final RegistryKey<Biome> UMBRA_FOREST_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "umbra_forest"));
+    public static final RegistryKey<Biome> ILFTY_HILLS_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("charlsensideas", "ilfty_hills"));
 
     public static void biomesInit(){
 

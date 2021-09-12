@@ -2,6 +2,7 @@ package com.github.thecharlsen.charlsensideas.World;
 
 import com.github.thecharlsen.charlsensideas.Charlsensideas;
 import com.github.thecharlsen.charlsensideas.World.Structures.DiamondCascadeStructure;
+import com.github.thecharlsen.charlsensideas.World.Structures.IlftyHouseStructure;
 import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
@@ -13,6 +14,7 @@ import net.minecraft.world.gen.feature.StructureFeature;
 public class CharlsensideasStructures {
 
     public static StructureFeature<DefaultFeatureConfig> DIAMOND_CASCADE = new DiamondCascadeStructure(DefaultFeatureConfig.CODEC);
+    public static StructureFeature<DefaultFeatureConfig> ILFTY_HOUSE = new IlftyHouseStructure(DefaultFeatureConfig.CODEC);
 
     public static void setupAndRegisterStructureFeatures() {
 
@@ -44,7 +46,15 @@ public class CharlsensideasStructures {
                 /* Finally! Now we register our structure and everything above will take effect. */
                 .register();
 
-
+        FabricStructureBuilder.create(new Identifier(Charlsensideas.MODID, "ilfty_house"), ILFTY_HOUSE)
+                .step(GenerationStep.Feature.SURFACE_STRUCTURES)
+                .defaultConfig(new StructureConfig(
+                        50, /* average distance apart in chunks between spawn attempts */
+                        38, /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE */
+                        319048184 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */))
+                .superflatFeature(ILFTY_HOUSE.configure(FeatureConfig.DEFAULT))
+                .adjustsSurface()
+                .register();
 
     }
 }

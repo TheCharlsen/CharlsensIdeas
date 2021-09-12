@@ -14,7 +14,7 @@
           "type": "minecraft:square",
           "config": {}
         },
-        "feature": "terralith:shrubland/small_tree"
+        "feature": "charlsensideas:tree5s"
       }
     }
   }

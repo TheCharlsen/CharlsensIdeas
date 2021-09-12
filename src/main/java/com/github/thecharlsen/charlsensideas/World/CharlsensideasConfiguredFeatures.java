@@ -7,8 +7,10 @@ import com.github.thecharlsen.charlsensideas.World.Features.Features;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -31,10 +33,8 @@ public class CharlsensideasConfiguredFeatures {
 
     private static final ConfiguredFeature<?, ?> BORNITE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, CharlsensideasBlocks.Bornite_Ore.getDefaultState(), 4)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.fixed(0), YOffset.fixed(20)))).spreadHorizontally().repeat(7));
     private static final ConfiguredFeature<?, ?> DEEPSTONE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, CharlsensideasBlocks.Black_Tourmaline_Stone.getDefaultState(), 60)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.fixed(0), YOffset.fixed(25)))).repeat(60));
-    public static final ConfiguredFeature<?, ?> PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.PineLog.getDefaultState()), new StraightTrunkPlacer(4, 2, 2), new SimpleBlockStateProvider(CharlsensideasBlocks.PineLeaves.getDefaultState()), new SimpleBlockStateProvider(CharlsensideasBlocks.PineSapling.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(4), 5), new TwoLayersFeatureSize(1, 4, 6))).build());
-    public static final ConfiguredFeature<?, ?> PINE_FLORES = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(PINE_TREE.withChance(0.0F), PINE_TREE.withChance(0.2F), PINE_TREE.withChance(0)), PINE_TREE)).decorate(Decorator.DARK_OAK_TREE.configure(DecoratorConfig.DEFAULT));
-    public static final ConfiguredFeature<?, ?> TALL_PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.PineLog.getDefaultState()), new StraightTrunkPlacer(4, 2, 15), new SimpleBlockStateProvider(CharlsensideasBlocks.PineLeaves.getDefaultState()), new SimpleBlockStateProvider(CharlsensideasBlocks.PineSapling.getDefaultState()),new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(4), 5), new TwoLayersFeatureSize(1, 1, 1))).ignoreVines().build());
-    public static final ConfiguredFeature<?, ?> TALL_PINE_FLORES = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(ImmutableList.of(TALL_PINE_TREE.withChance(0.6F), TALL_PINE_TREE.withChance(0.3F), PINE_TREE.withChance(0.2F)), TALL_PINE_TREE)).decorate(Decorator.DARK_OAK_TREE.configure(DecoratorConfig.DEFAULT));
+    public static final ConfiguredFeature<?, ?> PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.PineLog.getDefaultState()), new StraightTrunkPlacer(4, 2, 2), new SimpleBlockStateProvider(CharlsensideasBlocks.PineLeaves.getDefaultState()), new SimpleBlockStateProvider(CharlsensideasBlocks.PineSapling.getDefaultState()), new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(4), 5), new TwoLayersFeatureSize(1, 4, 6))).build()).decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP).spreadHorizontally().repeatRandomly(30);
+    public static final ConfiguredFeature<?, ?> TALL_PINE_TREE = Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.PineLog.getDefaultState()), new StraightTrunkPlacer(4, 2, 15), new SimpleBlockStateProvider(CharlsensideasBlocks.PineLeaves.getDefaultState()), new SimpleBlockStateProvider(CharlsensideasBlocks.PineSapling.getDefaultState()),new BlobFoliagePlacer(ConstantIntProvider.create(3), ConstantIntProvider.create(4), 5), new TwoLayersFeatureSize(1, 1, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP).spreadHorizontally().repeatRandomly(30);;
     public static final ConfiguredFeature<?, ?> WEIRDLY_DEEPSTONE_ORE_OVERWORLD = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, CharlsensideasBlocks.Weirdly_Black_Tourmaline_Stone.getDefaultState(), 4)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.fixed(0), YOffset.fixed(15)))).spreadHorizontally().repeat(7));
     public static final ConfiguredFeature<?, ?> POMPON_PATCH_FEATURE = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.Pompon.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(7).build());
     public static final ConfiguredFeature<?, ?> ALPINE_BUSH_PATCH = Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(CharlsensideasBlocks.Alpine_Strawberry_Bush.getDefaultState()), SimpleBlockPlacer.INSTANCE)).tries(64).build()).decorate(ConfiguredFeatures.Decorators.TOP_SOLID_HEIGHTMAP).spreadHorizontally();
@@ -54,20 +54,12 @@ public class CharlsensideasConfiguredFeatures {
 
         RegistryKey<ConfiguredFeature<?, ?>> pineTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","pine_tree"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineTreeOverworld.getValue(), PINE_TREE);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, pineTreeOverworld);
-
-        RegistryKey<ConfiguredFeature<?, ?>> pineFloresTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","pine_tree_flores"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, pineFloresTreeOverworld.getValue(), PINE_FLORES);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, pineFloresTreeOverworld);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.PINE_FOREST_KEY), GenerationStep.Feature.VEGETAL_DECORATION, pineTreeOverworld);
 
         RegistryKey<ConfiguredFeature<?, ?>> tallPineTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","tall_pine_tree"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineTreeOverworld.getValue(), TALL_PINE_TREE);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineTreeOverworld);
-
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.TALL_PINE_FOREST_KEY), GenerationStep.Feature.VEGETAL_DECORATION, tallPineTreeOverworld);
         Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("charlsensideas", "tall_pine_forest_surface_builder"), CharlsensideasBiomes.TALL_PINE_FOREST_SURFACE_BUILDER);
-        RegistryKey<ConfiguredFeature<?, ?>> tallPineFloresTreeOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","tall_pine_tree_flores"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, tallPineFloresTreeOverworld.getValue(), TALL_PINE_FLORES);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.TALL_PINE_FOREST_KEY), GenerationStep.Feature.SURFACE_STRUCTURES, tallPineFloresTreeOverworld);
 
         RegistryKey<ConfiguredFeature<?,?>> weirdlyDeepStoneOreOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","weirdly_deep_stone"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, weirdlyDeepStoneOreOverworld.getValue(), WEIRDLY_DEEPSTONE_ORE_OVERWORLD);

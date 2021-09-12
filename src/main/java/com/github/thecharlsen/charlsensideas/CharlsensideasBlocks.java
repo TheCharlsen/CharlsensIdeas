@@ -57,7 +57,8 @@ public class CharlsensideasBlocks {
     public static final Block Black_Tourmaline_Stone_Brick_Slab = new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(6F, 6F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block Black_Tourmaline_Stone_Cracked_Brick_Slab = new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(6F, 6F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block Alpine_Strawberry_Cake = new CakeBlocks(FabricBlockSettings.of(Material.CAKE).strength(0.5F).sounds(BlockSoundGroup.WOOL));
-    public static final TenebrisPortalBlock TenebrisPortal = new TenebrisPortalBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true));
+    public static final TenebrisPortalBlock TenebrisPortal = new TenebrisPortalBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true).nonOpaque());
+    public static final Block Ancient_Groats = new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.7F, 1.0F).sounds(BlockSoundGroup.CROP).breakByHand(true));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -102,7 +103,8 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "black_tourmaline_stone_brick_slab"), Black_Tourmaline_Stone_Brick_Slab);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "black_tourmaline_stone_cracked_brick_slab"), Black_Tourmaline_Stone_Cracked_Brick_Slab);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "alpine_strawberry_cake"), Alpine_Strawberry_Cake);
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal"), TenebrisPortal);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal_block"), TenebrisPortal);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "ancient_groats"), Ancient_Groats);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES)));
@@ -140,6 +142,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Brick_Slab, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_cracked_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Cracked_Brick_Slab, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_cake"), new BlockItem(CharlsensideasBlocks.Alpine_Strawberry_Cake, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD)));
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal_block"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_groats"), new BlockItem(CharlsensideasBlocks.Ancient_Groats, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
     }
 }

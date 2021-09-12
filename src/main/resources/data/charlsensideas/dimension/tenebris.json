@@ -39,10 +39,10 @@
         "island_noise_override": false,
         "amplified": false,
         "sampling": {
-          "xz_scale": 1000,
-          "y_scale": 100,
-          "xz_factor": 500,
-          "y_factor": 1000
+          "xz_scale": 1,
+          "y_scale": 1,
+          "xz_factor": 125,
+          "y_factor": 50
         },
         "bottom_slide": {
           "target": -300,
@@ -112,22 +112,22 @@
           }
         },
         {
-          "biome": "charlsensideas:ilfty_hills",
-          "parameters": {
-            "altitude": 0,
-            "temperature": 0.1,
-            "humidity": 0,
-            "weirdness": 0.2,
-            "offset": 0.3
-          }
-        },
-        {
           "biome": "charlsensideas:umbra_forest",
           "parameters": {
             "altitude": 0,
             "temperature": 0.3,
             "humidity": 0,
             "weirdness": 0.1,
+            "offset": 0.3
+          }
+        },
+        {
+          "biome": "charlsensideas:ilfty_hills",
+          "parameters": {
+            "altitude": 0,
+            "temperature": 0.1,
+            "humidity": 0,
+            "weirdness": 0.2,
             "offset": 0.3
           }
         }

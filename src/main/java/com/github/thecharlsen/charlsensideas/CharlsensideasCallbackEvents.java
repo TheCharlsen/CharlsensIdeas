@@ -13,6 +13,10 @@ public class CharlsensideasCallbackEvents {
     public static final Identifier BURIED_TREASURE_LOOT_TABLE_ID = new Identifier("minecraft", "chests/buried_treasure");
     public static final Identifier SIMPLE_DUNGEON_LOOT_TABLE_ID = new Identifier("minecraft", "chests/simple_dungeon");
     public static final Identifier ENTITY_ZOMBIE_LOOT_TABLE_ID = new Identifier("minecraft", "entities/zombie");
+    public static final Identifier PLAINS_VILLAGE_LOOTTABLE_ID = new Identifier("minecraft", "chests/village/village_plains_house");
+    public static final Identifier DESERT_VILLAGE_LOOTTABLE_ID = new Identifier("minecraft", "chests/village/village_desert_house");
+    public static final Identifier TAIGA_VILLAGE_LOOTTABLE_ID = new Identifier("minecraft", "chests/village/village_taiga_house");
+    public static final Identifier SAVANNA_VILLAGE_LOOTTABLE_ID = new Identifier("minecraft", "chests/village/village_savanna_house");
 
     public static void callbackEventsInit(){
 
@@ -61,6 +65,46 @@ public class CharlsensideasCallbackEvents {
                 FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
                         .rolls(BinomialLootNumberProvider.create(1, 1f))
                         .with(ItemEntry.builder(CharlsensideasItems.CHIP));
+
+                supplier.pool(poolBuilder);
+            }
+        });
+
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
+            if (PLAINS_VILLAGE_LOOTTABLE_ID.equals(id)) {
+                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+                        .rolls(BinomialLootNumberProvider.create(8, 2f))
+                        .with(ItemEntry.builder(CharlsensideasBlocks.Ancient_Groats));
+
+                supplier.pool(poolBuilder);
+            }
+        });
+
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
+            if (DESERT_VILLAGE_LOOTTABLE_ID.equals(id)) {
+                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+                        .rolls(BinomialLootNumberProvider.create(8, 2f))
+                        .with(ItemEntry.builder(CharlsensideasBlocks.Ancient_Groats));
+
+                supplier.pool(poolBuilder);
+            }
+        });
+
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
+            if (TAIGA_VILLAGE_LOOTTABLE_ID.equals(id)) {
+                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+                        .rolls(BinomialLootNumberProvider.create(8, 2f))
+                        .with(ItemEntry.builder(CharlsensideasBlocks.Ancient_Groats));
+
+                supplier.pool(poolBuilder);
+            }
+        });
+
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
+            if (SAVANNA_VILLAGE_LOOTTABLE_ID.equals(id)) {
+                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+                        .rolls(BinomialLootNumberProvider.create(8, 2f))
+                        .with(ItemEntry.builder(CharlsensideasBlocks.Ancient_Groats));
 
                 supplier.pool(poolBuilder);
             }
