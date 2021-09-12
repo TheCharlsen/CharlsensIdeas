@@ -28,6 +28,7 @@ public class CharlsensideasItems {
     public static final Item Alpine_Strawberry_Jam_Jar = new FilledJamJarItem(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD));
     public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CharlsensideasEntitys.CUBE, 1238, 2849, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE));
     public static final Item Ancient_Meal = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD));
+    public static final Item Ancient_Bread = new Item(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD).food(CharlsensideasFoodComponents.Ancient_Bread));
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -65,6 +66,7 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_jam_jar"), Alpine_Strawberry_Jam_Jar);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cube_spawn_egg"), CUBE_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_meal"), Ancient_Meal);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_bread"), Ancient_Bread);
 
     }
 }

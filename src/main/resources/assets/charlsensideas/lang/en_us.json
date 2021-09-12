@@ -76,7 +76,8 @@
     "charlsensideas.dimension.tenebris.enter.error.1": "Error Entering Tenebris. More info in the log",
     "block.charlsensideas.ancient_groats": "Ancient Groats",
     "item.charlsensideas.ancient_meal": "Ancient Meal",
-    "block.charlsensideas.tenebris_portal_block": "Tenebris Portal Block"
+    "block.charlsensideas.tenebris_portal_block": "Tenebris Portal Block",
+    "item.charlsensideas.ancient_bread": "Ancient Bread"
 }
 
 
