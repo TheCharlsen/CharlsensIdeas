@@ -14,7 +14,7 @@
       "noodle_caves_enabled": true,
       "aquifers_enabled": false,
       "deepslate_enabled": false,
-      "ore_veins_enabled": false,
+      "ore_veins_enabled": true,
       "default_block": {
         "Name": "charlsensideas:cobbled_black_tourmaline_stone",
         "Properties": {

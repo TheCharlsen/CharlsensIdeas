@@ -8,49 +8,29 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
 public abstract class CanBreatheInDimension extends LivingEntity {
 
-    protected CanBreatheInDimension(EntityType<? extends LivingEntity> entityType, World world) {
-        super(entityType, world);
+    @Shadow
+    protected boolean isSubmergedInWater;
+
+    private CanBreatheInDimension(EntityType<? extends LivingEntity> type, World world) {
+        super(type, world);
     }
 
-    @Override()
-    public boolean canBreatheInWater() {
-        return true;
-    }
-
-    @Unique
-    protected void tickWaterBreathingAir(int air) {
+    @Inject(method = "tick", at = @At("TAIL"))
+    public void atlantisTick(CallbackInfo ci) {
         if (world.getRegistryKey() == TenebrisDimension.TENEBRIS_WORLD) {
-            if (this.isAlive() && !this.isSubmergedIn(FluidTags.WATER)) {
-                this.setAir(air - 1);
-                if (this.getAir() == -20) {
-                    this.setAir(0);
-                    this.damage(DamageSource.DROWN, 2.0F);
-                }
-            } else {
-                this.setAir(getNextAirOnLand(air));
-            }
-        } else {
-            if (this.isAlive() && this.isSubmergedIn(FluidTags.WATER)) {
-                this.setAir(air - 1);
-                if (this.getAir() == -20) {
-                    this.setAir(0);
-                    this.damage(DamageSource.DROWN, 2.0F);
-                }
-            } else {
-                this.setAir(getNextAirOnLand(air));
+            if (this.isAlive() && this.isSubmergedInWater) {
+                this.setAir(this.getMaxAir());
             }
         }
-    }
 
-    @Override
-    public void baseTick() {
-        int i = this.getAir();
-        super.baseTick();
-        this.tickWaterBreathingAir(i);
     }
 }
