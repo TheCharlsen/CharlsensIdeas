@@ -25,7 +25,7 @@ public abstract class CanBreatheInDimension extends LivingEntity {
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
-    public void atlantisTick(CallbackInfo ci) {
+    public void chidTick(CallbackInfo ci) {
         if (world.getRegistryKey() == TenebrisDimension.TENEBRIS_WORLD) {
             if (this.isAlive() && this.isSubmergedInWater) {
                 this.setAir(this.getMaxAir());
