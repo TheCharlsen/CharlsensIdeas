@@ -12,6 +12,8 @@ group = project.maven_group
 
 
 repositories {
+	mavenLocal()
+
     maven {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
@@ -48,9 +50,12 @@ dependencies {
 
 	modImplementation 'xyz.nucleoid:fantasy:0.4.2+1.17'
 
-	modImplementation("com.github.Mysticpasta1:OpenWorlds:cce9fed") {
-		exclude module: "fabric-api"
-	}
+	include "io.github.waterpicker:OpenWorlds-master:1.1.0"
+	modImplementation "io.github.waterpicker:OpenWorlds-master:1.1.0"
+
+//	modImplementation("com.github.Mysticpasta1:OpenWorlds:cce9fed") {
+//		exclude module: "fabric-api"
+//	}
 }
 
 

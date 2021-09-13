@@ -32,7 +32,7 @@ public abstract class TitleScreenMixin extends Screen {
     private long backgroundFadeStart;
     @Inject(at = @At("TAIL"), method = "render")
     private void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
-        String string = "Charlsensideas Beta 0.2.0";
+        String string = "Charlsensideas Beta 0.2.1";
         float f = this.doBackgroundFade ? (float) (Util.getMeasuringTimeMs() - this.backgroundFadeStart) / 1000.0F : 1.0F;
         float g = this.doBackgroundFade ? MathHelper.clamp(f - 1.0F, 0.0F, 1.0F) : 1.0F;
         int l = MathHelper.ceil(g * 255.0F) << 24;
