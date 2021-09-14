@@ -59,7 +59,8 @@ public class CharlsensideasBlocks {
     public static final Block Alpine_Strawberry_Cake = new CakeBlocks(FabricBlockSettings.of(Material.CAKE).strength(0.5F).sounds(BlockSoundGroup.WOOL));
     public static final TenebrisPortalBlock TenebrisPortal = new TenebrisPortalBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true).nonOpaque());
     public static final Block Ancient_Groats = new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.7F, 1.0F).sounds(BlockSoundGroup.CROP).breakByHand(true));
-    //testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+    public static final Block Umbra_Planks = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -106,6 +107,8 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "alpine_strawberry_cake"), Alpine_Strawberry_Cake);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal_block"), TenebrisPortal);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "ancient_groats"), Ancient_Groats);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "stripped_umbra_log"), Stripped_Umbra_Log);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "umbra_planks"), Umbra_Planks);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_ORES)));
@@ -145,5 +148,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_cake"), new BlockItem(CharlsensideasBlocks.Alpine_Strawberry_Cake, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_FOOD)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal_block"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_groats"), new BlockItem(CharlsensideasBlocks.Ancient_Groats, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_NATURE)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_planks"), new BlockItem(CharlsensideasBlocks.Umbra_Planks, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "stripped_umbra_log"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Log, new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_BUILDING_BLOCKS)));
     }
 }

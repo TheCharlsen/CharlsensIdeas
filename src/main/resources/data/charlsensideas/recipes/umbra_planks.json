@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "charlsensideas:umbra_log"
+    }
+  },
+  "result": {
+    "item": "charlsensideas:umbra_planks",
+    "count": 4
+  }
+}

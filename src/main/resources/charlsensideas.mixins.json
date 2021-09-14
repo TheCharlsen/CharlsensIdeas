@@ -4,6 +4,7 @@
   "package": "com.github.thecharlsen.charlsensideas.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "AxeItemMixin",
     "BiomeLayerSamplerAccessor",
     "CanBreatheInDimension",
     "LayerAccessor",
