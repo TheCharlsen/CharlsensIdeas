@@ -1,0 +1,11 @@
+{
+  "name": "Tourmaline Stone",
+  "icon": "charlsensideas:black_tourmaline_stone",
+  "category": "charlsensideas:blocks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "lakadadakodadopadakop"
+    }
+  ]
+}
