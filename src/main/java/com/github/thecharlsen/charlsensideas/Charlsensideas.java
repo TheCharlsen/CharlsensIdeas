@@ -15,6 +15,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
@@ -33,6 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Charlsensideas implements ModInitializer {
+
+    public static final String MOD_ID = "charlsensideas";
 
     @Deprecated@SuppressWarnings({"unused"})
     private static final MinecraftServer server = null;

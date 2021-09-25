@@ -2,6 +2,7 @@ package com.github.thecharlsen.charlsensideas;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.*;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -34,6 +35,10 @@ public class CharlsensideasItemGroup implements ModInitializer {
 
 			public static final ItemGroup ITEM_GROUP_SECCHESTS = FabricItemGroupBuilder.build(
 			new Identifier("charlsensideas", "secchests"),
+			() -> new ItemStack(CharlsensideasItems.Secure_Chest_Module));
+
+			public static final ItemGroup groupitem = FabricItemGroupBuilder.build(
+			new Identifier("charlsensideasgroup"),
 			() -> new ItemStack(CharlsensideasItems.Secure_Chest_Module));
 
 	        @Override
