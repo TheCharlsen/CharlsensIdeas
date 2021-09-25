@@ -78,7 +78,10 @@
     "item.charlsensideas.ancient_meal": "Ancient Meal",
     "block.charlsensideas.tenebris_portal_block": "Tenebris Portal Block",
     "item.charlsensideas.ancient_bread": "Ancient Bread",
-    "block.charlsensideas.umbra_planks": "Umbra Planks"
+    "block.charlsensideas.umbra_planks": "Umbra Planks",
+    "item.charlsensideas.book.name": "Charlsensideas Infos",
+    "info.charlsensideas.book.landing": "In this book you can learn evrything from the Charlsensideas mod. From recipes to Biomes",
+    "info.charlsensideas.book.subtitle": "Traveller version"
 }
 
 

@@ -1,4 +1,13 @@
 {
-  "name": "Charlsensideas Infos",
-  "landing_text": "In this book you can learn evrything from the Charlsensideas mod. From recipes to Biomes"
+  "name": "item.charlsensideas.book.name",
+  "landing_text": "info.charlsensideas.book.landing",
+  "advancement_namespaces": [
+    "naturesaura"
+  ],
+  "creative_tab": "nature",
+  "advancements_tab": "charlsensideas",
+  "progress_bar_background": "8892c9",
+  "progress_bar_color": "da3423",
+  "model": "patchouli:book_green",
+  "subtitle": "info.charlsensideas.book.subtitle"
 }
