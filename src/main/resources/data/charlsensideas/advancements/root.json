@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "charlsensideas:weird_grass_block"
+    },
+    "title": {
+      "translate": "advancements.chid.root.title"
+    },
+    "description": {
+      "translate": "advancements.chid.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "charlsensideas:textures/gui/advancements/backgrounds/root.png"
+  },
+  "criteria": {
+    "crafting_table": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crafting_table"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafting_table"
+    ]
+  ]
+}

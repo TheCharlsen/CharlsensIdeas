@@ -1,7 +1,8 @@
 {
-  "name": "Alpine Strawberry",
-  "icon": "charlsensideas:alpine_strawberry",
+  "name": "Ancient Bread",
+  "icon": "charlsensideas:ancient_bread",
   "category": "charlsensideas:food",
+  "advancement": "charlsensideas:food/ancient_bread",
 
   "pages": [
     {

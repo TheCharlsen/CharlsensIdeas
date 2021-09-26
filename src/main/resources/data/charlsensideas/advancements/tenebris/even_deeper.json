@@ -1,5 +1,6 @@
 {
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "parent": "charlsensideas:root",
     "display": {
         "title": {
             "text": "Even Deeper",
@@ -8,24 +9,23 @@
             "italic": false
         },
         "description": {
-            "text": "Go in the Chesta dimension",
+            "text": "Go to Tenebris",
             "color": "white"
         },
         "icon": {
-            "item": "minecraft:structure_void"
+            "item": "charlsensideas:cobbled_black_tourmaline_stone"
         },
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": false,
-        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+        "hidden": false
     },
     "criteria": {
         "Trigger": {
             "trigger": "minecraft:changed_dimension",
             "conditions": {
                 "from": "overworld",
-                "to": "charlsensideas:testdim"
+                "to": "charlsensideas:tenebris"
             }
         }
     },

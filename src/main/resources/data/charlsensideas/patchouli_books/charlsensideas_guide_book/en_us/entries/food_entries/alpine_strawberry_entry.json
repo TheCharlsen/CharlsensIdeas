@@ -1,0 +1,42 @@
+{
+  "name": "Alpine Strawberry",
+  "icon": "charlsensideas:alpine_strawberry",
+  "category": "charlsensideas:food",
+  "advancement": "charlsensideas:food/alpine_strawberry",
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "lakadadakodadopadakop"
+    },
+    {
+      "type": "patchouli:stonecutting",
+      "text": "lakadadakodadopadakop",
+      "recipe": "charlsensideas:ancient_meal"
+    },
+    {
+      "type": "spotlight",
+      "item": "charlsensideas:bornite",
+      "text": "This flower bears very large amounts of  that can be harvested in an interesting way: Dropping an Ender Eye on the ground close to it will cause the rose to consume it and start dispersing its  into the environment. During this process, it can neither be stopped, nor harvested. Note that this process does  require a.",
+      "link_recipe": true
+    },
+    {
+      "type": "image",
+      "title": "test",
+      "images": [
+        "minecraft:textures/gui/presets/isles.png"
+      ],
+      "border": true,
+      "text": "aaaaaa"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "charlsensideas:cube",
+      "scale": 1.0,
+      "offset": 0,
+      "rotate": true,
+      "name": "Schorsch",
+      "text": "stringggggg"
+    }
+  ]
+}

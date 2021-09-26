@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.loom.util.gradle.GradleSupport;
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
 import net.minecraft.block.entity.BlockEntityType;

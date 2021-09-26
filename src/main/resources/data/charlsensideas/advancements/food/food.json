@@ -1,0 +1,41 @@
+{
+  "parent": "charlsensideas:root",
+  "display": {
+    "icon": {
+      "item": "charlsensideas:ancient_bread"
+    },
+    "title": {
+      "translate": "advancement.charlsensideas.food"
+    },
+    "description": {
+      "translate": "advancement.charlsensideas.food.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "charlsensideas:alpine_strawberry"
+          },
+          {
+            "item": "charlsensideas:chip"
+          },
+          {
+            "item": "charlsensideas:ancient_meal"
+          },
+          {
+            "item": "charlsensideas:ancient_bread"
+          },
+          {
+            "item": "charlsensideas:alpine_strawberry_cake"
+          }
+        ]
+      }
+    }
+  }
+}

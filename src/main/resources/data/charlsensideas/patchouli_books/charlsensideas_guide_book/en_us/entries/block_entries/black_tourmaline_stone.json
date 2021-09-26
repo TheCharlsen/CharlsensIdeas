@@ -5,6 +5,12 @@
 
   "pages": [
     {
+      "type": "spotlight",
+      "item": "charlsensideas:black_tourmaline_stone",
+      "text": "Black Tourmaline Stone generates naturally in the overworld at bedrock level. You can't find it in other dimensions. You can craft other Tourmaline Stone variants with it!",
+      "link_recipe": true
+    },
+    {
       "type": "patchouli:text",
       "text": "lakadadakodadopadakop"
     },
@@ -12,12 +18,6 @@
       "type": "patchouli:stonecutting",
       "text": "lakadadakodadopadakop",
       "recipe": "charlsensideas:ancient_meal"
-    },
-    {
-      "type": "spotlight",
-      "item": "charlsensideas:bornite",
-      "text": "This flower bears very large amounts of  that can be harvested in an interesting way: Dropping an Ender Eye on the ground close to it will cause the rose to consume it and start dispersing its  into the environment. During this process, it can neither be stopped, nor harvested. Note that this process does  require a.",
-      "link_recipe": true
     },
     {
       "type": "image",

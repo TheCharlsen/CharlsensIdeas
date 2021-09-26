@@ -79,9 +79,15 @@
     "block.charlsensideas.tenebris_portal_block": "Tenebris Portal Block",
     "item.charlsensideas.ancient_bread": "Ancient Bread",
     "block.charlsensideas.umbra_planks": "Umbra Planks",
-    "item.charlsensideas.book.name": "Charlsensideas Infos",
+    "item.charlsensideas.book.name": "Charlsensideas Guide",
     "info.charlsensideas.book.landing": "In this book you can learn evrything from the Charlsensideas mod. From recipes to Biomes",
-    "info.charlsensideas.book.subtitle": "Traveller version"
+    "info.charlsensideas.book.subtitle": "Traveller version",
+    "advancements.chid.root.title": "Charlsensideas",
+    "advancements.chid.root.description": "The pretty damn cool amazing super ultra Charlsensideas Mod",
+    "advancement.charlsensideas.alpine_strawberry": "Alpine Strawberry",
+    "advancement.charlsensideas.alpine_strawberry.desc": "Hmmmmm yummy",
+    "advancement.charlsensideas.food": "Food",
+    "advancement.charlsensideas.food.desc": "Huh you can eat these things?"
 }
 
 

@@ -5,7 +5,7 @@
     "charlsensideas"
   ],
   "book_texture": "patchouli:textures/gui/book_green.png",
-  "creative_tab": "charlsensideasgroup",
+  "creative_tab": "charlsensideas.nature",
   "advancements_tab": "charlsensideas",
   "progress_bar_background": "8892c9",
   "progress_bar_color": "93C48B",

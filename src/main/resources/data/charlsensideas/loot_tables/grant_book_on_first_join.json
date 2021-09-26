@@ -10,7 +10,7 @@
           "functions": [
             {
               "function": "set_nbt",
-              "tag": "{\"patchouli:book\": \"charlsensideas:charlsensideas_info_book\"}"
+              "tag": "{\"patchouli:book\": \"charlsensideas:charlsensideas_guide_book\"}"
             }
           ]
         }
