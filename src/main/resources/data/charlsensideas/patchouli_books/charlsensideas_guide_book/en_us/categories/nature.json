@@ -1,5 +1,6 @@
 {
   "name": "Nature",
   "description": "All the Natures experiences of the Charlsensideas Mod",
-  "icon": "charlsensideas:mudded_dirt"
+  "icon": "charlsensideas:mudded_dirt",
+  "sortnum": 5
 }

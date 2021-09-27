@@ -1,20 +1,19 @@
 {
   "display": {
     "icon": {
-      "item": "charlsensideas:weird_grass_block"
+      "item": "patchouli:guide_book",
+      "nbt": "{\"patchouli:book\":\"charlsensideas:charlsensideas_guide_book\"}"
     },
     "title": {
-      "translate": "advancements.chid.root.title"
+      "translate": "advancement.charlsensideas.getting_the_book"
     },
     "description": {
-      "translate": "advancements.chid.root.description"
-    },
-    "show_toast": false,
-    "announce_to_chat": false,
-    "background": "charlsensideas:textures/gui/advancements/backgrounds/root.png"
+      "translate": "advancement.charlsensideas.getting_the_book.desc"
+    }
   },
+  "parent": "charlsensideas:root",
   "criteria": {
-    "crafting_table": {
+    "book": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

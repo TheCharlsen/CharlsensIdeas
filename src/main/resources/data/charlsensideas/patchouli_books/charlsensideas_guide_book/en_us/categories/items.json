@@ -1,5 +1,6 @@
 {
   "name": "Items",
   "description": "All the Items of the Charlsensideas Mod",
-  "icon": "charlsensideas:bornite"
+  "icon": "charlsensideas:bornite",
+  "sortnum": 3
 }

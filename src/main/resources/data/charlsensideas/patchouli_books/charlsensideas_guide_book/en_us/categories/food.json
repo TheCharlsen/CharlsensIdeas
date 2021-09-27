@@ -1,5 +1,6 @@
 {
   "name": "Food",
   "description": "All the Food of the Charlsensideas Mod",
-  "icon": "charlsensideas:alpine_strawberry_cake"
+  "icon": "charlsensideas:alpine_strawberry_cake",
+  "sortnum": 6
 }
