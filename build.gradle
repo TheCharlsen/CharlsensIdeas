@@ -65,6 +65,11 @@ dependencies {
 		// 1.14+
 		modImplementation "vazkii.patchouli:Patchouli:1.17.1-56-FABRIC-SNAPSHOT"
 	}
+
+	modImplementation "com.github.glisco03:owo-lib:${project.owo_version}"
+
+	//This is optional, but recommended so users dont have to install *another* library
+	include "com.github.glisco03:owo-lib:${project.owo_version}"
 }
 
 

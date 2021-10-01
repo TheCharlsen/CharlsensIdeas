@@ -1,46 +1,35 @@
 package io.github.thecharlsen.charlsensideas;
 
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.*;
-import net.minecraft.item.ItemGroup;
+import com.glisco.owo.itemgroup.Icon;
+import com.glisco.owo.itemgroup.OwoItemGroup;
+import com.glisco.owo.itemgroup.gui.ItemGroupButton;
+import com.glisco.owo.itemgroup.gui.ItemGroupTab;
+import net.fabricmc.fabric.api.tag.TagFactory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
-public class CharlsensideasItemGroup implements ModInitializer {
+public class CharlsensideasItemGroup extends OwoItemGroup {
 
-			public static final ItemGroup ITEM_GROUP_NATURE = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "nature"),
-			() -> new ItemStack(CharlsensideasBlocks.MuddedDirt));
+	protected CharlsensideasItemGroup(Identifier id) {
+		super(id);
+	}
 
-			public static final ItemGroup ITEM_GROUP_BUILDING_BLOCKS = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "building_blocks"),
-			() -> new ItemStack(CharlsensideasBlocks.Chiseled_Black_Tourmaline_Stone));
+	@Override
+	protected void setup() {
+		this.addTab(Icon.of(Items.BARRIER), "items", TagFactory.ITEM.create(RegistryHelper.id("metals")));
+		this.addTab(Icon.of(Items.BARRIER), "blocks", ItemGroupTab.EMPTY);
+		this.addTab(Icon.of(Items.BARRIER), "tools", TagFactory.ITEM.create(RegistryHelper.id("weapons")));
+		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("gear")));
 
-			public static final ItemGroup ITEM_GROUP_ORES = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "ores"),
-			() -> new ItemStack(CharlsensideasItems.Bornite));
+		this.addButton(ItemGroupButton.github("https://github.com/Noaaan/MythicMetals/issues"));
+		this.addButton(ItemGroupButton.curseforge("https://www.curseforge.com/minecraft/mc-mods/mythicmetals"));
+		this.addButton(ItemGroupButton.modrinth("https://modrinth.com/mod/mythicmetals"));
+		this.addButton(ItemGroupButton.discord("https://discord.gg/69cKvQWScC"));
+	}
 
-			public static final ItemGroup ITEM_GROUP_TOOLS = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "tools"),
-			() -> new ItemStack(CharlsensideasTools.Bornite_Pickaxe));
-
-			public static final ItemGroup ITEM_GROUP_FOOD = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "food"),
-			() -> new ItemStack(CharlsensideasBlocks.Alpine_Strawberry_Cake));
-
-			public static final ItemGroup ITEM_GROUP_MUSIC = FabricItemGroupBuilder.build(
-				new Identifier("charlsensideas", "music"),
-				() -> new ItemStack(CharlsensIdeasClientModInitializer.MUSICPLAYER));
-
-			public static final ItemGroup ITEM_GROUP_SECCHESTS = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideas", "secchests"),
-			() -> new ItemStack(CharlsensideasItems.Secure_Chest_Module));
-
-			public static final ItemGroup groupitem = FabricItemGroupBuilder.build(
-			new Identifier("charlsensideasgroup"),
-			() -> new ItemStack(CharlsensideasItems.Secure_Chest_Module));
-
-	        @Override
-			public void onInitialize() {
-    }
+	@Override
+	public ItemStack createIcon() {
+		return new ItemStack(CharlsensideasItems.Black_Tourmaline_Gem);
+	}
 }

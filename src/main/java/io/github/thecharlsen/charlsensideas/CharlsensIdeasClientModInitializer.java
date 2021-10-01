@@ -42,7 +42,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 public class CharlsensIdeasClientModInitializer implements ClientModInitializer {
 
-    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(CharlsensideasItemGroup.ITEM_GROUP_MUSIC).maxCount(1));
+    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Charlsensideas.MAIN).maxCount(1));
 
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("charlsensideas", "cube"), "main");
 

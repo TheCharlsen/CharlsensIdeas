@@ -1,5 +1,6 @@
 package io.github.thecharlsen.charlsensideas;
 
+import com.glisco.owo.itemgroup.OwoItemGroup;
 import io.github.thecharlsen.charlsensideas.Blocks.BlockEntitys.DummyDataStorage;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasConfiguredFeatures;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasStructureFeature;
@@ -34,6 +35,7 @@ import java.util.Map;
 public class Charlsensideas implements ModInitializer {
 
     public static final String MOD_ID = "charlsensideas";
+    public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
 
     @Deprecated@SuppressWarnings({"unused"})
     private static final MinecraftServer server = null;
@@ -81,6 +83,7 @@ public class Charlsensideas implements ModInitializer {
         TenebrisDimension.setupSurfaceBuilders();
         TenebrisDimension.registerBiomeSources();
         CharlsensideasEntitys.entityInit();
+        MAIN.initialize();
 
         CustomPortalApiRegistry.addPortal(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks, PortalIgnitionSource.FluidSource(CharlsensideasFluids.Still_Weird_Water),  new Identifier("charlsensideas","tenebris"), 1, 42, 54);
 
