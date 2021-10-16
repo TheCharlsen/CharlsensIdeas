@@ -15,4 +15,6 @@ public class CharlsensideasIdentifiers {
     public static final Identifier ATLANTEAN_ISLANDS = new Identifier(Charlsensideas.MODID, "atlantean_islands_biome");
     public static final Identifier VOLCANIC_DARKSEA = new Identifier(Charlsensideas.MODID, "volcanic_darksea");
     public static final Identifier CREDIT_BACKGROUND = new Identifier(Charlsensideas.MODID, "textures/block/cobbled_black_tourmaline_stone.png");
+    public static final Identifier ITEM_GROUP_BACKGROUND = new Identifier(Charlsensideas.MODID, "textures/gui/owo/item_group/group.png");
+    public static final Identifier ITEM_GROUP_TAB = new Identifier(Charlsensideas.MODID, "textures/gui/owo/item_group/tab.png");
 }

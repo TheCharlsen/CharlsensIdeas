@@ -17,15 +17,20 @@ public class CharlsensideasItemGroup extends OwoItemGroup {
 
 	@Override
 	protected void setup() {
-		this.addTab(Icon.of(Items.BARRIER), "items", TagFactory.ITEM.create(RegistryHelper.id("metals")));
+		this.setCustomTexture(CharlsensideasIdentifiers.ITEM_GROUP_BACKGROUND);
+		this.addTab(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_TAB, 32, 1000, 16, 16), "items", TagFactory.ITEM.create(RegistryHelper.id("metals")));
 		this.addTab(Icon.of(Items.BARRIER), "blocks", ItemGroupTab.EMPTY);
 		this.addTab(Icon.of(Items.BARRIER), "tools", TagFactory.ITEM.create(RegistryHelper.id("weapons")));
 		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("gear")));
+		this.addTab(Icon.of(Items.BARRIER), "zero", TagFactory.ITEM.create(RegistryHelper.id("s")));
+		this.addTab(Icon.of(Items.BARRIER), "one", ItemGroupTab.EMPTY);
+		this.addTab(Icon.of(Items.BARRIER), "two", TagFactory.ITEM.create(RegistryHelper.id("c")));
+		this.addTab(Icon.of(Items.BARRIER), "three", TagFactory.ITEM.create(RegistryHelper.id("h")));
 
-		this.addButton(ItemGroupButton.github("https://github.com/Noaaan/MythicMetals/issues"));
-		this.addButton(ItemGroupButton.curseforge("https://www.curseforge.com/minecraft/mc-mods/mythicmetals"));
-		this.addButton(ItemGroupButton.modrinth("https://modrinth.com/mod/mythicmetals"));
-		this.addButton(ItemGroupButton.discord("https://discord.gg/69cKvQWScC"));
+		this.addButton(ItemGroupButton.github("https://github.com/TheCharlsen/CharlsensIdeas"));
+		this.addButton(ItemGroupButton.curseforge("https://www.curseforge.com/minecraft/mc-mods/charlsensideas"));
+		this.addButton(ItemGroupButton.modrinth("https://modrinth.com/mod/charlsensideas"));
+		this.addButton(ItemGroupButton.discord("https://discord.gg/fPZgf2y3eB"));
 	}
 
 	@Override

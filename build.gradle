@@ -30,6 +30,15 @@ repositories {
 	repositories {
 		maven { url 'https://maven.blamejared.com' }
 	}
+
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+		content {
+			includeGroup 'io.github.ladysnake'
+			includeGroupByRegex 'io\\.github\\.onyxstudios.*'
+		}
+	}
 }
 
 
@@ -70,6 +79,10 @@ dependencies {
 
 	//This is optional, but recommended so users dont have to install *another* library
 	include "com.github.glisco03:owo-lib:${project.owo_version}"
+
+	modImplementation "io.github.ladysnake:satin:${satin_version}"
+	// Include Satin as a Jar-in-Jar dependency (optional)
+	include "io.github.ladysnake:satin:${satin_version}"
 }
 
 

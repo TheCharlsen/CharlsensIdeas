@@ -35,7 +35,12 @@ import java.util.Map;
 public class Charlsensideas implements ModInitializer {
 
     public static final String MOD_ID = "charlsensideas";
+    public static final String VERSION = "21dev-build1610"; //year/build/day/month
     public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
+
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_WHITE = "\u001B[0m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
 
     @Deprecated@SuppressWarnings({"unused"})
     private static final MinecraftServer server = null;
@@ -84,6 +89,8 @@ public class Charlsensideas implements ModInitializer {
         TenebrisDimension.registerBiomeSources();
         CharlsensideasEntitys.entityInit();
         MAIN.initialize();
+
+        LOGGER.info(ANSI_BLACK_BACKGROUND + "[Charlsensideas]: version " + ANSI_YELLOW + VERSION + ANSI_WHITE + ANSI_BLACK_BACKGROUND + " is now initialized");
 
         CustomPortalApiRegistry.addPortal(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks, PortalIgnitionSource.FluidSource(CharlsensideasFluids.Still_Weird_Water),  new Identifier("charlsensideas","tenebris"), 1, 42, 54);
 

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:dirt"
+    "minecraft:dirt",
+    "charlsensideas:weird_grass_block"
   ]
 }
