@@ -18,19 +18,21 @@ public class CharlsensideasItemGroup extends OwoItemGroup {
 	@Override
 	protected void setup() {
 		this.setCustomTexture(CharlsensideasIdentifiers.ITEM_GROUP_BACKGROUND);
-		this.addTab(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_TAB, 32, 1000, 16, 16), "items", TagFactory.ITEM.create(RegistryHelper.id("metals")));
-		this.addTab(Icon.of(Items.BARRIER), "blocks", ItemGroupTab.EMPTY);
-		this.addTab(Icon.of(Items.BARRIER), "tools", TagFactory.ITEM.create(RegistryHelper.id("weapons")));
-		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("gear")));
-		this.addTab(Icon.of(Items.BARRIER), "zero", TagFactory.ITEM.create(RegistryHelper.id("s")));
-		this.addTab(Icon.of(Items.BARRIER), "one", ItemGroupTab.EMPTY);
-		this.addTab(Icon.of(Items.BARRIER), "two", TagFactory.ITEM.create(RegistryHelper.id("c")));
-		this.addTab(Icon.of(Items.BARRIER), "three", TagFactory.ITEM.create(RegistryHelper.id("h")));
+		this.setStackHeight(6);
+
+		this.addTab(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_TAB, 32, 1000, 16, 16), "items", TagFactory.ITEM.create(RegistryHelper.id("chidtems")));
+		this.addTab(Icon.of(Items.BARRIER), "blocks", TagFactory.ITEM.create(RegistryHelper.id("chidlocks")));
+		this.addTab(Icon.of(Items.BARRIER), "tools", TagFactory.ITEM.create(RegistryHelper.id("chidools")));
+		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("chidrmor")));
+		this.addTab(Icon.of(Items.BARRIER), "ores", TagFactory.ITEM.create(RegistryHelper.id("chidres")));
+		this.addTab(Icon.of(Items.BARRIER), "food", TagFactory.ITEM.create(RegistryHelper.id("chidood")));
 
 		this.addButton(ItemGroupButton.github("https://github.com/TheCharlsen/CharlsensIdeas"));
 		this.addButton(ItemGroupButton.curseforge("https://www.curseforge.com/minecraft/mc-mods/charlsensideas"));
 		this.addButton(ItemGroupButton.modrinth("https://modrinth.com/mod/charlsensideas"));
 		this.addButton(ItemGroupButton.discord("https://discord.gg/fPZgf2y3eB"));
+		this.addButton(ItemGroupButton.link(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_BUTTON_ICONS, 0, 0, 64, 64), "youtube", "https://www.youtube.com/channel/UCzBj08FS4tDr3Lyf9zWM3kg"));
+		this.addButton(ItemGroupButton.link(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_BUTTON_ICONS, 16, 64, 64, 64), "tcgithubio", "https://thecharlsen.github.io/"));
 	}
 
 	@Override

@@ -35,7 +35,7 @@ import java.util.Map;
 public class Charlsensideas implements ModInitializer {
 
     public static final String MOD_ID = "charlsensideas";
-    public static final String VERSION = "21dev-build1610"; //year/build/day/month
+    public static final String VERSION = "21dev-build2210"; //year/build/day/month
     public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
 
     public static final String ANSI_YELLOW = "\u001B[33m";

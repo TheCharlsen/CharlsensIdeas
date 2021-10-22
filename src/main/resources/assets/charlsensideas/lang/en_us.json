@@ -89,7 +89,13 @@
     "advancement.charlsensideas.food": "Food",
     "advancement.charlsensideas.food.desc": "Huh you can eat these things?",
     "advancement.charlsensideas.getting_the_book": "The Guide Book",
-    "advancement.charlsensideas.getting_the_book.desc": "A Guide to all things in the Charlsensideas Mod"
+    "advancement.charlsensideas.getting_the_book.desc": "A Guide to all things in the Charlsensideas Mod",
+    "itemGroup.charlsensideas.main.button.github": "The Charlsensideas Github Page",
+    "itemGroup.charlsensideas.main.button.curseforge": "The Charlsensideas Curseforge Page",
+    "itemGroup.charlsensideas.main.button.modrinth": "The Charlsensideas Modrinth Page",
+    "itemGroup.charlsensideas.main.button.discord": "The Official Charlsensideas Discord Server",
+    "itemGroup.charlsensideas.main.button.youtube": "Charlsens Official Youtube Channel",
+    "itemGroup.charlsensideas.main.button.tcgithubio": "Charlsens Official Website"
 }
 
 

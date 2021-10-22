@@ -17,4 +17,6 @@ public class CharlsensideasIdentifiers {
     public static final Identifier CREDIT_BACKGROUND = new Identifier(Charlsensideas.MODID, "textures/block/cobbled_black_tourmaline_stone.png");
     public static final Identifier ITEM_GROUP_BACKGROUND = new Identifier(Charlsensideas.MODID, "textures/gui/owo/item_group/group.png");
     public static final Identifier ITEM_GROUP_TAB = new Identifier(Charlsensideas.MODID, "textures/gui/owo/item_group/tab.png");
+    public static final Identifier ITEM_GROUP_BUTTON_ICONS = new Identifier(Charlsensideas.MODID, "textures/gui/owo/item_group/icons.png");
+
 }
