@@ -5,6 +5,7 @@ import com.glisco.owo.itemgroup.OwoItemGroup;
 import com.glisco.owo.itemgroup.gui.ItemGroupButton;
 import com.glisco.owo.itemgroup.gui.ItemGroupTab;
 import net.fabricmc.fabric.api.tag.TagFactory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
@@ -20,12 +21,12 @@ public class CharlsensideasItemGroup extends OwoItemGroup {
 		this.setCustomTexture(CharlsensideasIdentifiers.ITEM_GROUP_BACKGROUND);
 		this.setStackHeight(6);
 
-		this.addTab(Icon.of(CharlsensideasIdentifiers.ITEM_GROUP_TAB, 32, 1000, 16, 16), "items", TagFactory.ITEM.create(RegistryHelper.id("chidtems")));
-		this.addTab(Icon.of(Items.BARRIER), "blocks", TagFactory.ITEM.create(RegistryHelper.id("chidlocks")));
-		this.addTab(Icon.of(Items.BARRIER), "tools", TagFactory.ITEM.create(RegistryHelper.id("chidools")));
-		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("chidrmor")));
-		this.addTab(Icon.of(Items.BARRIER), "ores", TagFactory.ITEM.create(RegistryHelper.id("chidres")));
-		this.addTab(Icon.of(Items.BARRIER), "food", TagFactory.ITEM.create(RegistryHelper.id("chidood")));
+		this.addTab(Icon.of(CharlsensideasItems.Dog_Music_Disc), "items", TagFactory.ITEM.create(RegistryHelper.id("chidtems")));
+		this.addTab(Icon.of(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks), "blocks", TagFactory.ITEM.create(RegistryHelper.id("chidlocks")));
+		this.addTab(Icon.of(CharlsensideasTools.Bornite_Pickaxe), "tools", TagFactory.ITEM.create(RegistryHelper.id("chidools")));
+		this.addTab(Icon.of(Items.AIR), "armor", TagFactory.ITEM.create(RegistryHelper.id("chidrmor")));
+		this.addTab(Icon.of(CharlsensideasItems.Bornite), "ores", TagFactory.ITEM.create(RegistryHelper.id("chidres")));
+		this.addTab(Icon.of(CharlsensideasItems.CHIP), "food", TagFactory.ITEM.create(RegistryHelper.id("chidood")));
 
 		this.addButton(ItemGroupButton.github("https://github.com/TheCharlsen/CharlsensIdeas"));
 		this.addButton(ItemGroupButton.curseforge("https://www.curseforge.com/minecraft/mc-mods/charlsensideas"));

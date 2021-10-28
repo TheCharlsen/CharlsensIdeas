@@ -95,8 +95,7 @@
     "itemGroup.charlsensideas.main.button.modrinth": "The Charlsensideas Modrinth Page",
     "itemGroup.charlsensideas.main.button.discord": "The Official Charlsensideas Discord Server",
     "itemGroup.charlsensideas.main.button.youtube": "Charlsens Official Youtube Channel",
-    "itemGroup.charlsensideas.main.button.tcgithubio": "Charlsens Official Website"
+    "itemGroup.charlsensideas.main.button.tcgithubio": "Charlsens Official Website",
+    "item.minecraft.splash_potion.effect.potion_of_blossom": "Splash Potion of Blossom",
+    "item.minecraft.lingering_potion.effect.potion_of_blossom": "Lingering Potion of Blossom"
 }
-
-
-    

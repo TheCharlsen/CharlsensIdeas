@@ -39,6 +39,8 @@ repositories {
 			includeGroupByRegex 'io\\.github\\.onyxstudios.*'
 		}
 	}
+
+	maven { url "https://maven.terraformersmc.com/" }
 }
 
 
@@ -83,6 +85,10 @@ dependencies {
 	modImplementation "io.github.ladysnake:satin:${satin_version}"
 	// Include Satin as a Jar-in-Jar dependency (optional)
 	include "io.github.ladysnake:satin:${satin_version}"
+
+	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
 

@@ -13,6 +13,9 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.loader.ModContainer;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
 import net.minecraft.block.entity.BlockEntityType;
@@ -34,8 +37,26 @@ import java.util.Map;
 
 public class Charlsensideas implements ModInitializer {
 
+/*
+    @Override
+    public @NotNull String getVersion() {
+        return metadata.getVersion().getFriendlyString();
+    }
+
+    public @NotNull String getPrefixedVersion() {
+        String version = getVersion().trim();
+        if (version.startsWith("version")) {
+            version = "v" + version.substring("version".length());
+        } else if (version.startsWith("ver")) {
+            version = "v" + version.substring("ver".length());
+        } else if (!version.startsWith("v")) {
+            version = "v" + version;
+        }
+        return version.trim();
+    }*/
+
     public static final String MOD_ID = "charlsensideas";
-    public static final String VERSION = "21dev-build2210"; //year/build/day/month
+    public static final String VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).get().getMetadata().getVersion().toString(); //year/build/day/month
     public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
 
     public static final String ANSI_YELLOW = "\u001B[33m";
