@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 public class CharlsensideasItems {
 
-    public static final Item Secure_Chest_Module = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(1));
+    public static final Item Secure_Chest_Module = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
     public static final Item Bornite = new Item(new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item CHIP = new Item(new Item.Settings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.CHIP));
     public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, CharlsensideasSoundEvents.Dog_Sound_Event, new FabricItemSettings().group(Charlsensideas.MAIN).maxCount(1).rarity(Rarity.RARE));
