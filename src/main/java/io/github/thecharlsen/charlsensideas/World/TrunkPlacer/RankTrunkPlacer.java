@@ -45,7 +45,7 @@ public class RankTrunkPlacer extends TrunkPlacer {
     private final float overgrowthChance;
 
     protected TrunkPlacerType<?> getType() {
-        return TrunkPlacerTypes.RANK_TRUNK_PLACER_TYPE;
+        return TrunkPlacerTypes.OVERGROWN_TRUNK;
     }
 
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {

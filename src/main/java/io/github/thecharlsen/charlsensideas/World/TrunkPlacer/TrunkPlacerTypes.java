@@ -12,17 +12,23 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class TrunkPlacerTypes {
-
-    public static TrunkPlacerType<RankTrunkPlacer> RANK_TRUNK_PLACER_TYPE;
+    public static TrunkPlacerType<RankTrunkPlacer> OVERGROWN_TRUNK;
+    private static Constructor<FoliagePlacerType> foliageConstructor;
     private static Constructor<TrunkPlacerType> trunkConstructor;
 
     static {
         try {
+            foliageConstructor = FoliagePlacerType.class.getDeclaredConstructor(Codec.class);
+            foliageConstructor.setAccessible(true);
             trunkConstructor = TrunkPlacerType.class.getDeclaredConstructor(Codec.class);
             trunkConstructor.setAccessible(true);
         } catch (NoSuchMethodException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static <P extends FoliagePlacer> FoliagePlacerType<P> registerFoliage(String name, Codec<P> codec) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+        return Registry.register(Registry.FOLIAGE_PLACER_TYPE, Charlsensideas.locate(name), foliageConstructor.newInstance(codec));
     }
 
     public static <P extends TrunkPlacer> TrunkPlacerType<P> registerTrunk(String name, Codec<P> codec) throws IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -31,7 +37,8 @@ public class TrunkPlacerTypes {
 
     public static void init() {
         try {
-            RANK_TRUNK_PLACER_TYPE = registerTrunk("rank_trunk_placer_type", RankTrunkPlacer.CODEC);
+            OVERGROWN_TRUNK = registerTrunk("overgrown_trunk_placer", RankTrunkPlacer.CODEC);
+            foliageConstructor.setAccessible(false);
             trunkConstructor.setAccessible(false);
         } catch (Exception ex) {
             ex.printStackTrace();
