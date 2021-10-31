@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "charlsensideas:block/spore",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "charlsensideas:block/spore"
+    },
+    "facing=south": {
+      "model": "charlsensideas:block/spore",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "charlsensideas:block/spore",
+      "y": 270
+    }
+  }
+}

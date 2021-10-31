@@ -62,6 +62,8 @@ public class CharlsensideasBlocks {
     public static final Block Ancient_Groats = new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.7F, 1.0F).sounds(BlockSoundGroup.CROP).breakByHand(true));
     public static final Block Umbra_Planks = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Lavender = new TallFlowerBlock(FabricBlockSettings.of(Material.PLANT).strength(0.2F, 0.2F).sounds(BlockSoundGroup.GRASS).noCollision());
+    public static final Block Spore = new SporeWallBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1F, 0.1F).sounds(BlockSoundGroup.MOSS_BLOCK).noCollision());
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -110,9 +112,11 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "ancient_groats"), Ancient_Groats);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "stripped_umbra_log"), Stripped_Umbra_Log);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "umbra_planks"), Umbra_Planks);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "lavender"), Lavender);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "spore"), Spore);
 
         //BlockItems
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(2)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "adrian_block"), new BlockItem(Adrian_Block, new Item.Settings()));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "charlie_block"), new BlockItem(Charlie_Block, new Item.Settings()));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "julian_block"), new BlockItem(Julian_Block, new Item.Settings()));
@@ -146,10 +150,12 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chiseled_black_tourmaline_stone_slab"), new BlockItem(CharlsensideasBlocks.Chiseled_Black_Tourmaline_Stone_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Brick_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_cracked_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Cracked_Brick_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_cake"), new BlockItem(CharlsensideasBlocks.Alpine_Strawberry_Cake, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_cake"), new BlockItem(CharlsensideasBlocks.Alpine_Strawberry_Cake, new OwoItemSettings().group(Charlsensideas.MAIN).tab(5)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal_block"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_groats"), new BlockItem(CharlsensideasBlocks.Ancient_Groats, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_planks"), new BlockItem(CharlsensideasBlocks.Umbra_Planks, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "stripped_umbra_log"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Log, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "lavender"), new BlockItem(CharlsensideasBlocks.Lavender, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "spore"), new BlockItem(CharlsensideasBlocks.Spore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
     }
 }

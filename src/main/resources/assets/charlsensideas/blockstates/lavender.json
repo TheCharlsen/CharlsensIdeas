@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "charlsensideas:block/lavender_bottom"
+    },
+    "half=upper": {
+      "model": "charlsensideas:block/lavender_top"
+    }
+  }
+}

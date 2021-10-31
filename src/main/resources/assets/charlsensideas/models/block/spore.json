@@ -1,0 +1,89 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "charlsensideas:block/spore1",
+		"1": "charlsensideas:block/spore2",
+		"2": "charlsensideas:block/spore",
+		"particle": "charlsensideas:block/spore1"
+	},
+	"elements": [
+		{
+			"name": "0",
+			"from": [-2, 3, 0],
+			"to": [14, 3, 16],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 3, 14]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "1",
+			"from": [0.4, 4, 0],
+			"to": [15.4, 4, 16],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 5, 14], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "2",
+			"from": [1, 5, 0],
+			"to": [13, 5, 16],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 14], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#2"}
+			}
+		},
+		{
+			"name": "3",
+			"from": [-7, 7, 0],
+			"to": [9, 7, 16],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 5, 14], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "4",
+			"from": [2, 8, 0],
+			"to": [14, 8, 16],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 14], "rescale": true},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#2"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#2"}
+			}
+		},
+		{
+			"name": "5",
+			"from": [0, 8.4, 0],
+			"to": [16, 8.4, 16],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 13, 14]},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#1"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "6",
+			"from": [0, 10, 2],
+			"to": [16, 10, 18],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 11, 14], "rescale": true},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 16], "texture": "#0"},
+				"down": {"uv": [16, 16, 0, 0], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -58,6 +58,9 @@ public class Charlsensideas implements ModInitializer {
     public static final String MOD_ID = "charlsensideas";
     public static final String VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).get().getMetadata().getVersion().toString(); //year/build/day/month
     public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
+    public static Identifier locate(String location) {
+        return new Identifier(MOD_ID, location);
+    }
 
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_WHITE = "\u001B[0m";

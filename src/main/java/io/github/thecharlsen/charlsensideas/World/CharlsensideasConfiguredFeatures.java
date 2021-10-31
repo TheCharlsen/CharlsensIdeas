@@ -19,6 +19,7 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.RandomSpreadFoliagePlacer;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
+import net.minecraft.world.gen.placer.DoublePlantPlacer;
 import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
@@ -81,6 +82,5 @@ public class CharlsensideasConfiguredFeatures {
         RegistryKey<ConfiguredFeature<?, ?>> cloud = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, new Identifier("charlsensideas","cloud"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, cloud.getValue(), Cloud);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(CharlsensideasBiomes.UMBRA_FOREST_KEY), GenerationStep.Feature.RAW_GENERATION, cloud);
-
     }
 }

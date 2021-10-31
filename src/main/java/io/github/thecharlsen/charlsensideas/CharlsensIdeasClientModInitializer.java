@@ -56,6 +56,8 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Umbra_Sapling, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Ancient_Groats, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.TenebrisPortal, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Lavender, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Spore, RenderLayer.getCutout());
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 
