@@ -9,7 +9,8 @@
     "CanBreatheInDimension",
     "LayerAccessor",
     "PlayerEntityMixin",
-    "StructuresConfigAccessor"
+    "StructuresConfigAccessor",
+    "TreeDecoratorTypeInvoker"
   ],
   "client": [
     "BrewingRecipeRegistryMixin",

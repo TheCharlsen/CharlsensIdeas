@@ -6,6 +6,7 @@ import io.github.thecharlsen.charlsensideas.World.CharlsensideasConfiguredFeatur
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasStructureFeature;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasStructures;
 import io.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
+import io.github.thecharlsen.charlsensideas.World.TreeDecorators.ChidTreeDecoratorTypes;
 import io.github.thecharlsen.charlsensideas.World.TrunkPlacer.TrunkPlacerTypes;
 import io.github.thecharlsen.charlsensideas.mixin.StructuresConfigAccessor;
 import net.fabricmc.api.ModInitializer;
@@ -115,6 +116,7 @@ public class Charlsensideas implements ModInitializer {
         CharlsensideasEntitys.entityInit();
         MAIN.initialize();
         TrunkPlacerTypes.init();
+        ChidTreeDecoratorTypes.init();
 
         LOGGER.info(ANSI_BLACK_BACKGROUND + "[Charlsensideas]: version " + ANSI_YELLOW + VERSION + ANSI_WHITE + ANSI_BLACK_BACKGROUND + " is now initialized");
 
