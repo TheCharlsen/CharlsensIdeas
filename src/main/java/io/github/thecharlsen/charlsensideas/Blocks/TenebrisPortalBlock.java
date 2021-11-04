@@ -15,6 +15,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.Tag;
+import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -57,7 +58,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                 if (dataStorage.getDestination() != null) {
                     Vec3d vector3d = new Vec3d(dataStorage.getDestination().getX(), dataStorage.getDestination().getY(), dataStorage.getDestination().getZ());
                     sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                    player.sendMessage(new TranslatableText("Welcome To Tenebris!!!"), true);
+                    player.sendMessage(Text.of(dataStorage.toString()), true);
                     return ActionResult.SUCCESS;
                 }
 
@@ -70,7 +71,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                                 dataStorage.setDestination(atlantisPos);
                                 Vec3d vector3d = new Vec3d(atlantisPos.getX(), atlantisPos.getY(), atlantisPos.getZ());
                                 sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                                player.sendMessage(new TranslatableText("Welcome To Tenebris!!!"), true);
+                                player.sendMessage(Text.of(dataStorage.toString()), true);
                                 return ActionResult.SUCCESS;
                             } else {
                                 tenebris.setBlockState(pos, this.asBlock().getDefaultState(), 2);
@@ -79,7 +80,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                                     dataStorage.setDestination(atlantisPos);
                                     Vec3d vector3d = new Vec3d(atlantisPos.getX(), atlantisPos.getY(), atlantisPos.getZ());
                                     sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                                    player.sendMessage(new TranslatableText("Welcome To Tenebris!!!"), true);
+                                    player.sendMessage(Text.of(dataStorage.toString()), true);
                                     return ActionResult.SUCCESS;
                                 }
                             }
@@ -88,7 +89,7 @@ public class TenebrisPortalBlock extends Block implements BlockEntityProvider {
                 }
                 worldIn.setBlockState(pos, this.asBlock().getDefaultState(), 2);
             } else {
-                player.sendMessage(new TranslatableText("Welcome To Tenebris!!!"), true);
+                player.sendMessage(new TranslatableText("Entering Tenebris"), true);
                 return ActionResult.FAIL;
             }
         } else {

@@ -131,7 +131,12 @@
                                     }
                                   }
                                 },
-                                "decorators": []
+                                "decorators": [
+                                  {
+                                    "type": "charlsensideas:spore_trunk",
+                                    "probability": 0.05
+                                  }
+                                ]
                               }
                             }
                           }
