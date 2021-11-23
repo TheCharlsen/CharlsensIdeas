@@ -1,6 +1,6 @@
 # CharlsensIdeas
 
-[![]( https://cf.way2muchnoise.eu/240630.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
+[![cursedownloads]( https://cf.way2muchnoise.eu/full_charlsensideas_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
 [![curseforge](https://img.shields.io/badge/-CurseForge-gray?style=for-the-badge&logo=curseforge&labelColor=orange)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
 [![modrinth](https://img.shields.io/badge/-modrinth-gray?style=for-the-badge&labelColor=green&labelWidth=15&logo=appveyor&logoColor=white)](https://modrinth.com/mod/charlsensideas)
 [![release](https://img.shields.io/github/v/release/TheCharlsen/Charlsensideas?color=blue&include_prereleases&logo=github&style=for-the-badge)](https://github.com/TheCharlsen/CharlsensIdeas/releases)
