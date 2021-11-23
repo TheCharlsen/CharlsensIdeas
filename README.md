@@ -9,7 +9,7 @@
 ## What is this even?
 Charlsensideas is a really random mod with things that just come to my mind. And this is the official Github repo of Charlsensideas.
 
-##What can Charlsensideas do?
+## What can Charlsensideas do?
 Well a new dimension is included and some blocks and other things that i am not enough motivated to tell you here.
 
 SO try it out!
