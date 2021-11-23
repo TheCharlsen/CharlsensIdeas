@@ -1,8 +1,15 @@
 # CharlsensIdeas
 
-![GitHub issues](https://img.shields.io/github/issues/thecharlsen/charlsensideas.svg)
-![GitHub license](https://img.shields.io/github/license/thecharlsen/charlsensideas.svg)
-[![](https://img.shields.io/discord/824979507626508308.svg?)](https://discord.gg/44SpPH74)
-[![](https://cf.way2muchnoise.eu/full_463138_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
+[![]( https://cf.way2muchnoise.eu/240630.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
+[![curseforge](https://img.shields.io/badge/-CurseForge-gray?style=for-the-badge&logo=curseforge&labelColor=orange)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
+[![modrinth](https://img.shields.io/badge/-modrinth-gray?style=for-the-badge&labelColor=green&labelWidth=15&logo=appveyor&logoColor=white)](https://modrinth.com/mod/charlsensideas)
+[![release](https://img.shields.io/github/v/release/TheCharlsen/Charlsensideas?color=blue&include_prereleases&logo=github&style=for-the-badge)](https://github.com/TheCharlsen/CharlsensIdeas/releases)
+[![discord](https://img.shields.io/discord/824979507626508308?label=Charlsens%20Modding&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/fPZgf2y3eB)
 
-This is the very Dumb Charlsensideas Mod.
+## What is this even?
+Charlsensideas is a really random mod with things that just come to my mind. And this is the official Github repo of Charlsensideas.
+
+##What can Charlsensideas do?
+Well a new dimension is included and some blocks and other things that i am not enough motivated to tell you here.
+
+SO try it out!
