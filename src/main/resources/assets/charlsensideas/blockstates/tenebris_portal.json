@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "charlsensideas:block/tenebris_portal_x"
+    },
+    "axis=z": {
+      "model": "charlsensideas:block/tenebris_portal_z"
+    },
+    "axis=y": {
+      "model": "charlsensideas:block/tenebris_portal_y"
+    }
+  }
+}

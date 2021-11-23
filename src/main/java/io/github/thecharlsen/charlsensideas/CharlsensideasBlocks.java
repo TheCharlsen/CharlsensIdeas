@@ -18,6 +18,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
+import static net.minecraft.block.AbstractBlock.Settings.copy;
+import static net.minecraft.block.Blocks.NETHER_PORTAL;
+
 public class CharlsensideasBlocks {
 
     public static final Block MuddedDirt = new Block(FabricBlockSettings.of(Material.SOIL).strength(1F, 1F).sounds(BlockSoundGroup.GRAVEL));
@@ -58,13 +61,14 @@ public class CharlsensideasBlocks {
     public static final Block Black_Tourmaline_Stone_Brick_Slab = new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(6F, 6F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block Black_Tourmaline_Stone_Cracked_Brick_Slab = new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(6F, 6F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block Alpine_Strawberry_Cake = new CakeBlocks(FabricBlockSettings.of(Material.CAKE).strength(0.5F).sounds(BlockSoundGroup.WOOL));
-    public static final TenebrisPortalBlock TenebrisPortal = new TenebrisPortalBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true).nonOpaque());
+    public static final TenebrisGatewayBlock TenebrisGateway = new TenebrisGatewayBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true).nonOpaque());
     public static final Block Ancient_Groats = new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.7F, 1.0F).sounds(BlockSoundGroup.CROP).breakByHand(true));
     public static final Block Umbra_Planks = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Lavender = new TallFlowerBlock(FabricBlockSettings.of(Material.PLANT).strength(0.2F, 0.2F).sounds(BlockSoundGroup.GRASS).noCollision());
     public static final Block Spore = new SporeWallBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1F, 0.1F).sounds(BlockSoundGroup.MOSS_BLOCK).noCollision());
     public static final Block debug = new Block(FabricBlockSettings.of(Material.WOOL).strength(0F, 0F).sounds(BlockSoundGroup.WOOL).nonOpaque());
+    public static final TenebrisPortalBlock TenebrisPortal = new TenebrisPortalBlock(FabricBlockSettings.copyOf(NETHER_PORTAL).of(Material.GLASS).strength(1000F, 10F).blockVision(CharlsensideasBlocks::never).mapColor(MapColor.GREEN).noCollision());
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -109,13 +113,14 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "black_tourmaline_stone_brick_slab"), Black_Tourmaline_Stone_Brick_Slab);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "black_tourmaline_stone_cracked_brick_slab"), Black_Tourmaline_Stone_Cracked_Brick_Slab);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "alpine_strawberry_cake"), Alpine_Strawberry_Cake);
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal_block"), TenebrisPortal);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal_block"), TenebrisGateway);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "ancient_groats"), Ancient_Groats);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "stripped_umbra_log"), Stripped_Umbra_Log);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "umbra_planks"), Umbra_Planks);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "lavender"), Lavender);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "spore"), Spore);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "debug"), debug);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "tenebris_portal"), TenebrisPortal);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -153,12 +158,13 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Brick_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_stone_cracked_brick_slab"), new BlockItem(CharlsensideasBlocks.Black_Tourmaline_Stone_Cracked_Brick_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_cake"), new BlockItem(CharlsensideasBlocks.Alpine_Strawberry_Cake, new OwoItemSettings().group(Charlsensideas.MAIN).tab(5)));
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal_block"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "tenebris_portal_block"), new BlockItem(CharlsensideasBlocks.TenebrisGateway, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_groats"), new BlockItem(CharlsensideasBlocks.Ancient_Groats, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_planks"), new BlockItem(CharlsensideasBlocks.Umbra_Planks, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "stripped_umbra_log"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Log, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "lavender"), new BlockItem(CharlsensideasBlocks.Lavender, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "spore"), new BlockItem(CharlsensideasBlocks.Spore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
-        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "debug"), new BlockItem(CharlsensideasBlocks.debug, new OwoItemSettings()));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "debug"), new BlockItem(CharlsensideasBlocks.debug, new OwoItemSettings().maxCount(1000)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "tenebris_portal"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new OwoItemSettings().maxCount(16)));
     }
 }

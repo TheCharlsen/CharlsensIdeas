@@ -4,28 +4,39 @@
       "charlsensideas:dog"
     ]
   },
-
   "discord_special_call_music": {
     "sounds": [
       "charlsensideas:discord_special_call_music"
     ]
   },
-
   "revenge": {
   "sounds": [
     "charlsensideas:revenge"
   ]
   },
-
   "da_coconut_nut": {
     "sounds": [
       "charlsensideas:da_coconut_nut"
     ]
   },
-
   "adrian_block": {
     "sounds": [
       "charlsensideas:adrian_block"
+    ]
+  },
+  "block.portal.ambient": {
+    "sounds": [
+      "charlsensideas:block/portal/tenebris_portal_ambient"
+    ]
+  },
+  "block.portal.travel": {
+    "sounds": [
+      "charlsensideas:block/portal/tenebris_portal_travel"
+    ]
+  },
+  "block.portal.trigger": {
+    "sounds": [
+      "charlsensideas:block/portal/tenebris_portal_trigger"
     ]
   }
 }

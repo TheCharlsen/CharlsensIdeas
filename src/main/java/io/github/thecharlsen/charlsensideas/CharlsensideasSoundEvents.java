@@ -1,6 +1,7 @@
 package io.github.thecharlsen.charlsensideas;
 
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class CharlsensideasSoundEvents {
@@ -10,6 +11,9 @@ public class CharlsensideasSoundEvents {
     public static final SoundEvent Da_Coconut_nut_Sound_Event = new SoundEvent(CharlsensideasIdentifiers.Da_Coconut_nut);
     public static SoundEvent Revenge_Sound_Event = new SoundEvent(CharlsensideasIdentifiers.Revenge);
     public static SoundEvent Adrian_Sound_Event = new SoundEvent(CharlsensideasIdentifiers.ADRIAN_BLOCK_SOUND);
+    public static SoundEvent Block_Tenebris_Portal_Ambient = new SoundEvent(new Identifier("charlsensideas", "block.portal.ambient"));
+    public static SoundEvent Block_Tenebris_Portal_Travel = new SoundEvent(new Identifier("charlsensideas", "block.portal.travel"));
+    public static SoundEvent Block_Tenebris_Portal_Trigger = new SoundEvent(new Identifier("charlsensideas", "block.portal.trigger"));
 
     public static void soundEventsInit(){
 

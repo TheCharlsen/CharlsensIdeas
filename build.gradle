@@ -60,8 +60,8 @@ dependencies {
 
 	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.config_version}")
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta39-1.17'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta39-1.17'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta46-1.17-dev3'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta46-1.17-dev3'
 
 	modImplementation 'xyz.nucleoid:fantasy:0.4.2+1.17'
 

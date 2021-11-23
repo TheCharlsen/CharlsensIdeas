@@ -120,8 +120,6 @@ public class Charlsensideas implements ModInitializer {
 
         LOGGER.info(ANSI_BLACK_BACKGROUND + "[Charlsensideas]: version " + ANSI_YELLOW + VERSION + ANSI_WHITE + ANSI_BLACK_BACKGROUND + " is now initialized");
 
-        CustomPortalApiRegistry.addPortal(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks, PortalIgnitionSource.FluidSource(CharlsensideasFluids.Still_Weird_Water),  new Identifier("charlsensideas","tenebris"), 1, 42, 54);
-
         BiomeModifications.create(new Identifier(MODID, "diamond_cascade_addition"))
                 .add(   // Describes what we are doing. SInce we are adding a structure, we choose ADDITIONS.
                         ModificationPhase.ADDITIONS,
