@@ -3,6 +3,7 @@
 [![](https://cf.way2muchnoise.eu/full_charlsensideas_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
 [![curseforge](https://img.shields.io/badge/-CurseForge-gray?style=for-the-badge&logo=curseforge&labelColor=orange)](https://www.curseforge.com/minecraft/mc-mods/charlsensideas)
 [![modrinth](https://img.shields.io/badge/-modrinth-gray?style=for-the-badge&labelColor=green&labelWidth=15&logo=appveyor&logoColor=white)](https://modrinth.com/mod/charlsensideas)
+[![](https://img.shields.io/modrinth/dt/charlsensideas?color=green&logo=modrinth&style=for-the-badge)]((https://modrinth.com/mod/charlsensideas))
 [![release](https://img.shields.io/github/v/release/TheCharlsen/Charlsensideas?color=blue&include_prereleases&logo=github&style=for-the-badge)](https://github.com/TheCharlsen/CharlsensIdeas/releases)
 [![discord](https://img.shields.io/discord/824979507626508308?label=Charlsens%20Modding&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/fPZgf2y3eB)
 
