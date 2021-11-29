@@ -94,7 +94,6 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
                         ? BiomeColors.getFoliageColor(view, pos)
                         : FoliageColors.getDefaultColor(), CharlsensideasBlocks.Umbra_Leaves);
 
-
         //Weird Water
         setupFluidRendering(CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water);
