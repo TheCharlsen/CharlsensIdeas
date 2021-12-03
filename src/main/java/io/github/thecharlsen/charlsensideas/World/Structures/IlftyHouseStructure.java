@@ -4,7 +4,6 @@ import io.github.thecharlsen.charlsensideas.Charlsensideas;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
-import net.minecraft.structure.MarginedStructureStart;
 import net.minecraft.structure.PoolStructurePiece;
 import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
@@ -19,12 +18,13 @@ import net.minecraft.world.Heightmap;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.VerticalBlockSample;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
+import net.minecraft.world.gen.feature.MarginedStructureFeature;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
+import net.minecraft.world.gen.random.ChunkRandom;
 import org.apache.logging.log4j.Level;
 
 public class IlftyHouseStructure extends StructureFeature<DefaultFeatureConfig> {
@@ -124,7 +124,7 @@ public class IlftyHouseStructure extends StructureFeature<DefaultFeatureConfig> 
     /**
      * Handles calling up the structure's pieces class and height that structure will spawn at.
      */
-    public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {
+    public static class Start extends MarginedStructureFeature<DefaultFeatureConfig> {
         public Start(StructureFeature<DefaultFeatureConfig> structureIn, ChunkPos chunkPos, int referenceIn, long seedIn) {
             super(structureIn, chunkPos, referenceIn, seedIn);
         }
@@ -205,7 +205,7 @@ public class IlftyHouseStructure extends StructureFeature<DefaultFeatureConfig> 
             this.children.forEach(piece -> piece.getBoundingBox().move(0, -1, 0));
 
             // Sets the bounds of the structure once you are finished.
-            this.setBoundingBoxFromChildren();
+            this.getBoundingBox();
 
             // I use to debug and quickly find out if the structure is spawning or not and where it is.
             // This is returning the coordinates of the center starting piece.

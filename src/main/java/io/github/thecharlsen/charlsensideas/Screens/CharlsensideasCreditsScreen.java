@@ -162,7 +162,7 @@ public class CharlsensideasCreditsScreen extends Screen {
                 }
 
                 resource = this.client.getResourceManager().getResource(new Identifier("charlsensideas","texts/credits.json"));
-                JsonArray jsonArray = JsonHelper.method_37165(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8));
+                JsonArray jsonArray = JsonHelper.deserializeArray(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8));
                 JsonArray jsonArray2 = jsonArray.getAsJsonArray();
                 Iterator var24 = jsonArray2.iterator();
 
