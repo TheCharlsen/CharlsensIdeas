@@ -52,19 +52,19 @@ public class RankTrunkPlacer extends TrunkPlacer {
         setToDirt(world, replacer, random, startPos.down(), config);
 
         for(int i = 0; i < height; ++i) {
-            BlockPos curPos = startPos.up(i);
+            var curPos = startPos.up(i);
             getAndSetState(world, replacer, random, curPos, config);
 
             if(i > 0 && i < (height * 0.7)) {
-                F chance = overgrowthChance;
+                var chance = overgrowthChance;
 
                 for (Direction dir : Direction.values()) {
                     if(dir.getHorizontal() >= 0 && random.nextFloat() <= chance) {
-                        BlockPos tempPos = curPos.offset(dir);
+                        var tempPos = curPos.offset(dir);
 
                         if(TreeFeature.canTreeReplace(world, tempPos)) {
                             getAndSetState(world, replacer, random, tempPos, config, (state -> {
-                                BlockState overgrowth = overgrowthProvider.getBlockState(random, tempPos);
+                                var overgrowth = overgrowthProvider.getBlockState(random, tempPos);
 
                                 if(overgrowth.contains(Properties.HORIZONTAL_FACING)) {
                                     overgrowth = overgrowth.with(Properties.HORIZONTAL_FACING, dir.getOpposite());
