@@ -43,7 +43,7 @@ public class TenebrisSkyRenderer implements SkyRenderer {
         RenderSystem.setShaderTexture(0, SUN_TEXTURES);
         matrix.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-90.0F));
         matrix.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(world.getSkyAngle(partialTicks) * 360));
-        Matrix4f matrix4f = matrix.peek().getPositionMatrix();
+        Matrix4f matrix4f = matrix.peek().getModel();
         bufferbuilder.begin(drawMode, VertexFormats.POSITION_TEXTURE);
         bufferbuilder.vertex(matrix4f, (-size), 100.0F, (-size)).texture(0.0F, 0.0F).next();
         bufferbuilder.vertex(matrix4f, size, 100.0F, (-size)).texture(1.0F, 0.0F).next();
@@ -68,7 +68,7 @@ public class TenebrisSkyRenderer implements SkyRenderer {
         float f23 = (float)(k2 + 0) / 2.0F;
         float f24 = (float)(i2 + 1) / 4.0F;
         float f14 = (float)(k2 + 1) / 2.0F;
-        Matrix4f matrix4f = matrix.peek().getPositionMatrix();
+        Matrix4f matrix4f = matrix.peek().getModel();
         bufferbuilder.begin(drawMode, VertexFormats.POSITION_TEXTURE);
         bufferbuilder.vertex(matrix4f, (-size), -100.0F, size).texture(f24, f14).next();
         bufferbuilder.vertex(matrix4f, size, -100.0F, size).texture(f22, f14).next();

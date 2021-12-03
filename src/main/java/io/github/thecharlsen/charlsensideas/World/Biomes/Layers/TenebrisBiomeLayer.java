@@ -6,7 +6,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.layer.type.InitLayer;
 import net.minecraft.world.biome.layer.util.LayerRandomnessSource;
-import net.minecraft.world.gen.random.ChunkRandom;
+import net.minecraft.world.gen.ChunkRandom;
+
 import java.util.stream.IntStream;
 
 public class TenebrisBiomeLayer implements InitLayer {
