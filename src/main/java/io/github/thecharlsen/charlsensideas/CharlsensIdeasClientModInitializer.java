@@ -22,7 +22,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -68,7 +67,7 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTextureModelData);
 
-        SkyProperties tenebris = new SkyProperties(255.0F, true, SkyProperties.SkyType.NORMAL, false, false) {
+        DimensionEffects tenebris = new DimensionEffects(255.0F, true, DimensionEffects.SkyType.NORMAL, false, false) {
             @Override
             public Vec3d adjustFogColor(Vec3d color, float sunHeight) {
                 return color;
