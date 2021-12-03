@@ -58,8 +58,6 @@ dependencies {
 
     modImplementation include("io.github.cottonmc:LibGui:4.1.5+1.17.1")
 
-	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.config_version}")
-
 	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta46-1.17-dev3'
 	include 'net.kyrptonaught:customportalapi:0.0.1-beta46-1.17-dev3'
 
