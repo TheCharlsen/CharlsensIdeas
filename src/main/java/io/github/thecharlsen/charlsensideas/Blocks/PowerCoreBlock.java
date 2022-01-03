@@ -16,8 +16,6 @@ public class PowerCoreBlock extends Block {
         super(settings);
     }
 
-
-
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (random.nextInt(5) == 0) {

@@ -3,9 +3,7 @@ package io.github.thecharlsen.charlsensideas;
 import io.github.thecharlsen.charlsensideas.Items.MusicPlayerGuiItem;
 import io.github.thecharlsen.charlsensideas.Models.Entitys.CubeEntityModel;
 import io.github.thecharlsen.charlsensideas.Render.Entitys.CubeEntityRenderer;
-import io.github.thecharlsen.charlsensideas.Render.TenebrisSkyRenderer;
-import io.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
-import io.github.waterpicker.openworlds.OpenWorlds;
+import io.wispforest.owo.itemgroup.OwoItemSettings;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -21,8 +19,8 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
+import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -42,7 +40,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 public class CharlsensIdeasClientModInitializer implements ClientModInitializer {
 
-    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Charlsensideas.MAIN).maxCount(1));
+    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(1).maxCount(1));
 
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("charlsensideas", "cube"), "main");
 
@@ -68,7 +66,7 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTextureModelData);
 
-        SkyProperties tenebris = new SkyProperties(255.0F, true, SkyProperties.SkyType.NORMAL, false, false) {
+        DimensionEffects tenebris = new DimensionEffects(255.0F, true, DimensionEffects.SkyType.NORMAL, false, false) {
             @Override
             public Vec3d adjustFogColor(Vec3d color, float sunHeight) {
                 return color;
@@ -80,9 +78,6 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
             }
         };
 
-        OpenWorlds.registerSkyProperty(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, tenebris);
-        OpenWorlds.registerSkyRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, new TenebrisSkyRenderer());
-        OpenWorlds.registerCloudRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, (client, matrices, matrix4f, tickDelta, cameraX, cameraY, cameraZ) -> {});
 
         ColorProviderRegistry.BLOCK.register((state , view, pos, tintIndex) ->
         view != null && pos != null

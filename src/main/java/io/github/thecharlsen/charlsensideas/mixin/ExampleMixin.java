@@ -12,4 +12,6 @@ public class ExampleMixin {
 	private void init(CallbackInfo info) {
 		System.out.println("NO WAY! This line is printed by an example mod mixin!");
 	}
+
+	//i really like this
 }

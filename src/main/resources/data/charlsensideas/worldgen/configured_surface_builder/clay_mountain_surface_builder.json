@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:default",
+  "config": {
+    "top_material": {
+      "Name": "minecraft:clay",
+      "Properties": {}
+    },
+    "under_material": {
+      "Name": "minecraft:andesite"
+    },
+    "underwater_material": {
+      "Name": "minecraft:stone"
+    }
+  }
+}

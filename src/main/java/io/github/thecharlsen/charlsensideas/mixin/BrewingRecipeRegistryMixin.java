@@ -1,6 +1,8 @@
 package io.github.thecharlsen.charlsensideas.mixin;
 
+import io.github.thecharlsen.charlsensideas.CharlsensideasBlocks;
 import io.github.thecharlsen.charlsensideas.CharlsensideasItems;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.potion.Potion;
@@ -22,10 +24,10 @@ public abstract class BrewingRecipeRegistryMixin {
 
     @Inject(method = "registerDefaults", at = @At("TAIL"), cancellable = true)
     private static void hook_registerDefaults(CallbackInfo ci) {
-        hook_registerPotionRecipe(Potions.AWKWARD, CharlsensideasItems.Pompon, CharlsensideasItems.Potion_Of_Blossom);
+        hook_registerPotionRecipe(Potions.AWKWARD, CharlsensideasBlocks.Pompon, CharlsensideasItems.Potion_Of_Blossom);
     }
 
-    private static void hook_registerPotionRecipe(Potion input, Item item, Potion output) {
-        POTION_RECIPES.add(new BrewingRecipeRegistry.Recipe(input, Ingredient.ofItems(new ItemConvertible[]{item}), output));
+    private static void hook_registerPotionRecipe(Potion input, Block block, Potion output) {
+        POTION_RECIPES.add(new BrewingRecipeRegistry.Recipe(input, Ingredient.ofItems(new ItemConvertible[]{block}), output));
     }
 }

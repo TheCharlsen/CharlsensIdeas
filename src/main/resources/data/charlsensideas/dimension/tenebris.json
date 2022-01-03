@@ -112,7 +112,7 @@
           }
         },
         {
-          "biome": "charlsensideas:umbra_forest",
+          "biome": "minecraft:modified_jungle_edge",
           "parameters": {
             "altitude": 0,
             "temperature": 0.3,

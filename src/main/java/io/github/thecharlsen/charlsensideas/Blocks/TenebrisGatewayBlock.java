@@ -1,6 +1,6 @@
 package io.github.thecharlsen.charlsensideas.Blocks;
 
-import io.github.thecharlsen.charlsensideas.Blocks.BlockEntitys.DummyDataStorage;
+import io.github.thecharlsen.charlsensideas.Blocks.BlockEntitys.TenebrisDataHandler;
 import io.github.thecharlsen.charlsensideas.Charlsensideas;
 import io.github.thecharlsen.charlsensideas.CharlsensideasBlocks;
 import io.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
@@ -46,18 +46,18 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
     public ActionResult onUse(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockHitResult hit) {
         if (!TenebrisDimension.isTenebrisDimension(worldIn)) {
             if(!worldIn.isClient) {
-                ServerWorld tenebris =  player.getServer().getWorld(TenebrisDimension.TENEBRIS_WORLD);
+                ServerWorld tenebris =  player.getServer().getWorld(TenebrisDimension.TENEBRIS_WORLD_KEY);
                 ServerWorld overWorld = player.getServer().getWorld(Charlsensideas.getOverworldKey());
                 tenebris.getBlockState(pos);
                 BlockEntity entity = worldIn.getBlockEntity(pos);
-                DummyDataStorage dataStorage = (DummyDataStorage) entity;
+                TenebrisDataHandler dataHandler = (TenebrisDataHandler) entity;
                 BlockPos atlantisPos;
                 BlockPos.Mutable mutableBlockPos = new BlockPos.Mutable(0, 0, 0);
 
-                if (dataStorage.getDestination() != null) {
-                    Vec3d vector3d = new Vec3d(dataStorage.getDestination().getX(), dataStorage.getDestination().getY(), dataStorage.getDestination().getZ());
+                if (dataHandler.getDestination() != null) {
+                    Vec3d vector3d = new Vec3d(dataHandler.getDestination().getX(), dataHandler.getDestination().getY(), dataHandler.getDestination().getZ());
                     sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                    player.sendMessage(Text.of(dataStorage.toString()), true);
+                    player.sendMessage(Text.of(dataHandler.toString()), true);
                     return ActionResult.SUCCESS;
                 }
 
@@ -67,19 +67,19 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
                             mutableBlockPos.set(x, y, z);
                             if (tenebris.getBlockState(mutableBlockPos).getBlock() == this.asBlock() && isPortalAt(tenebris, mutableBlockPos)) {
                                 atlantisPos = mutableBlockPos.add(0, 1, 0);
-                                dataStorage.setDestination(atlantisPos);
+                                dataHandler.setDestination(atlantisPos);
                                 Vec3d vector3d = new Vec3d(atlantisPos.getX(), atlantisPos.getY(), atlantisPos.getZ());
                                 sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                                player.sendMessage(Text.of(dataStorage.toString()), true);
+                                player.sendMessage(Text.of(dataHandler.toString()), true);
                                 return ActionResult.SUCCESS;
                             } else {
                                 tenebris.setBlockState(pos, this.asBlock().getDefaultState(), 2);
                                 if (tenebris.getBlockState(mutableBlockPos).getBlock() == this.asBlock() && isPortalAt(tenebris, mutableBlockPos)) {
                                     atlantisPos = mutableBlockPos.add(0, 1, 0);
-                                    dataStorage.setDestination(atlantisPos);
+                                    dataHandler.setDestination(atlantisPos);
                                     Vec3d vector3d = new Vec3d(atlantisPos.getX(), atlantisPos.getY(), atlantisPos.getZ());
                                     sendPlayerToDimension((ServerPlayerEntity) player, tenebris, vector3d);
-                                    player.sendMessage(Text.of(dataStorage.toString()), true);
+                                    player.sendMessage(Text.of(dataHandler.toString()), true);
                                     return ActionResult.SUCCESS;
                                 }
                             }
@@ -93,12 +93,12 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
             }
         } else {
             if (!worldIn.isClient) {
-                ServerWorld tenebris =  worldIn.getServer().getWorld(TenebrisDimension.TENEBRIS_WORLD);
+                ServerWorld tenebris =  worldIn.getServer().getWorld(TenebrisDimension.TENEBRIS_WORLD_KEY);
                 ServerWorld overWorld = worldIn.getServer().getWorld(Charlsensideas.getOverworldKey());
                 if (worldIn != null) {
                     overWorld.getBlockState(pos);
                     BlockEntity entity = worldIn.getBlockEntity(pos);
-                    DummyDataStorage dataStorage = (DummyDataStorage) entity;
+                    TenebrisDataHandler dataStorage = (TenebrisDataHandler) entity;
                     BlockPos overWorldPos;
                     BlockPos.Mutable mutableBlockPos = new BlockPos.Mutable(0, 0, 0);
 
@@ -125,7 +125,7 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
                                         overWorldPos = mutableBlockPos.add(0, 1, 0);
                                         dataStorage.setDestination(overWorldPos);
                                         sendPlayerToDimension((ServerPlayerEntity) player, overWorld, new Vec3d(overWorldPos.getX(), overWorldPos.getY(), overWorldPos.getZ()));
-                                        player.sendMessage(new TranslatableText("We Hope You Enjoyed Tenebris, Come Back Soon!"), true);
+                                        player.sendMessage(new TranslatableText("shhhhhhhhhhhhhhhhhhhhhhzzzzzzzzzzzz"), true);
                                         return ActionResult.SUCCESS;
                                     }
                                 }
@@ -134,7 +134,7 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
                     }
                     worldIn.setBlockState(pos, this.asBlock().getDefaultState(), 2);
                 } else {
-                    player.sendMessage(new TranslatableText("NO PASSING THE GATES OF TENEBRIS!!!"), true);
+                    player.sendMessage(new TranslatableText("Nope"), true);
                     return ActionResult.FAIL;
                 }
             }
@@ -178,7 +178,7 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new DummyDataStorage(pos, state);
+        return new TenebrisDataHandler(pos, state);
     }
 
     @Override

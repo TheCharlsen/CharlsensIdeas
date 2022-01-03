@@ -1,8 +1,8 @@
 package io.github.thecharlsen.charlsensideas;
 
-import com.glisco.owo.itemgroup.OwoItemSettings;
 import io.github.thecharlsen.charlsensideas.Items.FilledJamJarItem;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.MusicDiscItems;
+import io.wispforest.owo.itemgroup.OwoItemSettings;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -14,22 +14,22 @@ import net.minecraft.util.registry.Registry;
 
 public class CharlsensideasItems {
 
-    public static final Item Secure_Chest_Module = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
-    public static final Item Bornite = new Item(new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item CHIP = new Item(new Item.Settings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.CHIP));
-    public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, CharlsensideasSoundEvents.Dog_Sound_Event, new FabricItemSettings().group(Charlsensideas.MAIN).maxCount(1).rarity(Rarity.RARE));
-    public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15,CharlsensideasSoundEvents.Discord_Special_Call_Music_Sound_Event, new FabricItemSettings().group(Charlsensideas.MAIN).maxCount(1).rarity(Rarity.RARE));
-    public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Revenge_Sound_Event, new FabricItemSettings().group(Charlsensideas.MAIN).maxCount(1).rarity(Rarity.RARE));
-    public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Da_Coconut_nut_Sound_Event, new FabricItemSettings().group(Charlsensideas.MAIN).maxCount(1).rarity(Rarity.EPIC));
+    public static final Item Secure_Chest_Module = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0));
+    public static final Item Bornite = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(4));
+    public static final Item CHIP = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(5).food(CharlsensideasFoodComponents.CHIP));
+    public static final MusicDiscItem Dog_Music_Disc = new MusicDiscItems(14, CharlsensideasSoundEvents.Dog_Sound_Event, new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0).maxCount(1).rarity(Rarity.RARE));
+    public static final MusicDiscItem Discord_Remix_Music_Disc = new MusicDiscItems(15,CharlsensideasSoundEvents.Discord_Special_Call_Music_Sound_Event, new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0).maxCount(1).rarity(Rarity.RARE));
+    public static final MusicDiscItem Revenge_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Revenge_Sound_Event, new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0).maxCount(1).rarity(Rarity.RARE));
+    public static final MusicDiscItem Da_Coconut_nut_Music_Disc = new MusicDiscItems(15, CharlsensideasSoundEvents.Da_Coconut_nut_Sound_Event, new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0).maxCount(1).rarity(Rarity.EPIC));
     public static final Potion Potion_Of_Blossom = new Potion(new StatusEffectInstance(CharlsensideasStatusEffects.Blossomed, 3600));
-    public static final Item Alpine_Strawberry = new AliasedBlockItem(CharlsensideasBlocks.Alpine_Strawberry_Bush, (new Item.Settings()).group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.Alpine_Strawberry));
-    public static final Item Black_Tourmaline_Gem = new Item(new Item.Settings().group(Charlsensideas.MAIN));
+    public static final Item Alpine_Strawberry = new AliasedBlockItem(CharlsensideasBlocks.Alpine_Strawberry_Bush, (new OwoItemSettings()).group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(5).food(CharlsensideasFoodComponents.Alpine_Strawberry));
+    public static final Item Black_Tourmaline_Gem = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(4));
     public static Item Pompon;
-    public static final Item Jar = new Item(new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item Alpine_Strawberry_Jam_Jar = new FilledJamJarItem(new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CharlsensideasEntitys.CUBE, 1238, 2849, new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item Ancient_Meal = new Item(new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item Ancient_Bread = new Item(new Item.Settings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.Ancient_Bread));
+    public static final Item Jar = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0));
+    public static final Item Alpine_Strawberry_Jam_Jar = new FilledJamJarItem(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(5));
+    public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CharlsensideasEntitys.CUBE, 1238, 2849, new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0));
+    public static final Item Ancient_Meal = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(5));
+    public static final Item Ancient_Bread = new Item(new OwoItemSettings().group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(5).food(CharlsensideasFoodComponents.Ancient_Bread));
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -62,7 +62,7 @@ public class CharlsensideasItems {
         Registry.register(Registry.POTION, new Identifier("charlsensideas", "potion_of_blossom"), Potion_Of_Blossom);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry"), Alpine_Strawberry);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "black_tourmaline_gem"), Black_Tourmaline_Gem);
-        Pompon = register(CharlsensideasBlocks.Pompon, Charlsensideas.MAIN);
+        Pompon = register(CharlsensideasBlocks.Pompon, Charlsensideas.CHARLSENSIDEAS_ITG);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "jar"), Jar);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "alpine_strawberry_jam_jar"), Alpine_Strawberry_Jam_Jar);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cube_spawn_egg"), CUBE_SPAWN_EGG);
