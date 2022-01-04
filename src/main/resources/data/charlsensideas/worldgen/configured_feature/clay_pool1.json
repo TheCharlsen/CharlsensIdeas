@@ -21,6 +21,9 @@
         "Name": "minecraft:clay"
       }
     },
-    "vegetation_feature": "minecraft:dripleaf"
+    "vegetation_feature": {
+      "feature": "minecraft:dripleaf",
+      "placement": []
+    }
   }
 }

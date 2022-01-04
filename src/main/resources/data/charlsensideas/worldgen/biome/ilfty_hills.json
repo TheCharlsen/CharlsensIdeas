@@ -1,5 +1,4 @@
 {
-  "scale": 0.727,
   "effects": {
     "sky_color": 14145739,
     "fog_color": 11579558,
@@ -14,24 +13,22 @@
       "probability": 0.001
     }
   },
-  "surface_builder": "charlsensideas:umbra_forest_surface_builder",
   "carvers": {
-    "air": [
-      "minecraft:prototype_cave",
-      "minecraft:prototype_canyon"
-    ]
+    "air": []
   },
   "features": [
     [],
     [
-      "minecraft:lake_lava",
+      "minecraft:lake_lava_surface",
+      "minecraft:lake_lava_underground",
       "charlsensideas:lake_m",
       "charlsensideas:lake_v_m"
     ],
     [],
     [
       "minecraft:amethyst_geode",
-      "minecraft:monster_room"
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [],
     [],
@@ -59,6 +56,7 @@
       "charlsensideas:test_clay_m"
     ],
     [],
+    [],
     [
       "minecraft:patch_tall_grass",
       "minecraft:flower_warm",
@@ -81,13 +79,6 @@
     [
       "minecraft:freeze_top_layer"
     ]
-  ],
-  "starts": [
-    "minecraft:village_savanna",
-    "minecraft:pillager_outpost",
-    "minecraft:mineshaft",
-    "minecraft:stronghold",
-    "minecraft:ruined_portal"
   ],
   "spawners": {
     "monster": [
@@ -205,10 +196,8 @@
     ]
   },
   "spawn_costs": {},
-  "player_spawn_friendly": false,
   "precipitation": "snow",
   "temperature": 0.3,
   "downfall": 0.6,
-  "category": "extreme_hills",
-  "depth": 1
+  "category": "extreme_hills"
 }

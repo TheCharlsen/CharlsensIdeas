@@ -1,0 +1,32 @@
+{
+	"feature": "charlsensideas:tiny_tree_bclay",
+	"placement": [
+		{
+			"type": "minecraft:count",
+			"count": {
+				"type": "minecraft:weighted_list",
+				"distribution": [
+					{
+						"weight": 0,
+						"data": 10
+					},
+					{
+						"weight": 100,
+						"data": 20
+					}
+				]
+			}
+		},
+		{
+			"type": "minecraft:in_square"
+		},
+		{
+			"type": "heightmap",
+			"heightmap": "WORLD_SURFACE"
+		},
+		{
+			"type": "heightmap",
+			"heightmap": "WORLD_SURFACE_WG"
+		}
+	]
+}

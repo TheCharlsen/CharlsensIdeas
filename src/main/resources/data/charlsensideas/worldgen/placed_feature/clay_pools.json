@@ -1,0 +1,28 @@
+{
+	"feature": "charlsensideas:clay_pools",
+	"placement": [
+		{
+			"type": "count",
+			"count": 20
+		},
+		{
+			"type": "minecraft:in_square"
+		},
+		{
+			"type": "minecraft:height_range",
+			"height": {
+				"type": "minecraft:uniform",
+				"min_inclusive": {
+					"above_bottom": 0
+				},
+				"max_inclusive": {
+					"absolute": 60
+				}
+			}
+		},
+		{
+			"type": "heightmap",
+			"heightmap": "WORLD_SURFACE_WG"
+		}
+	]
+}

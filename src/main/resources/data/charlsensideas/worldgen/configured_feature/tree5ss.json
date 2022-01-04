@@ -1,21 +1,7 @@
 {
-  "type": "minecraft:decorated",
+  "type": "minecraft:random_selector",
   "config": {
-    "decorator": {
-      "type": "minecraft:chance",
-      "config": {
-        "chance": 2
-      }
-    },
-    "feature": {
-      "type": "minecraft:decorated",
-      "config": {
-        "decorator": {
-          "type": "minecraft:square",
-          "config": {}
-        },
-        "feature": "charlsensideas:tree5s"
-      }
-    }
+    "features": [],
+    "default": "charlsensideas:tree5s"
   }
 }

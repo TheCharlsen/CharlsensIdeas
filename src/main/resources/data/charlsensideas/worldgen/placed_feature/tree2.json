@@ -1,0 +1,32 @@
+{
+	"feature": "charlsensideas:tree2",
+	"placement": [
+		{
+			"type": "count",
+			"count": 5
+		},
+		{
+			"type": "minecraft:in_square"
+		},
+		{
+			"type": "count",
+			"count": 4
+		},
+		{
+			"type": "minecraft:height_range",
+			"height": {
+				"absolute": 192
+			}
+		},
+		{
+			"type": "count",
+			"count": {
+				"type": "minecraft:uniform",
+				"value": {
+					"min_inclusive": 7,
+					"max_inclusive": 16
+				}
+			}
+		}
+	]
+}
