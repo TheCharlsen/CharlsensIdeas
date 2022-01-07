@@ -1,19 +1,31 @@
 {
-  "type": "charlsensideas:tenebris",
+  "type": {
+    "ultrawarm": false,
+    "natural": true,
+    "piglin_safe": true,
+    "respawn_anchor_works": true,
+    "bed_works": true,
+    "has_raids": true,
+    "has_skylight": true,
+    "has_ceiling": false,
+    "coordinate_scale": 1,
+    "ambient_light": 13,
+    "logical_height": 256,
+    "infiniburn": "minecraft:infiniburn_overworld",
+    "min_y": -32,
+    "height": 288
+  },
   "generator": {
     "type": "minecraft:noise",
-    "seed": 0,
+    "seed": -2088259265,
     "settings": {
-      "name": "charlsensideas:tenebris",
-      "bedrock_roof_position": -33,
-      "bedrock_floor_position": -33,
-      "sea_level": -33,
+      "sea_level": 40,
       "disable_mob_generation": false,
-      "noise_caves_enabled": false,
-      "noodle_caves_enabled": false,
-      "aquifers_enabled": false,
-      "deepslate_enabled": false,
-      "ore_veins_enabled": true,
+      "noise_caves_enabled": true,
+      "noodle_caves_enabled": true,
+      "aquifers_enabled": true,
+      "ore_veins_enabled": false,
+      "legacy_random_source": false,
       "default_block": {
         "Name": "charlsensideas:cobbled_black_tourmaline_stone",
         "Properties": {
@@ -33,6 +45,7 @@
         "size_vertical": 2,
         "island_noise_override": false,
         "amplified": false,
+        "large_biomes": false,
         "sampling": {
           "xz_scale": 1,
           "y_scale": 1,
@@ -55,13 +68,17 @@
           "jaggedness": 0
         }
       },
-      "structures": {
-        "structures": {}
-      },
-      "legacy_random_source": false,
       "surface_rule": {
         "type": "minecraft:sequence",
         "sequence": []
+      },
+      "structures": {
+        "stronghold": {
+          "distance": 32,
+          "spread": 3,
+          "count": 128
+        },
+        "structures": {}
       }
     },
     "biome_source": {
@@ -80,39 +97,15 @@
           }
         },
         {
-          "biome": "minecraft:dark_forest",
-          "parameters": {
-            "temperature": 0.4,
-            "humidity": 0,
-            "continentalness": 0.1,
-            "erosion": 0,
-            "weirdness": 0.2,
-            "depth": 0,
-            "offset": 0.01
-          }
-        },
-        {
-          "biome": "minecraft:modified_jungle_edge",
-          "parameters": {
-            "temperature": 0.3,
-            "humidity": 0,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0.1,
-            "depth": 0,
-            "offset": 0.3
-          }
-        },
-        {
           "biome": "charlsensideas:ilfty_hills",
           "parameters": {
             "temperature": 0.1,
-            "humidity": 0,
-            "continentalness": 0,
+            "humidity": 0.2,
+            "continentalness": 0.3,
             "erosion": 0,
             "weirdness": 0.2,
             "depth": 0,
-            "offset": 0.3
+            "offset": 0.2
           }
         },
         {
@@ -120,11 +113,23 @@
           "parameters": {
             "temperature": 0.1,
             "humidity": 0,
+            "continentalness": 0.6,
+            "erosion": 0.8,
+            "weirdness": 0.2,
+            "depth": 0.15,
+            "offset": 0.2
+          }
+        },
+        {
+          "biome": "minecraft:meadow",
+          "parameters": {
+            "temperature": -0.1,
+            "humidity": 0.2,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0.3,
-            "depth": 0,
-            "offset": 0.4
+            "depth": 0.2,
+            "offset": 0.1
           }
         }
       ]

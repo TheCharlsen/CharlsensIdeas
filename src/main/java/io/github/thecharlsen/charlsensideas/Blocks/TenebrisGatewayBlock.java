@@ -88,7 +88,7 @@ public class TenebrisGatewayBlock extends Block implements BlockEntityProvider {
                 }
                 worldIn.setBlockState(pos, this.asBlock().getDefaultState(), 2);
             } else {
-                player.sendMessage(new TranslatableText("Entering Tenebris"), true);
+                player.sendMessage(new TranslatableText("Blue Screen Engaging"), true);
                 return ActionResult.FAIL;
             }
         } else {
