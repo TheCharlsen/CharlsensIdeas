@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "facing=east,tilt=full": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_least_height"
+    },
+    "facing=east,tilt=none": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=east,tilt=partial": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_partial_height"
+    },
+    "facing=east,tilt=unstable": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=east,tilt=unpartial": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_unpartial_height"
+    },
+    "facing=east,tilt=unacceptable": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_unacceptable_height"
+    },
+    "facing=east,tilt=underestimated": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_underestimated_height"
+    },
+    "facing=north,tilt=full": {
+      "model": "charlsensideas:block/ringleaf_least_height"
+    },
+    "facing=north,tilt=none": {
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=north,tilt=partial": {
+      "model": "charlsensideas:block/ringleaf_partial_height"
+    },
+    "facing=north,tilt=unstable": {
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=north,tilt_unpartial": {
+      "model": "charlsensideas:block/ringleaf_unpartial_height"
+    },
+    "facing=south,tilt=full": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_least_height"
+    },
+    "facing=south,tilt=none": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=south,tilt=partial": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_partial_height"
+    },
+    "facing=south,tilt=unstable": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=west,tilt=full": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_least_height"
+    },
+    "facing=west,tilt=none": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=west,tilt=partial": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_partial_height"
+    },
+    "facing=west,tilt=unstable": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf"
+    }
+  }
+}
