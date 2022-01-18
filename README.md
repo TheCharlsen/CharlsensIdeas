@@ -14,3 +14,6 @@ Charlsensideas is a really random mod with things that just come to my mind. And
 Well a new dimension is included and some blocks and other things that i am not enough motivated to tell you here.
 
 SO try it out!
+
+## Are there any Pre-releases?
+Yes there are may Pre-releases and devs-builds out in the Releases Tab on this Github page.
