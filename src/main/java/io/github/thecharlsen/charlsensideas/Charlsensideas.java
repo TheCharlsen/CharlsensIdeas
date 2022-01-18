@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas;
 
 import com.glisco.owo.itemgroup.OwoItemGroup;
 import io.github.thecharlsen.charlsensideas.Blocks.BlockEntitys.DummyDataStorage;
+import io.github.thecharlsen.charlsensideas.Recipe.CharlsensideasRecipes;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasConfiguredFeatures;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasStructureFeature;
 import io.github.thecharlsen.charlsensideas.World.CharlsensideasStructures;
@@ -117,6 +118,7 @@ public class Charlsensideas implements ModInitializer {
         MAIN.initialize();
         TrunkPlacerTypes.init();
         ChidTreeDecoratorTypes.init();
+        CharlsensideasRecipes.init();
 
         LOGGER.info(ANSI_BLACK_BACKGROUND + "[Charlsensideas]: version " + ANSI_YELLOW + VERSION + ANSI_WHITE + ANSI_BLACK_BACKGROUND + " is now initialized");
 

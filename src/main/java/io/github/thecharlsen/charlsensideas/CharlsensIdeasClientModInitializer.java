@@ -4,6 +4,8 @@ import io.github.thecharlsen.charlsensideas.Items.MusicPlayerGuiItem;
 import io.github.thecharlsen.charlsensideas.Models.Entitys.CubeEntityModel;
 import io.github.thecharlsen.charlsensideas.Render.Entitys.CubeEntityRenderer;
 import io.github.thecharlsen.charlsensideas.Render.TenebrisSkyRenderer;
+import io.github.thecharlsen.charlsensideas.Screens.PressScreen;
+import io.github.thecharlsen.charlsensideas.Screens.PressScreenHandler;
 import io.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
 import io.github.waterpicker.openworlds.OpenWorlds;
 import net.fabricmc.api.ClientModInitializer;
@@ -15,6 +17,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
@@ -60,6 +63,8 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Spore, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.debug, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.RingLeaf, RenderLayer.getCutout());
+
+        ScreenRegistry.register(CharlsensideasScreenHandlers.PRESS_SCREEN_HANDLER, PressScreen::new);
 
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "musicplayer"), MUSICPLAYER);
 

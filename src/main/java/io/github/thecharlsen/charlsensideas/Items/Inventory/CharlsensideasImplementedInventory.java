@@ -1,4 +1,4 @@
-package io.github.thecharlsen.charlsensideas;
+package io.github.thecharlsen.charlsensideas.Items.Inventory;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
