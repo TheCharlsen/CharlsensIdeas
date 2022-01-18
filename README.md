@@ -16,4 +16,4 @@ Well a new dimension is included and some blocks and other things that i am not 
 SO try it out!
 
 ## Are there any Pre-releases?
-Yes there are may Pre-releases and devs-builds out in the Releases Tab on this Github page.
+Yes there are many Pre-releases and devs-builds out in the Releases Tab on this Github page.
