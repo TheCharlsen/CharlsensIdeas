@@ -30,9 +30,9 @@ public class PressScreenHandler extends ScreenHandler {
         this.propertyDelegate = delegate;
 
         // Our Slots
-        this.addSlot(new Slot(inventory, 0, 80, 31));
-        this.addSlot(new Slot(inventory, 1, 80, 53));
-        this.addSlot(new Slot(inventory, 2, 123, 42));
+        this.addSlot(new Slot(inventory, 0, 62, 24));
+        this.addSlot(new Slot(inventory, 1, 62, 48));
+        this.addSlot(new Slot(inventory, 2, 107, 36));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -47,13 +47,13 @@ public class PressScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1); // Max Progress
-        int progressArrowSize = 21; // This is the width in pixels of your arrow
+        int progressArrowSize = 25; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     public boolean isNightTime() {
-        return world.isNight();
+        return world.getTimeOfDay() % 24000L > 13000 && world.getTimeOfDay() % 24000L < 24000;
     }
 
     @Override

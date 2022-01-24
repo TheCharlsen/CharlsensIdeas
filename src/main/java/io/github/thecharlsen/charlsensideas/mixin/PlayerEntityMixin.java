@@ -43,7 +43,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
             tickCounter++;
             if ((x > 0) && (tickCounter >= 30)) {
                 tickCounter = 0;
-            if (this.world.getBlockState(this.getBlockPos().down()).getBlock().equals(Blocks.GRASS_BLOCK)) {
+            if (this.world.getBlockState(this.getBlockPos().down()).getBlock().equals(Blocks.SAND)) {
                 world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.ALLIUM.getDefaultState());
                 world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.AZURE_BLUET.getDefaultState());
                 world.setBlockState(this.getBlockPos().add(randomXZ(random), 0, randomXZ(random)), Blocks.DANDELION.getDefaultState());
@@ -61,7 +61,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 world.addParticle(ParticleTypes.HAPPY_VILLAGER, (double) getPos().getX() + randomD(random), (double) getPos().getY() + randomD(random), (double) getPos().getZ() + randomD(random), randomD(random), randomD(random), randomD(random));
                 world.addParticle(ParticleTypes.HAPPY_VILLAGER, (double) getPos().getX() + randomD(random), (double) getPos().getY() + randomD(random), (double) getPos().getZ() + randomD(random), randomD(random), randomD(random), randomD(random));
 
-                System.out.println("Grasssss");
+                System.out.println("i like waffle fries");
                 System.out.println(x);
 
                 }

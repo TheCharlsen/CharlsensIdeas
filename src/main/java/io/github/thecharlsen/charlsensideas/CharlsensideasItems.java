@@ -1,10 +1,12 @@
 package io.github.thecharlsen.charlsensideas;
 
 import com.glisco.owo.itemgroup.OwoItemSettings;
+import io.github.thecharlsen.charlsensideas.Items.CharlsensideasArmorMaterial;
 import io.github.thecharlsen.charlsensideas.Items.FilledJamJarItem;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.MusicDiscItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
@@ -30,6 +32,7 @@ public class CharlsensideasItems {
     public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CharlsensideasEntitys.CUBE, 1238, 2849, new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Meal = new Item(new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Bread = new Item(new Item.Settings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.Ancient_Bread));
+    public static final Item Combat_Helmet = new ArmorItem(CharlsensideasArmorMaterial.COMBAT, EquipmentSlot.HEAD, new OwoItemSettings().group(Charlsensideas.MAIN).tab(4));
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -68,6 +71,7 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cube_spawn_egg"), CUBE_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_meal"), Ancient_Meal);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_bread"), Ancient_Bread);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "combat_helmet"), Combat_Helmet);
 
     }
 }

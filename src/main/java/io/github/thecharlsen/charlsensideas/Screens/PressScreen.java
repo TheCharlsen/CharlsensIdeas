@@ -33,12 +33,12 @@ public class PressScreen extends HandledScreen<PressScreenHandler> {
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         if(handler.isNightTime()) {
-            this.drawTexture(matrices, x + 26, y + 31, 176, 0, 28, 36, 256, 256);
+            this.drawTexture(matrices, x + 8, y + 36, 176, 0, 16, 16, 256, 256);
         }
 
         if(handler.isCrafting()) {
             int progress = handler.getScaledProgress();
-            this.drawTexture(matrices, x + 98, y + 37, 176, 37, progress, 24);
+            this.drawTexture(matrices, x + 80, y + 36, 176, 32, progress, 16);
         }
     }
 

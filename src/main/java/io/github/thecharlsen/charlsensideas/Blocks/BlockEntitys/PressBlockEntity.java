@@ -34,7 +34,7 @@ public class PressBlockEntity extends BlockEntity implements NamedScreenHandlerF
     private int progress = 0;
     // How many ticks it will take to craft the item (divide by twenty to get seconds count)
     // In our case this should be even divisible by 21 as that's our pixel count for our progress arrow
-    private int maxProgress = 420;
+    private int maxProgress = 460;
 
 
     public PressBlockEntity(BlockPos pos, BlockState state) {
@@ -152,14 +152,14 @@ public class PressBlockEntity extends BlockEntity implements NamedScreenHandlerF
         return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
 
-    private static boolean evaluateTime(PressRecipe.Time time, World world) {
+    public static boolean evaluateTime(PressRecipe.Time time, World world) {
         boolean matches = false;
 
-        if(time == PressRecipe.Time.DAY && !world.isNight()) {
+        if(time == PressRecipe.Time.DAY && world.getTimeOfDay() % 24000L < 13000) {
             matches = true;
         }
 
-        if(time == PressRecipe.Time.NIGHT && world.isNight()) {
+        if(time == PressRecipe.Time.NIGHT && world.getTimeOfDay() % 24000L > 13000) {
             matches = true;
         }
 
