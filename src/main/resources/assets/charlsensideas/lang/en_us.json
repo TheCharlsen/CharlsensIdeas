@@ -108,5 +108,7 @@
     "block.charlsensideas.lavender": "Lavender",
     "block.charlsensideas.spore": "Spore",
     "block.charlsensideas.press": "Press",
-    "item.charlsensideas.combat_helmet": "Combat Helmet"
+    "item.charlsensideas.combat_helmet": "Combat Helmet",
+    "item.charlsensideas.cube_spawn_egg": "Cube Spawn Egg",
+    "block.charlsensideas.ring_leaf": "Ringleaf"
 }

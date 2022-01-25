@@ -18,6 +18,8 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
@@ -131,7 +133,7 @@ public class PressBlockEntity extends BlockEntity implements NamedScreenHandlerF
             entity.setStack(2, new ItemStack(match.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1));
 
-            if(!world.isClient() && match.get().getTime() == PressRecipe.Time.NIGHT) {
+            if(!world.isClient() && match.get().getTime() == PressRecipe.Time.NIGHT && match.get().getTime() == PressRecipe.Time.DAY) {
                 EntityType.LIGHTNING_BOLT.spawn((ServerWorld) world, null, null, null, entity.pos,
                         SpawnReason.TRIGGERED, true, true);
             }
