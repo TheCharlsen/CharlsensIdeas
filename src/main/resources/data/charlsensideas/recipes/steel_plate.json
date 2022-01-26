@@ -1,0 +1,15 @@
+{
+  "type": "charlsensideas:press",
+  "daytime": "both",
+  "ingredients": [
+    {
+      "item": "charlsensideas:steel_ingot"
+    },
+    {
+      "item": "charlsensideas:steel_ingot"
+    }
+  ],
+  "output": {
+    "item": "charlsensideas:steel_plate"
+  }
+}

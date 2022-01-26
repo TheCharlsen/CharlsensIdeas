@@ -16,10 +16,11 @@ import java.util.Objects;
 public class PressRecipe implements Recipe<SimpleInventory> {
     public enum Time {
         DAY,
-        NIGHT;
+        NIGHT,
+        BOTH;
 
         public static Time getTimeByString(String s) {
-            return Objects.equals(s, "night") ? NIGHT : Objects.equals(s, "day") ? DAY : DAY;
+            return Objects.equals(s, "night") ? NIGHT : Objects.equals(s, "day") ? DAY : Objects.equals(s, "both") ? BOTH : BOTH;
         }
     }
 

@@ -38,6 +38,11 @@
     "sounds": [
       "charlsensideas:block/portal/tenebris_portal_trigger"
     ]
+  },
+  "item.combat_helmet.wear": {
+    "sounds": [
+      "charlsensideas:item/armor/combat_helmet_wear"
+    ]
   }
 }
 

@@ -14,6 +14,7 @@ public class CharlsensideasSoundEvents {
     public static SoundEvent Block_Tenebris_Portal_Ambient = new SoundEvent(new Identifier("charlsensideas", "block.portal.ambient"));
     public static SoundEvent Block_Tenebris_Portal_Travel = new SoundEvent(new Identifier("charlsensideas", "block.portal.travel"));
     public static SoundEvent Block_Tenebris_Portal_Trigger = new SoundEvent(new Identifier("charlsensideas", "block.portal.trigger"));
+    public static SoundEvent Item_Combat_Helmet_Wear = new SoundEvent(new Identifier("charlsensideas", "item.combat_helmet.wear"));
 
     public static void soundEventsInit(){
 
@@ -22,6 +23,10 @@ public class CharlsensideasSoundEvents {
         Registry.register(Registry.SOUND_EVENT, CharlsensideasIdentifiers.Revenge, Revenge_Sound_Event);
         Registry.register(Registry.SOUND_EVENT, CharlsensideasIdentifiers.Da_Coconut_nut, Da_Coconut_nut_Sound_Event);
         Registry.register(Registry.SOUND_EVENT, CharlsensideasIdentifiers.ADRIAN_BLOCK_SOUND, Adrian_Sound_Event);
+        Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "block.portal.ambient"), Block_Tenebris_Portal_Ambient);
+        Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "block.portal.travel"), Block_Tenebris_Portal_Travel);
+        Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "block.portal.trigger"), Block_Tenebris_Portal_Trigger);
+        Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "item.combat_helmet.wear"), Item_Combat_Helmet_Wear);
 
     }
 }

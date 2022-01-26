@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas;
 
 import com.glisco.owo.itemgroup.OwoItemSettings;
 import io.github.thecharlsen.charlsensideas.Items.CharlsensideasArmorMaterial;
+import io.github.thecharlsen.charlsensideas.Items.EntityEggItem;
 import io.github.thecharlsen.charlsensideas.Items.FilledJamJarItem;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.MusicDiscItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -29,10 +30,14 @@ public class CharlsensideasItems {
     public static Item Pompon;
     public static final Item Jar = new Item(new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Alpine_Strawberry_Jam_Jar = new FilledJamJarItem(new Item.Settings().group(Charlsensideas.MAIN));
-    public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CharlsensideasEntitys.CUBE, 1238, 2849, new Item.Settings().group(Charlsensideas.MAIN));
+    public static final Item CUBE_SPAWN_EGG = new EntityEggItem(CharlsensideasEntitys.CUBE, new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Meal = new Item(new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Bread = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.Ancient_Bread).tab(5));
     public static final Item Combat_Helmet = new ArmorItem(CharlsensideasArmorMaterial.COMBAT, EquipmentSlot.HEAD, new OwoItemSettings().group(Charlsensideas.MAIN).tab(3));
+    public static final Item Steel_Plate = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
+    public static final Item Plastic_Plate = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
+    public static final Item Plastic_Granules = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
+    public static final Item Steel_Ingot = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(4));
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -72,6 +77,11 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_meal"), Ancient_Meal);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_bread"), Ancient_Bread);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "combat_helmet"), Combat_Helmet);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "steel_plate"), Steel_Plate);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_plate"), Plastic_Plate);
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_granules"), Plastic_Granules);
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "steel_ingot"), Steel_Ingot);
+
 
     }
 }

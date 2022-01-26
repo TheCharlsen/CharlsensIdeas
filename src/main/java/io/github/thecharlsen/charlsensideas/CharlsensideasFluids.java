@@ -25,7 +25,6 @@ public class CharlsensideasFluids {
         Still_Weird_Water = Registry.register(Registry.FLUID, new Identifier("charlsensideas", "still_weird_water"), new WeirdWater.Still());
         Flowing_Weird_Water =  Registry.register(Registry.FLUID, new Identifier("charlsensideas", "flowing_weird_water"), new WeirdWater.Flowing());
         CharlsensideasBlocks.Weird_Water = Registry.register(Registry.BLOCK, new Identifier("charlsensideas","weird_water_block"), new FluidBlocks(Still_Weird_Water, FabricBlockSettings.copy(Blocks.WATER)));
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "weird_water_block"), new BlockItem(CharlsensideasBlocks.Weird_Water, new Item.Settings()));
         Bucket_Of_Weird_Water = Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bucket_of_weird_water"), new BucketItem(Still_Weird_Water, new OwoItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(Charlsensideas.MAIN).tab(0)));
 
     }

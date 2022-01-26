@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "charlsensideas:item/plastic_plate"
+  }
+}

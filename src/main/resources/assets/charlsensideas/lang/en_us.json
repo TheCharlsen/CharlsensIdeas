@@ -110,5 +110,10 @@
     "block.charlsensideas.press": "Press",
     "item.charlsensideas.combat_helmet": "Combat Helmet",
     "item.charlsensideas.cube_spawn_egg": "Cube Spawn Egg",
-    "block.charlsensideas.ring_leaf": "Ringleaf"
+    "block.charlsensideas.ring_leaf": "Ringleaf",
+    "item.charlsensideas.steel_plate": "Steel Plate",
+    "item.charlsensideas.plastic_plate": "Plastic Plate",
+    "item.charlsensideas.plastic_granules": "Plastic Granules",
+    "block.charlsensideas.steel_ore": "Steel Ore",
+    "item.charlsensideas.steel_ingot": "Steel Ingot"
 }

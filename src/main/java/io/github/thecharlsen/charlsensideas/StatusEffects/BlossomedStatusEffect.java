@@ -1,11 +1,11 @@
 package io.github.thecharlsen.charlsensideas.StatusEffects;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectType;
+import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class BlossomedStatusEffect extends StatusEffect {
     public BlossomedStatusEffect() {
-        super(StatusEffectType.BENEFICIAL, 0x98D982);
+        super(StatusEffectCategory.BENEFICIAL, 0x98D982);
     }
 
     @Override

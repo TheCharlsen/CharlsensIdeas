@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas.Items;
 
 import io.github.thecharlsen.charlsensideas.Charlsensideas;
 import io.github.thecharlsen.charlsensideas.CharlsensideasItems;
+import io.github.thecharlsen.charlsensideas.CharlsensideasSoundEvents;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemConvertible;
@@ -14,8 +15,8 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum CharlsensideasArmorMaterial implements ArmorMaterial {
-    COMBAT("combat", 30, new int[]{6, 5, 6, 2}, 9, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 3.0F, 0.1F, () -> {
-        return Ingredient.ofItems(CharlsensideasItems.Black_Tourmaline_Gem);
+    COMBAT("combat", 30, new int[]{6, 5, 6, 2}, 9, CharlsensideasSoundEvents.Item_Combat_Helmet_Wear, 3.0F, 0.1F, () -> {
+        return Ingredient.ofItems(CharlsensideasItems.Steel_Plate, CharlsensideasItems.Plastic_Plate);
     });
 
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};

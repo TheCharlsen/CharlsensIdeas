@@ -165,6 +165,10 @@ public class PressBlockEntity extends BlockEntity implements NamedScreenHandlerF
             matches = true;
         }
 
+        if(time == PressRecipe.Time.BOTH && world.getTimeOfDay() % 24000L >= 0) {
+            matches = true;
+        }
+
         return matches;
     }
 }

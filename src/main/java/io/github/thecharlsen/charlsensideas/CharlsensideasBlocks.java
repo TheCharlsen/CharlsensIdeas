@@ -71,6 +71,7 @@ public class CharlsensideasBlocks {
     public static final Block RingLeaf = new RingLeafBlock(FabricBlockSettings.of(Material.PLANT).strength(0.01F).sounds(BlockSoundGroup.BIG_DRIPLEAF));
     public static final Block RingLeafStem = new RingLeafStemBlock(FabricBlockSettings.of(Material.PLANT).strength(0.01F).sounds(BlockSoundGroup.BIG_DRIPLEAF));
     public static final Block Press = new PressBlock(FabricBlockSettings.of(Material.METAL));
+    public static final Block Steel_Ore = new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(3F, 2F));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -126,6 +127,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ring_leaf"), RingLeaf);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ring_leaf_stem"), RingLeafStem);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "press"), Press);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "steel_ore"), Steel_Ore);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -170,8 +172,9 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "lavender"), new BlockItem(CharlsensideasBlocks.Lavender, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "spore"), new BlockItem(CharlsensideasBlocks.Spore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "debug"), new BlockItem(CharlsensideasBlocks.debug, new OwoItemSettings().maxCount(1000)));
-        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "tenebris_portal"), new BlockItem(CharlsensideasBlocks.TenebrisPortal, new OwoItemSettings().maxCount(16)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "ring_leaf"), new BlockItem(CharlsensideasBlocks.RingLeaf, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "press"), new BlockItem(CharlsensideasBlocks.Press, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "steel_ore"), new BlockItem(CharlsensideasBlocks.Steel_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+
     }
 }
