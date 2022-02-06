@@ -28,6 +28,10 @@
       "y": 90,
       "model": "charlsensideas:block/ringleaf_underestimated_height"
     },
+    "facing=east,tilt=understable": {
+      "y": 90,
+      "model": "charlsensideas:block/ringleaf_understable_height"
+    },
     "facing=north,tilt=full": {
       "model": "charlsensideas:block/ringleaf_least_height"
     },
@@ -40,8 +44,17 @@
     "facing=north,tilt=unstable": {
       "model": "charlsensideas:block/ringleaf"
     },
-    "facing=north,tilt_unpartial": {
+    "facing=north,tilt=unpartial": {
       "model": "charlsensideas:block/ringleaf_unpartial_height"
+    },
+    "facing=north,tilt=unacceptable": {
+      "model": "charlsensideas:block/ringleaf_unacceptable_height"
+    },
+    "facing=north,tilt=underestimated": {
+      "model": "charlsensideas:block/ringleaf_underestimated_height"
+    },
+    "facing=north,tilt=understable": {
+      "model": "charlsensideas:block/ringleaf_understable_height"
     },
     "facing=south,tilt=full": {
       "y": 180,
@@ -59,6 +72,22 @@
       "y": 180,
       "model": "charlsensideas:block/ringleaf"
     },
+    "facing=south,tilt=unpartial": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_unpartial_height"
+    },
+    "facing=south,tilt=unacceptable": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_unacceptable_height"
+    },
+    "facing=south,tilt=underestimated": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_underestimated_height"
+    },
+    "facing=south,tilt=understable": {
+      "y": 180,
+      "model": "charlsensideas:block/ringleaf_understable_height"
+    },
     "facing=west,tilt=full": {
       "y": 270,
       "model": "charlsensideas:block/ringleaf_least_height"
@@ -74,6 +103,22 @@
     "facing=west,tilt=unstable": {
       "y": 270,
       "model": "charlsensideas:block/ringleaf"
+    },
+    "facing=west,tilt=unpartial": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_unpartial_height"
+    },
+    "facing=west,tilt=unacceptable": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_unacceptable_height"
+    },
+    "facing=west,tilt=underestimated": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_underestimated_height"
+    },
+    "facing=west,tilt=understable": {
+      "y": 270,
+      "model": "charlsensideas:block/ringleaf_understable_height"
     }
   }
 }

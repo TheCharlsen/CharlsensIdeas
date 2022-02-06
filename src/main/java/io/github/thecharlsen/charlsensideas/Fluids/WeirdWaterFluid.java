@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas.Fluids;
 
 import io.github.thecharlsen.charlsensideas.CharlsensideasBlocks;
 import io.github.thecharlsen.charlsensideas.CharlsensideasFluids;
+import io.github.thecharlsen.charlsensideas.CharlsensideasItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

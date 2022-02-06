@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "charlsensideas:block/nightshade_age0"
+    },
+    "age=1": {
+      "model": "charlsensideas:block/nightshade_age1"
+    }
+  }
+}

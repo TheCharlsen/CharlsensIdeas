@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "colors": {
+    "redstone_torch": "#ff3333",
+    "sea_pickle": "#734B5E",
+    "glowstone": "#0F1020",
+    "cave_vines_plant": "#2F195F",
+    "charlsensideas:nightshade": "#0F1020"
+  }
+}

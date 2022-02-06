@@ -40,24 +40,6 @@ import java.util.Map;
 
 public class Charlsensideas implements ModInitializer {
 
-/*
-    @Override
-    public @NotNull String getVersion() {
-        return metadata.getVersion().getFriendlyString();
-    }
-
-    public @NotNull String getPrefixedVersion() {
-        String version = getVersion().trim();
-        if (version.startsWith("version")) {
-            version = "v" + version.substring("version".length());
-        } else if (version.startsWith("ver")) {
-            version = "v" + version.substring("ver".length());
-        } else if (!version.startsWith("v")) {
-            version = "v" + version;
-        }
-        return version.trim();
-    }*/
-
     public static final String MOD_ID = "charlsensideas";
     public static final String VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).get().getMetadata().getVersion().toString(); //year/build/day/month
     public static final OwoItemGroup MAIN = new CharlsensideasItemGroup(RegistryHelper.id("main"));
@@ -119,6 +101,7 @@ public class Charlsensideas implements ModInitializer {
         TrunkPlacerTypes.init();
         ChidTreeDecoratorTypes.init();
         CharlsensideasRecipes.init();
+        CharlsensideasParticleTypes.init();
 
         LOGGER.info(ANSI_BLACK_BACKGROUND + "[Charlsensideas]: version " + ANSI_YELLOW + VERSION + ANSI_WHITE + ANSI_BLACK_BACKGROUND + " is now initialized");
 

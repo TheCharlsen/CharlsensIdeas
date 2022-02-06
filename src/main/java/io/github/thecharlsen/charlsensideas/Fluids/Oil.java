@@ -10,30 +10,29 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 
-public class WeirdWater extends WeirdWaterFluid{
-
+public class Oil extends OilFluid {
     @Override
     public Fluid getStill() {
-        return CharlsensideasFluids.Still_Weird_Water;
+        return CharlsensideasFluids.Still_Oil;
     }
 
     @Override
     public Fluid getFlowing() {
-        return CharlsensideasFluids.Flowing_Weird_Water;
+        return CharlsensideasFluids.Flowing_Oil;
     }
 
     @Override
     public Item getBucketItem() {
-        return CharlsensideasFluids.Bucket_Of_Weird_Water;
+        return CharlsensideasFluids.Bucket_Of_Oil;
     }
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         // method_15741 converts the LEVEL_1_8 of the fluid state to the LEVEL_15 the fluid block uses
-        return CharlsensideasBlocks.Weird_Water.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
+        return CharlsensideasBlocks.Oil.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
     }
 
-    public static class Flowing extends WeirdWater{
+    public static class Flowing extends Oil {
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
@@ -51,7 +50,7 @@ public class WeirdWater extends WeirdWaterFluid{
         }
     }
 
-    public static class Still extends WeirdWater {
+    public static class Still extends Oil {
         @Override
         public int getLevel(FluidState fluidState) {
             return 8;

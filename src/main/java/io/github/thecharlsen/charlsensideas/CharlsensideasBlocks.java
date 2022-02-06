@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas;
 
 import com.glisco.owo.itemgroup.OwoItemSettings;
 import io.github.thecharlsen.charlsensideas.Blocks.*;
+import io.github.thecharlsen.charlsensideas.Blocks.Interfaces.NightShade;
 import io.github.thecharlsen.charlsensideas.Generators.PineTreeGenerator;
 import io.github.thecharlsen.charlsensideas.Generators.UmbraTreeGenerator;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.CakeBlocks;
@@ -25,7 +26,7 @@ public class CharlsensideasBlocks {
     public static final Block MuddedDirt = new Block(FabricBlockSettings.of(Material.SOIL).strength(1F, 1F).sounds(BlockSoundGroup.GRAVEL));
     public static final Block HardenedMuddedDirt = new Block(FabricBlockSettings.of(Material.STONE).strength(2F, 2F).sounds(BlockSoundGroup.STONE));
     public static final Block Bornite_Ore = new BorniteOreBlock(FabricBlockSettings.of(Material.STONE).strength(1F, 1F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().luminance((state) -> { return 15;}));
-    public static final Block Adrian_Block = new Block(FabricBlockSettings.of(Material.CAKE).strength(5F, 5F).sounds(CharlsensideasBlockSoundGroup.ADRIAN_BLOCK).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
+    public static final Block Adrian_Block = new Block(FabricBlockSettings.of(Material.CAKE).strength(5F, 5F).sounds(CharlsensideasBlockSoundGroup.ADRIAN_BLOCK).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().nonOpaque());
     public static final Block Charlie_Block = new Block(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
     public static final Block Julian_Block = new Block(FabricBlockSettings.of(Material.PISTON).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
     public static final Block Emil_Block = new Block(FabricBlockSettings.of(Material.CACTUS).strength(5F, 5F).sounds(BlockSoundGroup.METAL).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool());
@@ -72,6 +73,9 @@ public class CharlsensideasBlocks {
     public static final Block RingLeafStem = new RingLeafStemBlock(FabricBlockSettings.of(Material.PLANT).strength(0.01F).sounds(BlockSoundGroup.BIG_DRIPLEAF));
     public static final Block Press = new PressBlock(FabricBlockSettings.of(Material.METAL));
     public static final Block Steel_Ore = new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(3F, 2F));
+    public static Block Oil;
+    public static final Block NightShadeBlock = new NightShadeBlock(FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.MOSS_BLOCK).strength(0.5F, 0.5F).nonOpaque().noCollision().ticksRandomly().luminance(NightShade.getLuminanceSupplier(12)));
+    public static final Block ClayStone = new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(3.5F, 4F));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -124,10 +128,12 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "spore"), Spore);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "debug"), debug);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "tenebris_portal"), TenebrisPortal);
-        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ring_leaf"), RingLeaf);
-        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ring_leaf_stem"), RingLeafStem);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ringleaf"), RingLeaf);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "ringleaf_stem"), RingLeafStem);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "press"), Press);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "steel_ore"), Steel_Ore);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "nightshade"), NightShadeBlock);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "clay_stone"), ClayStone);
 
         //BlockItems
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -175,6 +181,8 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "ring_leaf"), new BlockItem(CharlsensideasBlocks.RingLeaf, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "press"), new BlockItem(CharlsensideasBlocks.Press, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "steel_ore"), new BlockItem(CharlsensideasBlocks.Steel_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "nightshade"), new BlockItem(CharlsensideasBlocks.NightShadeBlock, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "clay_stone"), new BlockItem(CharlsensideasBlocks.ClayStone, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
     }
 }

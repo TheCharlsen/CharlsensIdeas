@@ -15,6 +15,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
+import static io.github.thecharlsen.charlsensideas.CharlsensideasFluids.Still_Oil;
+import static io.github.thecharlsen.charlsensideas.CharlsensideasFluids.Still_Weird_Water;
+
 public class CharlsensideasItems {
 
     public static final Item Secure_Chest_Module = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
@@ -81,7 +84,5 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_plate"), Plastic_Plate);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_granules"), Plastic_Granules);
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "steel_ingot"), Steel_Ingot);
-
-
     }
 }

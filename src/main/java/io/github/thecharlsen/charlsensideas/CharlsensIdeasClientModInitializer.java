@@ -50,6 +50,7 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
 
     @Override
     public void onInitializeClient() {
+        CharlsensideasParticleTypes.initClient();
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.PineSapling, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Pompon, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.CloudBlock, RenderLayer.getTranslucent());
@@ -62,6 +63,9 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Spore, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.debug, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.RingLeaf, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.RingLeafStem, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Press, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.NightShadeBlock, RenderLayer.getTranslucent());
 
         ScreenRegistry.register(CharlsensideasScreenHandlers.PRESS_SCREEN_HANDLER, PressScreen::new);
 
@@ -99,14 +103,18 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
                         ? BiomeColors.getFoliageColor(view, pos)
                         : FoliageColors.getDefaultColor(), CharlsensideasBlocks.Umbra_Leaves);
 
-        //Weird Water
+
         setupFluidRendering(CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water, new Identifier("charlsensideas", "weird_water"), 0x2f6854 );
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Weird_Water, CharlsensideasFluids.Flowing_Weird_Water);
 
-        // ...
+        setupFluidRendering(CharlsensideasFluids.Still_Oil, CharlsensideasFluids.Flowing_Oil, new Identifier("charlsensideas", "oil"), 0x0a0a0a);
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Oil, CharlsensideasFluids.Flowing_Oil);
+
     }
 
+
     public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color) {
+
         final Identifier stillSpriteId = new Identifier(textureFluidId.getNamespace(), "block/" + textureFluidId.getPath() + "_still");
         final Identifier flowingSpriteId = new Identifier(textureFluidId.getNamespace(), "block/" + textureFluidId.getPath() + "_flow");
 
@@ -155,6 +163,4 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         FluidRenderHandlerRegistry.INSTANCE.register(still, renderHandler);
         FluidRenderHandlerRegistry.INSTANCE.register(flowing, renderHandler);
     }
-
-
 }

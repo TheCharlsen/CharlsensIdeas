@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "charlsensideas:block/ringleaf_stem",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "charlsensideas:block/ringleaf_stem"
+    },
+    "facing=south": {
+      "model": "charlsensideas:block/ringleaf_stem",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "charlsensideas:block/ringleaf_stem",
+      "y": 270
+    }
+  }
+}

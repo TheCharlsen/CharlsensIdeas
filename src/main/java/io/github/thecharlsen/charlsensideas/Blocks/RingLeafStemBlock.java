@@ -57,7 +57,7 @@ public class RingLeafStemBlock extends HorizontalFacingBlock implements Fertiliz
         BlockPos blockPos = pos.down();
         BlockState blockState = world.getBlockState(blockPos);
         BlockState blockState2 = world.getBlockState(pos.up());
-        return (blockState.isOf(this) || blockState.isSideSolidFullSquare(world, blockPos, Direction.UP)) && (blockState2.isOf(this) || blockState2.isOf(Blocks.BIG_DRIPLEAF));
+        return (blockState.isOf(this) || blockState.isSideSolidFullSquare(world, blockPos, Direction.UP)) && (blockState2.isOf(this) || blockState2.isOf(CharlsensideasBlocks.RingLeaf));
     }
 
     protected static boolean placeStemAt(WorldAccess world, BlockPos pos, FluidState fluidState, Direction direction) {
@@ -111,14 +111,14 @@ public class RingLeafStemBlock extends HorizontalFacingBlock implements Fertiliz
     }
 
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(Blocks.BIG_DRIPLEAF);
+        return new ItemStack(CharlsensideasBlocks.RingLeaf);
     }
 
     static {
         WATERLOGGED = Properties.WATERLOGGED;
-        NORTH_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 9.0D, 11.0D, 16.0D, 15.0D);
-        SOUTH_SHAPE = Block.createCuboidShape(5.0D, 0.0D, 1.0D, 11.0D, 16.0D, 7.0D);
+        NORTH_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
+        SOUTH_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
         EAST_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
-        WEST_SHAPE = Block.createCuboidShape(9.0D, 0.0D, 5.0D, 15.0D, 16.0D, 11.0D);
+        WEST_SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D);
     }
 }
