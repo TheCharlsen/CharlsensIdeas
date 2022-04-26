@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
@@ -27,22 +28,23 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class NightShadeBlock extends HorizontalFacingPlantBlock implements Fertilizable {
+public class NightShadeBlock extends HorizontalFacingPlantBlock implements Fertilizable, Waterloggable {
     private static final float field_31260 = 0.003F;
     public static final int MAX_AGE = 1;
     public static final IntProperty AGE;
     private static final VoxelShape GROWN_SHAPE;
     private static final VoxelShape NOT_GROWN_SHAPE;
     private static final BooleanProperty WATERLOGGED;
+    private static final DirectionProperty FACING;
 
     public NightShadeBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0).with(WATERLOGGED, false).with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0).with(WATERLOGGED, false).with(FACING, Direction.NORTH));
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
 
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
@@ -103,7 +105,7 @@ public class NightShadeBlock extends HorizontalFacingPlantBlock implements Ferti
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AGE, WATERLOGGED, Properties.HORIZONTAL_FACING);
+        builder.add(AGE, WATERLOGGED, FACING);
     }
 
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
@@ -124,5 +126,6 @@ public class NightShadeBlock extends HorizontalFacingPlantBlock implements Ferti
         GROWN_SHAPE = VoxelShapes.union(Block.createCuboidShape(1.0D, 6.5D, 1.0D, 15.0D, 13.0D, 15.0D), Block.createCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 8.0D, 9.0D));
         NOT_GROWN_SHAPE = VoxelShapes.union(Block.createCuboidShape(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.createCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 8.0D, 10.0D));
         WATERLOGGED = Properties.WATERLOGGED;
+        FACING = Properties.HORIZONTAL_FACING;
     }
 }

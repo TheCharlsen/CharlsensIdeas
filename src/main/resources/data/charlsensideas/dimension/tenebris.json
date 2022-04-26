@@ -5,21 +5,18 @@
     "seed": 0,
     "settings": {
       "name": "charlsensideas:tenebris",
-      "bedrock_roof_position": -33,
-      "bedrock_floor_position": -33,
-      "sea_level": -33,
-      "min_surface_level": -33,
+      "bedrock_roof_position": 10000,
+      "bedrock_floor_position": -10,
+      "sea_level": 0,
+      "min_surface_level": 0,
       "disable_mob_generation": false,
       "noise_caves_enabled": false,
       "noodle_caves_enabled": false,
       "aquifers_enabled": false,
       "deepslate_enabled": false,
-      "ore_veins_enabled": true,
+      "ore_veins_enabled": false,
       "default_block": {
-        "Name": "charlsensideas:cobbled_black_tourmaline_stone",
-        "Properties": {
-          "dirtotp": "false"
-        }
+        "Name": "minecraft:stone"
       },
       "default_fluid": {
         "Name": "charlsensideas:weird_water",
@@ -28,7 +25,7 @@
         }
       },
       "noise": {
-        "min_y": -32,
+        "min_y": 0,
         "height": 288,
         "density_factor": 1,
         "density_offset": -0.46875,
@@ -132,7 +129,7 @@
           }
         },
         {
-          "biome": "charlsensideas:clay_mountain",
+          "biome": "charlsensideas:clay_mountains_ce",
           "parameters": {
             "altitude": 0,
             "temperature": 0.1,

@@ -1,68 +1,68 @@
 {
   "variants": {
-    "age=0, facing=north, waterlogged=false": {
+    "age=0,facing=north,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age0",
-      "uvlock": true
+      "uvlock": false
     },
-    "age=1, facing=north, waterlogged=false": {
+    "age=1,facing=north,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age1",
-      "uvlock": true
+      "uvlock": false
     },
-    "age=0, facing=east, waterlogged=false": {
+    "age=0,facing=east,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y":  90, "uvlock": true
+      "y":  90, "uvlock": false
     },
-    "age=1, facing=east, waterlogged=false": {
+    "age=1,facing=east,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y":  90, "uvlock": true
+      "y":  90, "uvlock": false
     },
-    "age=0, facing=south, waterlogged=false": {
+    "age=0,facing=south,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y": 180, "uvlock": true
+      "y": 180, "uvlock": false
     },
-    "age=1, facing=south, waterlogged=false": {
+    "age=1,facing=south,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y": 180, "uvlock": true
+      "y": 180, "uvlock": false
     },
-    "age=0, facing=west, waterlogged=false": {
+    "age=0,facing=west,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y": 270, "uvlock": true
+      "y": 270, "uvlock": false
     },
-    "age=1, facing=west, waterlogged=false": {
+    "age=1,facing=west,waterlogged=false": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y": 270, "uvlock": true
+      "y": 270, "uvlock": false
     },
-    "age=0, facing=north, waterlogged=true": {
+    "age=0,facing=north,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age0",
-      "uvlock": true
+      "uvlock": false
     },
-    "age=1, facing=north, waterlogged=true": {
+    "age=1,facing=north,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age1",
-      "uvlock": true
+      "uvlock": false
     },
-    "age=0, facing=east, waterlogged=true": {
+    "age=0,facing=east,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y":  90, "uvlock": true
+      "y":  90, "uvlock": false
     },
-    "age=1, facing=east, waterlogged=true": {
+    "age=1,facing=east,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y":  90, "uvlock": true
+      "y":  90, "uvlock": false
     },
-    "age=0, facing=south, waterlogged=true": {
+    "age=0,facing=south,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y": 180, "uvlock": true
+      "y": 180, "uvlock": false
     },
-    "age=1, facing=south, waterlogged=true": {
+    "age=1,facing=south,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y": 180, "uvlock": true
+      "y": 180, "uvlock": false
     },
-    "age=0, facing=west, waterlogged=true": {
+    "age=0,facing=west,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age0",
-      "y": 270, "uvlock": true
+      "y": 270, "uvlock": false
     },
-    "age=1, facing=west, waterlogged=true": {
+    "age=1,facing=west,waterlogged=true": {
       "model": "charlsensideas:block/nightshade_age1",
-      "y": 270, "uvlock": true
+      "y": 270, "uvlock": false
     }
   }
 }

@@ -7,6 +7,12 @@
     "water_fog_color": 329011,
     "grass_color": 10463365,
     "foliage_color": 10792816,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    },
     "particle": {
       "options": {
         "type": "cloud"
@@ -17,8 +23,7 @@
   "surface_builder": "charlsensideas:umbra_forest_surface_builder",
   "carvers": {
     "air": [
-      "minecraft:prototype_cave",
-      "minecraft:prototype_canyon"
+      "charlsensideas:clay_mountains_basic_extra"
     ]
   },
   "features": [
@@ -209,6 +214,6 @@
   "precipitation": "snow",
   "temperature": 0.3,
   "downfall": 0.6,
-  "category": "extreme_hills",
+  "category": "plains",
   "depth": 1
 }

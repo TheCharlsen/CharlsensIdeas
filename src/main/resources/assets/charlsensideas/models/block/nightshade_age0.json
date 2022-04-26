@@ -2,7 +2,7 @@
   "credit": "Made with Blockbench",
   "textures": {
     "0": "charlsensideas:block/nightshade",
-    "particle": "charlsensideas:block/nightshade_berry"
+    "particle": "charlsensideas:block/nightshade"
   },
   "elements": [
     {
