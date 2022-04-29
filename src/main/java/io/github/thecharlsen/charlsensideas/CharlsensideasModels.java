@@ -1,7 +1,7 @@
 package io.github.thecharlsen.charlsensideas;
 
-import net.minecraft.data.client.model.Model;
-import net.minecraft.data.client.model.TextureKey;
+import net.minecraft.data.client.Model;
+import net.minecraft.data.client.TextureKey;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;

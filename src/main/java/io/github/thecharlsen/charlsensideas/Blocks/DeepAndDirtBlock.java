@@ -30,7 +30,7 @@ public class DeepAndDirtBlock extends Block {
     }
 
     private static boolean isDirt(BlockState state) {
-        return state.isIn(CharlsensideasBlockTags.Dirtotp);
+        return state.isIn(CharlsensideasBlockTags.Blocks.Dirtotp);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

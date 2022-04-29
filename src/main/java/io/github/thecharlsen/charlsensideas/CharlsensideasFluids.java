@@ -1,9 +1,9 @@
 package io.github.thecharlsen.charlsensideas;
 
-import com.glisco.owo.itemgroup.OwoItemSettings;
 import io.github.thecharlsen.charlsensideas.Fluids.Oil;
 import io.github.thecharlsen.charlsensideas.Fluids.WeirdWater;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.FluidBlocks;
+import io.wispforest.owo.itemgroup.OwoItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Blocks;
 import net.minecraft.fluid.FlowableFluid;
@@ -29,12 +29,12 @@ public class CharlsensideasFluids {
         Still_Weird_Water = Registry.register(Registry.FLUID, new Identifier("charlsensideas", "still_weird_water"), new WeirdWater.Still());
         Flowing_Weird_Water =  Registry.register(Registry.FLUID, new Identifier("charlsensideas", "flowing_weird_water"), new WeirdWater.Flowing());
         CharlsensideasBlocks.Weird_Water = Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "weird_water_block"), new FluidBlocks(Still_Weird_Water, FabricBlockSettings.copy(Blocks.WATER)));
-        Bucket_Of_Weird_Water = Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bucket_of_weird_water"), new BucketItem(Still_Weird_Water, new OwoItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(Charlsensideas.MAIN).tab(0)));
+        Bucket_Of_Weird_Water = Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bucket_of_weird_water"), new BucketItem(Still_Weird_Water, new OwoItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0)));
 
         Still_Oil = Registry.register(Registry.FLUID, new Identifier(Charlsensideas.MOD_ID, "still_oil"), new Oil.Still());
         Flowing_Oil = Registry.register(Registry.FLUID, new Identifier(Charlsensideas.MOD_ID, "flowing_oil"), new Oil.Flowing());
         CharlsensideasBlocks.Oil = Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "oil_block"), new FluidBlocks(Still_Oil, FabricBlockSettings.copy(Blocks.WATER)));
-        Bucket_Of_Oil = Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bucket_of_oil"), new BucketItem(Still_Oil, new OwoItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(Charlsensideas.MAIN).tab(0)));
+        Bucket_Of_Oil = Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bucket_of_oil"), new BucketItem(Still_Oil, new OwoItemSettings().recipeRemainder(Items.BUCKET).maxCount(1).group(Charlsensideas.CHARLSENSIDEAS_ITG).tab(0)));
 
     }
 }

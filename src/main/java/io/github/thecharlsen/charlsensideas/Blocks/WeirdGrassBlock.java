@@ -6,13 +6,13 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.FlowerFeature;
+import net.minecraft.world.gen.feature.*;
 
 import java.util.List;
 import java.util.Random;
@@ -67,18 +67,18 @@ public class WeirdGrassBlock extends SpreadableBlock implements Fertilizable {
         }
     }
 
-            public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         BlockPos blockPos = pos.up();
         BlockState blockState = Blocks.GRASS.getDefaultState();
 
-        label48:
+        label46:
         for(int i = 0; i < 128; ++i) {
             BlockPos blockPos2 = blockPos;
 
             for(int j = 0; j < i / 16; ++j) {
                 blockPos2 = blockPos2.add(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
                 if (!world.getBlockState(blockPos2.down()).isOf(this) || world.getBlockState(blockPos2).isFullCube(world, blockPos2)) {
-                    continue label48;
+                    continue label46;
                 }
             }
 
@@ -88,29 +88,21 @@ public class WeirdGrassBlock extends SpreadableBlock implements Fertilizable {
             }
 
             if (blockState2.isAir()) {
-                BlockState blockState4;
+                RegistryEntry registryEntry;
                 if (random.nextInt(8) == 0) {
-                    List<ConfiguredFeature<?, ?>> list = world.getBiome(blockPos2).getGenerationSettings().getFlowerFeatures();
+                    List<ConfiguredFeature<?, ?>> list = ((Biome)world.getBiome(blockPos2).value()).getGenerationSettings().getFlowerFeatures();
                     if (list.isEmpty()) {
                         continue;
                     }
 
-                    blockState4 = getFlowerState(random, blockPos2, (ConfiguredFeature)list.get(0));
+                    registryEntry = ((RandomPatchFeatureConfig)((ConfiguredFeature)list.get(0)).config()).feature();
                 } else {
-                    blockState4 = blockState;
+                    registryEntry = VegetationPlacedFeatures.GRASS_BONEMEAL;
                 }
 
-                if (blockState4.canPlaceAt(world, blockPos2)) {
-                    world.setBlockState(blockPos2, blockState4, 3);
-                }
+                ((PlacedFeature)registryEntry.value()).generateUnregistered(world, world.getChunkManager().getChunkGenerator(), random, blockPos2);
             }
         }
 
     }
-
-    private static <U extends FeatureConfig> BlockState getFlowerState(Random random, BlockPos pos, ConfiguredFeature<U, ?> flowerFeature) {
-        FlowerFeature<U> flowerFeature2 = (FlowerFeature)flowerFeature.feature;
-        return flowerFeature2.getFlowerState(random, pos, flowerFeature.getConfig());
-    }
 }
-

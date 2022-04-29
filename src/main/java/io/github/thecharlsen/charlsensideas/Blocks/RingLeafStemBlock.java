@@ -67,11 +67,11 @@ public class RingLeafStemBlock extends HorizontalFacingBlock implements Fertiliz
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if ((direction == Direction.DOWN || direction == Direction.UP) && !state.canPlaceAt(world, pos)) {
-            world.getBlockTickScheduler().schedule(pos, this, 1);
+            world.getBlockTickScheduler().isTicking(pos, this);
         }
 
         if (state.get(WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.getFluidTickScheduler().isTicking(pos, Fluids.WATER);
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);

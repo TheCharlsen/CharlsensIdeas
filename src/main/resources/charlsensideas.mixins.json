@@ -5,12 +5,9 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "AxeItemMixin",
-    "BiomeLayerSamplerAccessor",
     "CanBreatheInDimension",
     "CatEntityRendererMixin",
-    "LayerAccessor",
     "PlayerEntityMixin",
-    "StructuresConfigAccessor",
     "TreeDecoratorTypeInvoker"
   ],
   "client": [

@@ -118,7 +118,7 @@ public class RingLeafBlock extends HorizontalFacingBlock implements Fertilizable
             return Blocks.AIR.getDefaultState();
         } else {
             if (state.get(WATERLOGGED)) {
-                world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+                world.getFluidTickScheduler().isTicking(pos, Fluids.WATER);
             }
 
             return direction == Direction.UP && neighborState.isOf(this) ? CharlsensideasBlocks.RingLeafStem.getStateWithProperties(state) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -229,7 +229,7 @@ public class RingLeafBlock extends HorizontalFacingBlock implements Fertilizable
 
         int i = NEXT_TILT_DELAYS.getInt(tilt);
         if (i != -1) {
-            world.getBlockTickScheduler().schedule(pos, this, i);
+            world.getBlockTickScheduler().isTicking(pos, this);
         }
 
     }

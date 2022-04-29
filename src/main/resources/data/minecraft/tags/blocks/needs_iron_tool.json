@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "charlsensideas:bornite_ore",
+    "charlsensideas:black_tourmaline_stone",
+    "charlsensideas:umbra_log",
+    "charlsensideas:weirdly_black_tourmaline_stone",
+    "charlsensideas:cobbled_black_tourmaline_stone",
+    "charlsensideas:chiseled_black_tourmaline_stone",
+    "charlsensideas:black_tourmaline_stone_bricks",
+    "charlsensideas:cracked_black_tourmaline_stone_bricks",
+    "charlsensideas:polished_black_tourmaline_stone",
+    "charlsensideas:black_tourmaline_stone_pillar",
+    "charlsensideas:cobbled_black_tourmaline_stone_slab",
+    "charlsensideas:polished_black_tourmaline_stone_slab",
+    "charlsensideas:chiseled_black_tourmaline_stone_slab",
+    "charlsensideas:black_tourmaline_stone_brick_slab",
+    "charlsensideas:black_tourmaline_stone_cracked_brick_slab"
+  ]
+}

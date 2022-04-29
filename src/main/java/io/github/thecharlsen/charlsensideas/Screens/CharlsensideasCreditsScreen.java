@@ -11,6 +11,8 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.DrawableHelper;
+import net.minecraft.client.gui.screen.CreditsScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.NarratorManager;
@@ -27,6 +29,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -76,13 +79,13 @@ public class CharlsensideasCreditsScreen extends Screen {
     }
 
     public void tick() {
-        assert this.client != null;
         this.client.getMusicTracker().tick();
         this.client.getSoundManager().tick(false);
         float f = (float)(this.creditsHeight + this.height + this.height + 24);
         if (this.time > f) {
-            this.close();
+            this.closeScreen();
         }
+
     }
 
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
@@ -109,11 +112,11 @@ public class CharlsensideasCreditsScreen extends Screen {
         return super.keyReleased(keyCode, scanCode, modifiers);
     }
 
-    public void onClose() {
-        this.close();
+    public void close() {
+        this.closeScreen();
     }
 
-    private void close() {
+    private void closeScreen() {
         this.finishAction.run();
         this.client.setScreen((Screen)null);
     }
@@ -122,89 +125,93 @@ public class CharlsensideasCreditsScreen extends Screen {
         if (this.credits == null) {
             this.credits = Lists.newArrayList();
             this.centeredLines = new IntOpenHashSet();
-            Resource resource = null;
-
-            try {
-                String string2;
-                if (this.endCredits) {
-                    resource = this.client.getResourceManager().getResource(new Identifier("texts/end.txt"));
-                    InputStream inputStream = resource.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-                    Random random = new Random(8124371L);
-
-                    label147:
-                    while(true) {
-                        String string;
-                        int i;
-                        if ((string = bufferedReader.readLine()) == null) {
-                            inputStream.close();
-                            i = 0;
-
-                            while(true) {
-                                if (i >= 8) {
-                                    break label147;
-                                }
-
-                                this.addEmptyLine();
-                                ++i;
-                            }
-                        }
-
-                        String string3;
-                        for(string = string.replaceAll("PLAYERNAME", this.client.getSession().getUsername()); (i = string.indexOf(OBFUSCATION_PLACEHOLDER)) != -1; string = string2 + Formatting.WHITE + Formatting.OBFUSCATED + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + string3) {
-                            string2 = string.substring(0, i);
-                            string3 = string.substring(i + OBFUSCATION_PLACEHOLDER.length());
-                        }
-
-                        this.addText(string);
-                        this.addEmptyLine();
-                    }
-                }
-
-                resource = this.client.getResourceManager().getResource(new Identifier("charlsensideas","texts/credits.json"));
-                JsonArray jsonArray = JsonHelper.method_37165(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8));
-                JsonArray jsonArray2 = jsonArray.getAsJsonArray();
-                Iterator var24 = jsonArray2.iterator();
-
-                while(var24.hasNext()) {
-                    JsonElement jsonElement = (JsonElement)var24.next();
-                    JsonObject jsonObject = jsonElement.getAsJsonObject();
-                    string2 = jsonObject.get("section").getAsString();
-                    this.addText(SEPARATOR_LINE, true);
-                    this.addText((new LiteralText(string2)).formatted(Formatting.YELLOW), true);
-                    this.addText(SEPARATOR_LINE, true);
-                    this.addEmptyLine();
-                    this.addEmptyLine();
-                    JsonArray jsonArray3 = jsonObject.getAsJsonArray("titles");
-                    Iterator var9 = jsonArray3.iterator();
-
-                    while(var9.hasNext()) {
-                        JsonElement jsonElement2 = (JsonElement)var9.next();
-                        JsonObject jsonObject2 = jsonElement2.getAsJsonObject();
-                        String string5 = jsonObject2.get("title").getAsString();
-                        JsonArray jsonArray4 = jsonObject2.getAsJsonArray("names");
-                        this.addText((new LiteralText(string5)).formatted(Formatting.GRAY), false);
-                        Iterator var14 = jsonArray4.iterator();
-
-                        while(var14.hasNext()) {
-                            JsonElement jsonElement3 = (JsonElement)var14.next();
-                            String string6 = jsonElement3.getAsString();
-                            this.addText((new LiteralText("           ")).append(string6).formatted(Formatting.WHITE), false);
-                        }
-
-                        this.addEmptyLine();
-                        this.addEmptyLine();
-                    }
-                }
-
-                this.creditsHeight = this.credits.size() * 12;
-            } catch (Exception var20) {
-                LOGGER.error("Couldn't load credits", var20);
-            } finally {
-                IOUtils.closeQuietly(resource);
+            if (this.endCredits) {
+                this.load("texts/end.txt", this::readPoem);
             }
 
+            this.load("texts/credits.json", this::readCredits);
+            if (this.endCredits) {
+                this.load("texts/postcredits.txt", this::readPoem);
+            }
+
+            this.creditsHeight = this.credits.size() * 12;
         }
+    }
+
+    private void load(String id, CharlsensideasCreditsScreen.CreditsReader reader) {
+        Resource resource = null;
+
+        try {
+            resource = this.client.getResourceManager().getResource(new Identifier("charlsensideas", id));
+            InputStreamReader inputStreamReader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+            reader.read(inputStreamReader);
+        } catch (Exception var8) {
+            LOGGER.error("Couldn't load credits", var8);
+        } finally {
+            IOUtils.closeQuietly(resource);
+        }
+
+    }
+
+    private void readPoem(InputStreamReader inputStreamReader) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        Random random = new Random(8124371L);
+
+        String string;
+        int i;
+        while((string = bufferedReader.readLine()) != null) {
+            String string2;
+            String string3;
+            for(string = string.replaceAll("PLAYERNAME", this.client.getSession().getUsername()); (i = string.indexOf(OBFUSCATION_PLACEHOLDER)) != -1; string = string2 + Formatting.WHITE + Formatting.OBFUSCATED + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + string3) {
+                string2 = string.substring(0, i);
+                string3 = string.substring(i + OBFUSCATION_PLACEHOLDER.length());
+            }
+
+            this.addText(string);
+            this.addEmptyLine();
+        }
+
+        for(i = 0; i < 8; ++i) {
+            this.addEmptyLine();
+        }
+
+    }
+
+    private void readCredits(InputStreamReader inputStreamReader) {
+        JsonArray jsonArray = JsonHelper.deserializeArray(inputStreamReader);
+        Iterator var3 = jsonArray.iterator();
+
+        while(var3.hasNext()) {
+            JsonElement jsonElement = (JsonElement)var3.next();
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            String string = jsonObject.get("section").getAsString();
+            this.addText(SEPARATOR_LINE, true);
+            this.addText((new LiteralText(string)).formatted(Formatting.YELLOW), true);
+            this.addText(SEPARATOR_LINE, true);
+            this.addEmptyLine();
+            this.addEmptyLine();
+            JsonArray jsonArray2 = jsonObject.getAsJsonArray("titles");
+            Iterator var8 = jsonArray2.iterator();
+
+            while(var8.hasNext()) {
+                JsonElement jsonElement2 = (JsonElement)var8.next();
+                JsonObject jsonObject2 = jsonElement2.getAsJsonObject();
+                String string2 = jsonObject2.get("title").getAsString();
+                JsonArray jsonArray3 = jsonObject2.getAsJsonArray("names");
+                this.addText((new LiteralText(string2)).formatted(Formatting.GRAY), false);
+                Iterator var13 = jsonArray3.iterator();
+
+                while(var13.hasNext()) {
+                    JsonElement jsonElement3 = (JsonElement)var13.next();
+                    String string3 = jsonElement3.getAsString();
+                    this.addText((new LiteralText("           ")).append(string3).formatted(Formatting.WHITE), false);
+                }
+
+                this.addEmptyLine();
+                this.addEmptyLine();
+            }
+        }
+
     }
 
     private void addEmptyLine() {
@@ -232,7 +239,7 @@ public class CharlsensideasCreditsScreen extends Screen {
         float h = 0.015625F;
         float j = this.time / this.baseSpeed;
         float k = j * 0.02F;
-        float l = (float)(this.creditsHeight + this.height + this.height + 3) / this.baseSpeed;
+        float l = (float)(this.creditsHeight + this.height + this.height + 24) / this.baseSpeed;
         float m = (l - 20.0F - j) * 0.005F;
         if (m < k) {
             k = m;
@@ -265,9 +272,9 @@ public class CharlsensideasCreditsScreen extends Screen {
         RenderSystem.setShaderTexture(0, MINECRAFT_TITLE_TEXTURE);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableBlend();
-        this.drawWithOutline(i, j, (integer, integer2) -> {
-            this.drawTexture(matrices, integer + 0, integer2, 0, 0, 155, 44);
-            this.drawTexture(matrices, integer + 155, integer2, 0, 45, 155, 44);
+        this.drawWithOutline(i, j, (x, y) -> {
+            this.drawTexture(matrices, x + 0, y, 0, 0, 155, 44);
+            this.drawTexture(matrices, x + 155, y, 0, 45, 155, 44);
         });
         RenderSystem.disableBlend();
         RenderSystem.setShaderTexture(0, EDITION_TITLE_TEXTURE);
@@ -301,12 +308,12 @@ public class CharlsensideasCreditsScreen extends Screen {
         RenderSystem.enableBlend();
         RenderSystem.blendFunc(GlStateManager.SrcFactor.ZERO, GlStateManager.DstFactor.ONE_MINUS_SRC_COLOR);
         l = this.width;
-        int n = this.height;
+        int m = this.height;
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder bufferBuilder = tessellator.getBuffer();
         bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
-        bufferBuilder.vertex(0.0D, (double)n, (double)this.getZOffset()).texture(0.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
-        bufferBuilder.vertex((double)l, (double)n, (double)this.getZOffset()).texture(1.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
+        bufferBuilder.vertex(0.0D, (double)m, (double)this.getZOffset()).texture(0.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
+        bufferBuilder.vertex((double)l, (double)m, (double)this.getZOffset()).texture(1.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
         bufferBuilder.vertex((double)l, 0.0D, (double)this.getZOffset()).texture(1.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
         bufferBuilder.vertex(0.0D, 0.0D, (double)this.getZOffset()).texture(0.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).next();
         tessellator.draw();
@@ -317,5 +324,11 @@ public class CharlsensideasCreditsScreen extends Screen {
     static {
         SEPARATOR_LINE = (new LiteralText("============")).formatted(Formatting.WHITE);
         OBFUSCATION_PLACEHOLDER = "";
+    }
+
+    @FunctionalInterface
+    @Environment(EnvType.CLIENT)
+    private interface CreditsReader {
+        void read(InputStreamReader inputStreamReader) throws IOException;
     }
 }

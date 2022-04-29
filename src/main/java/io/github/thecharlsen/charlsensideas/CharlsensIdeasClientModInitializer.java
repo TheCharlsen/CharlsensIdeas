@@ -6,7 +6,6 @@ import io.github.thecharlsen.charlsensideas.Render.Entitys.CubeEntityRenderer;
 import io.github.thecharlsen.charlsensideas.Render.TenebrisSkyRenderer;
 import io.github.thecharlsen.charlsensideas.Screens.PressScreen;
 import io.github.thecharlsen.charlsensideas.World.Dimension.TenebrisDimension;
-import io.github.waterpicker.openworlds.OpenWorlds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -16,6 +15,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.DimensionRenderingRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -44,7 +44,7 @@ import java.util.function.Function;
 @Environment(EnvType.CLIENT)
 public class CharlsensIdeasClientModInitializer implements ClientModInitializer {
 
-    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Charlsensideas.MAIN).maxCount(1));
+    public static Item MUSICPLAYER = new MusicPlayerGuiItem(new Item.Settings().group(Charlsensideas.CHARLSENSIDEAS_ITG).maxCount(1));
 
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("charlsensideas", "cube"), "main");
 
@@ -88,10 +88,6 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
                 return false;
             }
         };
-
-        OpenWorlds.registerSkyProperty(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, tenebris);
-        OpenWorlds.registerSkyRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, new TenebrisSkyRenderer());
-        OpenWorlds.registerCloudRenderer(TenebrisDimension.TENEBRIS_DIMENSION_TYPE_KEY, (client, matrices, matrix4f, tickDelta, cameraX, cameraY, cameraZ) -> {});
 
         ColorProviderRegistry.BLOCK.register((state , view, pos, tintIndex) ->
         view != null && pos != null
