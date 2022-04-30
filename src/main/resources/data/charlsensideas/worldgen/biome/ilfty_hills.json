@@ -23,7 +23,8 @@
   "surface_builder": "charlsensideas:umbra_forest_surface_builder",
   "carvers": {
     "air": [
-      "charlsensideas:clay_mountains_basic_extra"
+      "minecraft:cave",
+      "minecraft:canyon"
     ]
   },
   "features": [

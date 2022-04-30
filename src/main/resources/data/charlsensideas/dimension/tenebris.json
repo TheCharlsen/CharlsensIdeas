@@ -2,7 +2,7 @@
   "type": "charlsensideas:tenebris",
   "generator": {
     "type": "minecraft:noise",
-    "seed": 0,
+    "seed": -1282816,
     "settings": {
       "name": "charlsensideas:tenebris",
       "bedrock_roof_position": 10000,
@@ -58,7 +58,7 @@
     },
     "biome_source": {
       "type": "minecraft:multi_noise",
-      "seed": 0,
+      "seed": -1432653,
       "altitude_noise": {
         "firstOctave": -7,
         "amplitudes": [
@@ -132,6 +132,16 @@
           "biome": "charlsensideas:clay_mountains_ce",
           "parameters": {
             "altitude": 0,
+            "temperature": 0.2,
+            "humidity": 0,
+            "weirdness": 0.3,
+            "offset": 0.4
+          }
+        },
+        {
+          "biome": "charlsensideas:clay_mountains",
+          "parameters": {
+            "altitude": 1,
             "temperature": 0.1,
             "humidity": 0,
             "weirdness": 0.3,

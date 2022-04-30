@@ -24,7 +24,7 @@ public class CharlsensideasItemGroup extends OwoItemGroup {
 		this.addTab(Icon.of(CharlsensideasItems.Dog_Music_Disc), "items", TagFactory.ITEM.create(RegistryHelper.id("chidtems")));
 		this.addTab(Icon.of(CharlsensideasBlocks.Black_Tourmaline_Stone_Bricks), "blocks", TagFactory.ITEM.create(RegistryHelper.id("chidlocks")));
 		this.addTab(Icon.of(CharlsensideasTools.Bornite_Pickaxe), "tools", TagFactory.ITEM.create(RegistryHelper.id("chidools")));
-		this.addTab(Icon.of(CharlsensideasItems.Combat_Helmet), "armor", TagFactory.ITEM.create(RegistryHelper.id("chidrmor")));
+		this.addTab(Icon.of(Items.BARRIER), "armor", TagFactory.ITEM.create(RegistryHelper.id("chidrmor")));
 		this.addTab(Icon.of(CharlsensideasItems.Bornite), "ores", TagFactory.ITEM.create(RegistryHelper.id("chidres")));
 		this.addTab(Icon.of(CharlsensideasItems.CHIP), "food", TagFactory.ITEM.create(RegistryHelper.id("chidood")));
 
@@ -38,6 +38,6 @@ public class CharlsensideasItemGroup extends OwoItemGroup {
 
 	@Override
 	public ItemStack createIcon() {
-		return new ItemStack(CharlsensideasItems.Black_Tourmaline_Gem);
+		return new ItemStack(CharlsensideasBlocks.Cobbled_Black_Tourmaline_Stone.asItem());
 	}
 }
