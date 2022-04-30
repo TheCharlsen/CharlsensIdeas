@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 1198198934,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:plains",
+          "parameters": {
+            "temperature": 1,
+            "humidity": 1,
+            "continentalness": 0,
+            "erosion": 1,
+            "weirdness": 0,
+            "depth": 0.452,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:frozen_peaks",
+          "parameters": {
+            "temperature": -1,
+            "humidity": 1,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 1,
+            "offset": 0.43
+          }
+        },
+        {
+          "biome": "minecraft:river",
+          "parameters": {
+            "temperature": 1,
+            "humidity": -1,
+            "continentalness": 1,
+            "erosion": 1,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 1
+          }
+        }
+      ]
+    }
+  }
+}
