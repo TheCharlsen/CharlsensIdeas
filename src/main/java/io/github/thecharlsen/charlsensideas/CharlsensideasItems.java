@@ -1,7 +1,6 @@
 package io.github.thecharlsen.charlsensideas;
 
 import com.glisco.owo.itemgroup.OwoItemSettings;
-import io.github.thecharlsen.charlsensideas.Items.CharlsensideasArmorMaterial;
 import io.github.thecharlsen.charlsensideas.Items.EntityEggItem;
 import io.github.thecharlsen.charlsensideas.Items.FilledJamJarItem;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.MusicDiscItems;
@@ -14,9 +13,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
-
-import static io.github.thecharlsen.charlsensideas.CharlsensideasFluids.Still_Oil;
-import static io.github.thecharlsen.charlsensideas.CharlsensideasFluids.Still_Weird_Water;
 
 public class CharlsensideasItems {
 
@@ -36,8 +32,7 @@ public class CharlsensideasItems {
     public static final Item CUBE_SPAWN_EGG = new EntityEggItem(CharlsensideasEntitys.CUBE, new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Meal = new Item(new Item.Settings().group(Charlsensideas.MAIN));
     public static final Item Ancient_Bread = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).food(CharlsensideasFoodComponents.Ancient_Bread).tab(5));
-    public static final Item Combat_Helmet = new ArmorItem(CharlsensideasArmorMaterial.COMBAT, EquipmentSlot.HEAD, new OwoItemSettings().group(Charlsensideas.MAIN).tab(3));
-    public static final Item Steel_Plate = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
+     public static final Item Steel_Plate = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
     public static final Item Plastic_Plate = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
     public static final Item Plastic_Granules = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
     public static final Item Steel_Ingot = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(4));
@@ -79,7 +74,6 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cube_spawn_egg"), CUBE_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_meal"), Ancient_Meal);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_bread"), Ancient_Bread);
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "combat_helmet"), Combat_Helmet);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "steel_plate"), Steel_Plate);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_plate"), Plastic_Plate);
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_granules"), Plastic_Granules);

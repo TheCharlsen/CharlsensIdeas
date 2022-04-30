@@ -115,5 +115,6 @@
     "item.charlsensideas.plastic_plate": "Plastic Plate",
     "item.charlsensideas.plastic_granules": "Plastic Granules",
     "block.charlsensideas.steel_ore": "Steel Ore",
-    "item.charlsensideas.steel_ingot": "Steel Ingot"
+    "item.charlsensideas.steel_ingot": "Steel Ingot",
+    "itemGroup.charlsensideas.main": "Charlsensideas"
 }
