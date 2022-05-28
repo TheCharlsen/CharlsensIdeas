@@ -127,7 +127,7 @@
           }
         },
         {
-          "biome": "charlsensideas:clay_mountains_ce",
+          "biome": "charlsensideas:clay_mountains",
           "parameters": {
             "altitude": 0.3,
             "temperature": 0.2,
@@ -137,7 +137,7 @@
           }
         },
         {
-          "biome": "charlsensideas:clay_mountains",
+          "biome": "charlsensideas:clay_mountains_ce",
           "parameters": {
             "altitude": 0.3,
             "temperature": 0.1,
