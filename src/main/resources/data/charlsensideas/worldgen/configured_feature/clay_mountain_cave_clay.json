@@ -35,16 +35,17 @@
               "type": "minecraft:decorated",
               "config": {
                 "decorator": {
-                  "type": "minecraft:heightmap",
+                  "type": "minecraft:cave_surface",
                   "config": {
-                    "heightmap": "WORLD_SURFACE_WG"
+                    "surface": "floor",
+                    "floor_to_ceiling_search_range": 12
                   }
                 },
                 "feature": {
                   "type": "minecraft:random_boolean_selector",
                   "config": {
-                    "feature_false": "charlsensideas:clay_pool1",
-                    "feature_true": "charlsensideas:clay_mountain_cave_clay"
+                    "feature_false": "charlsensideas:clay_pool_ringleaf_nightshade",
+                    "feature_true": "charlsensideas:clay_ringleaf_nightshade"
                   }
                 }
               }

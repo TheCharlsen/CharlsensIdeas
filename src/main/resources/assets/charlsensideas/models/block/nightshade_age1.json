@@ -3,7 +3,8 @@
   "textures": {
     "0": "charlsensideas:block/nightshade",
     "1": "charlsensideas:block/nightshade_berry",
-    "particle": "charlsensideas:block/nightshade"
+    "particle": "charlsensideas:block/nightshade",
+    "missing": "charlsensideas:block/missing"
   },
   "elements": [
     {

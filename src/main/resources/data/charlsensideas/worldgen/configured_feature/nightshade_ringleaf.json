@@ -1,0 +1,237 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "charlsensideas:nightshade",
+                  "Properties": {
+                    "waterlogged": "false",
+                    "facing": "east",
+                    "age": "0"
+                  }
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "charlsensideas:nightshade",
+                  "Properties": {
+                    "waterlogged": "false",
+                    "facing": "west",
+                    "age": "0"
+                  }
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "charlsensideas:nightshade",
+                  "Properties": {
+                    "waterlogged": "false",
+                    "facing": "north",
+                    "age": "0"
+                  }
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "charlsensideas:nightshade",
+                  "Properties": {
+                    "waterlogged": "false",
+                    "facing": "south",
+                    "age": "0"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "minecraft:growing_plant",
+        "config": {
+          "direction": "up",
+          "allow_water": true,
+          "height_distribution": [
+            {
+              "weight": 2,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 1,
+                  "max_inclusive": 5
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": 1
+            }
+          ],
+          "body_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf_stem",
+              "Properties": {
+                "waterlogged": "false",
+                "facing": "east"
+              }
+            }
+          },
+          "head_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf",
+              "Properties": {
+                "waterlogged": "false",
+                "tilt": "none",
+                "facing": "east"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:growing_plant",
+        "config": {
+          "direction": "up",
+          "allow_water": true,
+          "height_distribution": [
+            {
+              "weight": 2,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 1,
+                  "max_inclusive": 5
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": 1
+            }
+          ],
+          "body_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf_stem",
+              "Properties": {
+                "waterlogged": "false",
+                "facing": "west"
+              }
+            }
+          },
+          "head_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf",
+              "Properties": {
+                "waterlogged": "false",
+                "tilt": "none",
+                "facing": "west"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:growing_plant",
+        "config": {
+          "direction": "up",
+          "allow_water": true,
+          "height_distribution": [
+            {
+              "weight": 2,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 1,
+                  "max_inclusive": 5
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": 1
+            }
+          ],
+          "body_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf_stem",
+              "Properties": {
+                "waterlogged": "false",
+                "facing": "south"
+              }
+            }
+          },
+          "head_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf",
+              "Properties": {
+                "waterlogged": "false",
+                "tilt": "none",
+                "facing": "south"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "minecraft:growing_plant",
+        "config": {
+          "direction": "up",
+          "allow_water": true,
+          "height_distribution": [
+            {
+              "weight": 2,
+              "data": {
+                "type": "minecraft:uniform",
+                "value": {
+                  "min_inclusive": 1,
+                  "max_inclusive": 5
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": 1
+            }
+          ],
+          "body_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf_stem",
+              "Properties": {
+                "waterlogged": "false",
+                "facing": "north"
+              }
+            }
+          },
+          "head_provider": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "charlsensideas:ringleaf",
+              "Properties": {
+                "waterlogged": "false",
+                "tilt": "none",
+                "facing": "north"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

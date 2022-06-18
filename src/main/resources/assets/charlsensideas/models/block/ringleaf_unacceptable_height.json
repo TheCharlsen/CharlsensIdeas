@@ -3,7 +3,8 @@
 	"textures": {
 		"0": "charlsensideas:block/ringleaf",
 		"1": "charlsensideas:block/ringleaf_stem",
-		"particle": "charlsensideas:block/ringleaf"
+		"particle": "charlsensideas:block/ringleaf",
+		"missing": "charlsensideas:block/missing"
 	},
 	"elements": [
 		{

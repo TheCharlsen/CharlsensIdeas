@@ -79,7 +79,7 @@ public class NightShadeBlock extends HorizontalFacingPlantBlock implements Ferti
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = state.get(AGE);
-        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 6) <= 6) {
             world.setBlockState(pos, state.with(AGE, i + 1), 2);
         }
     }

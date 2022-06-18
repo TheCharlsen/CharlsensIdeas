@@ -2,7 +2,8 @@
   "credit": "Made with Blockbench",
   "textures": {
     "0": "charlsensideas:block/press",
-    "particle": "charlsensideas:block/press"
+    "particle": "charlsensideas:block/press",
+    "missing": "charlsensideas:block/missing"
   },
   "elements": [
     {

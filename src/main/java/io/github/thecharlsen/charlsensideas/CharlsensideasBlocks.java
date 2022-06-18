@@ -72,6 +72,9 @@ public class CharlsensideasBlocks {
     public static Block Oil;
     public static final Block NightShadeBlock = new NightShadeBlock(FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.MOSS_BLOCK).strength(0.5F, 0.5F).nonOpaque().noCollision().ticksRandomly().luminance(NightShade.getLuminanceSupplier(12)));
     public static final Block ClayStone = new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(3.5F, 4F));
+    public static final Block Thorns = new ThornsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
+    public static final Block ThornsPlant = new ThornsPlantBlock(FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
+
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -126,8 +129,12 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "steel_ore"), Steel_Ore);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "nightshade"), NightShadeBlock);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "clay_stone"), ClayStone);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "thorns"), Thorns);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "thorns_plant"), ThornsPlant);
 
-        //BlockItems
+        /*
+        *BlockItem
+        */
 
         //Dirt
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "weird_grass_block"), new BlockItem(CharlsensideasBlocks.Weird_Grass_Block, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -182,6 +189,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cloud_block"), new BlockItem(CharlsensideasBlocks.CloudBlock, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "ancient_groats"), new BlockItem(CharlsensideasBlocks.Ancient_Groats, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "spore"), new BlockItem(CharlsensideasBlocks.Spore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "thorns"), new BlockItem(CharlsensideasBlocks.Thorns, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //Flowers
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "lavender"), new BlockItem(CharlsensideasBlocks.Lavender, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));

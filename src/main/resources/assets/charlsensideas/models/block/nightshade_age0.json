@@ -2,7 +2,8 @@
   "credit": "Made with Blockbench",
   "textures": {
     "0": "charlsensideas:block/nightshade",
-    "particle": "charlsensideas:block/nightshade"
+    "particle": "charlsensideas:block/nightshade",
+    "missing": "charlsensideas:block/missing"
   },
   "elements": [
     {

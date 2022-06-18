@@ -66,6 +66,8 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.RingLeafStem, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Press, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.NightShadeBlock, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Thorns, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.ThornsPlant, RenderLayer.getCutout());
 
         ScreenRegistry.register(CharlsensideasScreenHandlers.PRESS_SCREEN_HANDLER, PressScreen::new);
 

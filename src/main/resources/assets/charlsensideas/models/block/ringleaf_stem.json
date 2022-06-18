@@ -2,7 +2,8 @@
   "credit": "Made with Blockbench",
   "textures": {
     "0": "charlsensideas:block/ringleaf_stem",
-    "particle": "charlsensideas:block/ringleaf_stem"
+    "particle": "charlsensideas:block/ringleaf_stem",
+    "missing": "charlsensideas:block/missing"
   },
   "elements": [
     {
