@@ -60,7 +60,7 @@ public class CharlsensideasBlocks {
     public static final TenebrisGatewayBlock TenebrisGateway = new TenebrisGatewayBlock(FabricBlockSettings.of(Material.PORTAL).strength(0.1F).sounds(BlockSoundGroup.STONE).breakByHand(true).nonOpaque());
     public static final Block Ancient_Groats = new Block(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength(0.7F, 1.0F).sounds(BlockSoundGroup.CROP).breakByHand(true));
     public static final Block Umbra_Planks = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Stripped_Umbra_Wood = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Lavender = new TallFlowerBlock(FabricBlockSettings.of(Material.PLANT).strength(0.2F, 0.2F).sounds(BlockSoundGroup.GRASS).noCollision());
     public static final Block Spore = new SporeWallBlock(FabricBlockSettings.of(Material.PLANT).strength(0.1F, 0.1F).sounds(BlockSoundGroup.MOSS_BLOCK).noCollision());
     public static final Block debug = new Block(FabricBlockSettings.of(Material.WOOL).strength(0F, 0F).sounds(BlockSoundGroup.WOOL).nonOpaque());
@@ -74,7 +74,8 @@ public class CharlsensideasBlocks {
     public static final Block ClayStone = new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(3.5F, 4F));
     public static final Block Thorns = new ThornsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
     public static final Block ThornsPlant = new ThornsPlantBlock(FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
-
+    public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Umbra_Wood = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -117,7 +118,7 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "alpine_strawberry_cake"), Alpine_Strawberry_Cake);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "tenebris_portal_block"), TenebrisGateway);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "ancient_groats"), Ancient_Groats);
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "stripped_umbra_log"), Stripped_Umbra_Log);
+        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "stripped_umbra_wood"), Stripped_Umbra_Wood);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "umbra_planks"), Umbra_Planks);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "lavender"), Lavender);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "spore"), Spore);
@@ -131,6 +132,8 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "clay_stone"), ClayStone);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "thorns"), Thorns);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "thorns_plant"), ThornsPlant);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "stripped_umbra_log"), Stripped_Umbra_Log);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_wood"), Umbra_Wood);
 
         /*
         *BlockItem
@@ -153,7 +156,11 @@ public class CharlsensideasBlocks {
         //Logs
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_log"), new BlockItem(PineLog, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_log"),  new BlockItem(CharlsensideasBlocks.Umbra_Log, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "stripped_umbra_log"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Log, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "stripped_umbra_log"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Log, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+
+        //Wood
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "stripped_umbra_wood"), new BlockItem(CharlsensideasBlocks.Stripped_Umbra_Wood, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_wood"), new BlockItem(CharlsensideasBlocks.Umbra_Wood, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //Planks
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_planks"), new BlockItem(CharlsensideasBlocks.Umbra_Planks, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "charlsensideas:block/umbra_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "charlsensideas:block/umbra_wood"
+    },
+    "axis=z": {
+      "model": "charlsensideas:block/umbra_wood",
+      "x": 90
+    }
+  }
+}
