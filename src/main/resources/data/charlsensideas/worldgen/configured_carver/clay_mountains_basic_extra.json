@@ -35,7 +35,7 @@
         }
       },
       "lava_state": {
-        "Name": "minecraft:orange_stained_glass"
+        "Name": "minecraft:air"
       },
       "barrier_state": {
         "Name": "minecraft:glass"

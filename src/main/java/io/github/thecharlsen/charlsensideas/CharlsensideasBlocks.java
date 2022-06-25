@@ -9,6 +9,7 @@ import io.github.thecharlsen.charlsensideas.ProtectedAcces.CakeBlocks;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.SaplingBlocks;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.StairsBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -75,7 +76,7 @@ public class CharlsensideasBlocks {
     public static final Block Thorns = new ThornsBlock(FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
     public static final Block ThornsPlant = new ThornsPlantBlock(FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.LILY_PAD));
     public static final Block Stripped_Umbra_Log = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block Umbra_Wood = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Umbra_Wood = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD).of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -134,6 +135,14 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "thorns_plant"), ThornsPlant);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "stripped_umbra_log"), Stripped_Umbra_Log);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_wood"), Umbra_Wood);
+
+        //Flammable
+        FlammableBlockRegistry.getDefaultInstance().add(Umbra_Wood, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(Umbra_Log, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(Umbra_Planks, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(Stripped_Umbra_Log, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(Stripped_Umbra_Wood, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(Umbra_Leaves, 8, 10);
 
         /*
         *BlockItem
