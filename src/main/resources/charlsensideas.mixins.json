@@ -11,7 +11,8 @@
     "LayerAccessor",
     "PlayerEntityMixin",
     "StructuresConfigAccessor",
-    "TreeDecoratorTypeInvoker"
+    "TreeDecoratorTypeInvoker",
+    "CarverMixin"
   ],
   "client": [
     "BrewingRecipeRegistryMixin",
