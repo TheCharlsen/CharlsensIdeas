@@ -23,7 +23,7 @@ public class CharlsensideasBiomes {
     public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> PINE_FOREST_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.STONE.getDefaultState()));
     public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> TALL_PINE_FOREST_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.GRASS_BLOCK.getDefaultState(), Blocks.DIRT.getDefaultState(), CharlsensideasBlocks.MuddedDirt.getDefaultState()));
     public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> UMBRA_FOREST_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(CharlsensideasBlocks.Weird_Grass_Block.getDefaultState(), Blocks.DIRT.getDefaultState(), CharlsensideasBlocks.Weird_Dirt.getDefaultState()));
-    public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> CLAY_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.CLAY.getDefaultState(), Blocks.ANDESITE.getDefaultState(), Blocks.STONE.getDefaultState()));
+    public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> CLAY_MOUNTAIN_SURFACE_BUILDER = SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(Blocks.CLAY.getDefaultState(), CharlsensideasBlocks.ClayStone.getDefaultState(), Blocks.STONE.getDefaultState()));
 
     private static final Biome PINE_FOREST = createPineForest();
     private static final Biome TALL_PINE_FOREST = createTallPineForest();

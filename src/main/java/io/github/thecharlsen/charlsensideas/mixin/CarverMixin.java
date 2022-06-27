@@ -28,7 +28,7 @@ public abstract class CarverMixin<C extends CarverConfig> {
         alwaysCarvableBlocks =
                 ImmutableSet.<Block>builder()
                         .addAll(alwaysCarvableBlocks)
-                        .add(CharlsensideasBlocks.Cobbled_Black_Tourmaline_Stone)
+                        .add(CharlsensideasBlocks.Cobbled_Black_Tourmaline_Stone, CharlsensideasBlocks.Weird_Grass_Block, Blocks.CLAY)
                         .build();
     }
 }

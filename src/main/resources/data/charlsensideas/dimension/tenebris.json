@@ -90,13 +90,13 @@
       },
       "biomes": [
         {
-          "biome": "minecraft:plains",
+          "biome": "charlsensideas:clay_mountains_ce",
           "parameters": {
-            "altitude": 0,
+            "altitude": 0.6,
             "temperature": 0.1,
-            "humidity": 0,
-            "weirdness": 0.1,
-            "offset": 0.4
+            "humidity": 0.3,
+            "weirdness": 0.5,
+            "offset": 0.2
           }
         },
         {
@@ -133,19 +133,19 @@
           "biome": "charlsensideas:clay_mountains",
           "parameters": {
             "altitude": 0.3,
-            "temperature": 0.2,
-            "humidity": 0,
-            "weirdness": 0.3,
-            "offset": 0.5
-          }
-        },
-        {
-          "biome": "charlsensideas:clay_mountains_ce",
-          "parameters": {
-            "altitude": 0.3,
             "temperature": 0.1,
             "humidity": 0.3,
             "weirdness": 0.7,
+            "offset": 0.4
+          }
+        },
+        {
+          "biome": "minecraft:plains",
+          "parameters": {
+            "altitude": 0,
+            "temperature": 0.1,
+            "humidity": 0,
+            "weirdness": 0.1,
             "offset": 0.4
           }
         }
