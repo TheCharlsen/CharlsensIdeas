@@ -16,6 +16,8 @@ public class CharlsensideasSoundEvents {
     public static SoundEvent Block_Tenebris_Portal_Trigger = new SoundEvent(new Identifier("charlsensideas", "block.portal.trigger"));
     public static SoundEvent Item_Combat_Helmet_Wear = new SoundEvent(new Identifier("charlsensideas", "item.combat_helmet.wear"));
 
+    public static SoundEvent Music_Tenebris_Game_Semi_Cold = new SoundEvent(new Identifier(Charlsensideas.MOD_ID, "music.tenebris.game.semi.cold"));
+
     public static void soundEventsInit(){
 
         Registry.register(Registry.SOUND_EVENT, CharlsensideasIdentifiers.Dog, Dog_Sound_Event);
@@ -27,6 +29,7 @@ public class CharlsensideasSoundEvents {
         Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "block.portal.travel"), Block_Tenebris_Portal_Travel);
         Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "block.portal.trigger"), Block_Tenebris_Portal_Trigger);
         Registry.register(Registry.SOUND_EVENT, new Identifier("charlsensideas", "item.combat_helmet.wear"), Item_Combat_Helmet_Wear);
+        Registry.register(Registry.SOUND_EVENT, new Identifier(Charlsensideas.MOD_ID, "music.tenebris.game.semi.cold"), Music_Tenebris_Game_Semi_Cold);
 
     }
 }

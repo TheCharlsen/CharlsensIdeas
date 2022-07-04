@@ -13,7 +13,13 @@
     "water_color": 4159204,
     "water_fog_color": 329011,
     "grass_color": 10463365,
-    "foliage_color": 10792816
+    "foliage_color": 10792816,
+    "music": {
+      "sound": "charlsensideas:music.tenebris.game.semi.cold",
+      "min_delay": 1700,
+      "max_delay": 15000,
+      "replace_current_music": false
+    }
   },
   "starts": [],
   "spawners": {},

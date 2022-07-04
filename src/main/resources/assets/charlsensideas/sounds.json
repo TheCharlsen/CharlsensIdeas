@@ -43,6 +43,11 @@
     "sounds": [
       "charlsensideas:item/armor/combat_helmet_wear"
     ]
+  },
+  "music.tenebris.game.semi.cold":{
+    "sounds": [
+      "charlsensideas:music/tenebris/semi_cold/tenebris_music_1"
+    ]
   }
 }
 
