@@ -7,6 +7,11 @@
 [![release](https://img.shields.io/github/v/release/TheCharlsen/Charlsensideas?color=blue&include_prereleases&logo=github&style=for-the-badge)](https://github.com/TheCharlsen/CharlsensIdeas/releases)
 [![discord](https://img.shields.io/discord/824979507626508308?label=Charlsens%20Modding&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/fPZgf2y3eB)
 
+## Future Versions and Plans:
+I made a list with plans and things that are in progress. Check it out if you want to know the state of this mod:
+
+https://trello.com/b/ys0tWId6/charlsensideasfuture
+
 ## What is this even?
 Charlsensideas is a really random mod with things that just come to my mind. And this is the official Github repo of Charlsensideas.
 
