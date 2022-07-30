@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "charlsensideas:block/bebusn_log",
+    "side": "charlsensideas:block/bebusn_log"
+  }
+}

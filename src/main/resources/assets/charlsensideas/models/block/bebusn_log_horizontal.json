@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "charlsensideas:block/bebusn_log_top",
+    "side": "charlsensideas:block/bebusn_log"
+  }
+}

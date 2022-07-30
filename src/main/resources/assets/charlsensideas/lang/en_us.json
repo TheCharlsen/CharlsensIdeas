@@ -120,5 +120,7 @@
     "block.charlsensideas.umbra_wood": "Umbra Wood",
     "block.charlsensideas.stripped_umbra_log": "Stripped Umbra Log",
     "block.charlsensideas.ringleaf": "Ringleaf",
-    "block.charlsensideas.thorns": "Thorns"
+    "block.charlsensideas.thorns": "Thorns",
+    "block.charlsensideas.umbra_stairs": "Umbra Stairs",
+    "block.charlsensideas.umbra_slab": "Umbra Slab"
 }

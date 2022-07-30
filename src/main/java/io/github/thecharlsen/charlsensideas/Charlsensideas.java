@@ -49,7 +49,7 @@ public class Charlsensideas implements ModInitializer {
 
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_WHITE = "\u001B[0m";
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[47m";
 
     @Deprecated@SuppressWarnings({"unused"})
     private static final MinecraftServer server = null;

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "charlsensideas:block/umbra_slab"
+    },
+    "type=double": {
+      "model": "charlsensideas:block/umbra_planks"
+    },
+    "type=top": {
+      "model": "charlsensideas:block/umbra_slab_top"
+    }
+  }
+}

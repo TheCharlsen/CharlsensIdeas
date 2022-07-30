@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "charlsensideas:block/stripped_bebusn_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "charlsensideas:block/stripped_bebusn_wood"
+    },
+    "axis=z": {
+      "model": "charlsensideas:block/stripped_bebusn_wood",
+      "x": 90
+    }
+  }
+}

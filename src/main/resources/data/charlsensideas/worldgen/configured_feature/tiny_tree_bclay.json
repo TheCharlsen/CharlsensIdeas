@@ -69,7 +69,7 @@
                         "trunk_provider": {
                           "type": "minecraft:simple_state_provider",
                           "state": {
-                            "Name": "minecraft:oak_log",
+                            "Name": "charlsensideas:bebusn_log",
                             "Properties": {
                               "axis": "y"
                             }
@@ -78,7 +78,7 @@
                         "foliage_provider": {
                           "type": "minecraft:simple_state_provider",
                           "state": {
-                            "Name": "minecraft:oak_leaves",
+                            "Name": "charlsensideas:bebusn_leaves",
                             "Properties": {
                               "distance": "7",
                               "persistent": "false"
