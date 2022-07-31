@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "charlsensideas:block/bebusn_door_top",
+    "bottom": "charlsensideas:block/bebusn_door_bottom"
+  }
+}

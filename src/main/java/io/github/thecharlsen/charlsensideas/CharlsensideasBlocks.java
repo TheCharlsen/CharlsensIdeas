@@ -89,6 +89,15 @@ public class CharlsensideasBlocks {
     public static final Block Bebusn_Leaves = new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).of(Material.LEAVES).strength(0.5F, 0.5F).sounds(BlockSoundGroup.GRASS).breakByHand(false).breakByTool(FabricToolTags.SHEARS).nonOpaque());
     public static final Block Umbra_Button = new WoodenButtonBlocks(FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
     public static final Block Umbra_Pressure_Plate = new PressurePlateBlocks(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
+    public static final Block Bebusn_Door = new DoorBlocks(FabricBlockSettings.of(Material.WOOD).strength(3.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block Bebusn_Trapdoor = new TrapdoorBlocks(FabricBlockSettings.of(Material.WOOD).strength(3.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block Bebusn_Slab = new SlabBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0F, 2.0F));
+    public static final Block Bebusn_Stairs = new StairsBlocks(Bebusn_Planks.getDefaultState(), FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Bebusn_Fence = new FenceBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Bebusn_Fence_Gate = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
+    public static final Block Bebusn_Button = new WoodenButtonBlocks(FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
+    public static final Block Bebusn_Pressure_Plate = new PressurePlateBlocks(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
+
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -181,6 +190,15 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_wood"), Bebusn_Wood);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_button"), Umbra_Button);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_pressure_plate"), Umbra_Pressure_Plate);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_door"), Bebusn_Door);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_trapdoor"), Bebusn_Trapdoor);
+
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_slab"), Bebusn_Slab);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_stairs"), Bebusn_Stairs);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence"), Bebusn_Fence);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence_gate"), Bebusn_Fence_Gate);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_button"), Bebusn_Button);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), Bebusn_Pressure_Plate);
 
         /*
         *BlockItem
@@ -223,9 +241,11 @@ public class CharlsensideasBlocks {
 
         //Fences
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_fence"), new BlockItem(CharlsensideasBlocks.Umbra_Fence, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence"), new BlockItem(CharlsensideasBlocks.Bebusn_Fence, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //FenceGates
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_fence_gate"), new BlockItem(CharlsensideasBlocks.Umbra_Fence_Gate, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence_gate"), new BlockItem(CharlsensideasBlocks.Bebusn_Fence_Gate, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //Stone
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "bornite_ore"), new BlockItem(Bornite_Ore, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -243,6 +263,7 @@ public class CharlsensideasBlocks {
 
         //Slabs
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_slab"), new BlockItem(CharlsensideasBlocks.Umbra_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_slab"), new BlockItem(CharlsensideasBlocks.Bebusn_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cobbled_black_tourmaline_stone_slab"),  new BlockItem(CharlsensideasBlocks.Cobbled_Black_Tourmaline_Stone_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "polished_black_tourmaline_stone_slab"), new BlockItem(CharlsensideasBlocks.Polished_Black_Tourmaline_Stone_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chiseled_black_tourmaline_stone_slab"), new BlockItem(CharlsensideasBlocks.Chiseled_Black_Tourmaline_Stone_Slab, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -251,6 +272,7 @@ public class CharlsensideasBlocks {
 
         //Stairs
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_stairs"), new BlockItem(CharlsensideasBlocks.Umbra_Stairs, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_stairs"), new BlockItem(CharlsensideasBlocks.Bebusn_Stairs, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "cobbled_black_tourmaline_stone_stairs"), new BlockItem(CharlsensideasBlocks.Cobbled_Black_Tourmaline_Stone_Stairs, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "polished_black_tourmaline_stone_stairs"), new BlockItem(CharlsensideasBlocks.Polished_Black_Tourmaline_Stone_Stairs, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "chiseled_black_tourmaline_stone_stairs"), new BlockItem(CharlsensideasBlocks.Chiseled_Black_Tourmaline_Stone_Stairs, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
@@ -259,9 +281,17 @@ public class CharlsensideasBlocks {
 
         //Buttons
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_button"), new BlockItem(CharlsensideasBlocks.Umbra_Button, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_button"), new BlockItem(CharlsensideasBlocks.Bebusn_Button, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //PressurePlates
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_pressure_plate"), new BlockItem(CharlsensideasBlocks.Umbra_Pressure_Plate, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), new BlockItem(CharlsensideasBlocks.Bebusn_Button, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+
+        //Doors
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_door"), new BlockItem(CharlsensideasBlocks.Bebusn_Door, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+
+        //Trapdoors
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_trapdoor"), new BlockItem(CharlsensideasBlocks.Bebusn_Trapdoor, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //OtherStone
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "clay_stone"), new BlockItem(CharlsensideasBlocks.ClayStone, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
