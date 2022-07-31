@@ -6,17 +6,21 @@
   "mixins": [
     "AxeItemMixin",
     "BiomeLayerSamplerAccessor",
+    "BlockEntityTypeMixin",
     "CanBreatheInDimension",
+    "CarverMixin",
     "CatEntityRendererMixin",
     "LayerAccessor",
     "PlayerEntityMixin",
     "StructuresConfigAccessor",
-    "TreeDecoratorTypeInvoker",
-    "CarverMixin"
+    "TreeDecoratorTypeInvoker"
   ],
   "client": [
     "BrewingRecipeRegistryMixin",
     "ExampleMixin",
+    "SignBlockEntityRendererMixin",
+    "SignEditScreenMixin",
+    "TexturedRenderLayersMixin",
     "TitleScreenMixin"
   ],
   "injectors": {

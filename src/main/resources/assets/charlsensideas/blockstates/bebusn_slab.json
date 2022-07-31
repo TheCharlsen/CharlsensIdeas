@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "charlsensideas:block/bebusn_slab"
+    },
+    "type=double": {
+      "model": "charlsensideas:block/bebusn_planks"
+    },
+    "type=top": {
+      "model": "charlsensideas:block/bebusn_slab_top"
+    }
+  }
+}

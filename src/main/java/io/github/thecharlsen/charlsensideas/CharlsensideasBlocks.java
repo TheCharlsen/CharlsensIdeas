@@ -14,6 +14,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.SignType;
+import net.minecraft.util.dynamic.RegistryOps;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -97,7 +99,8 @@ public class CharlsensideasBlocks {
     public static final Block Bebusn_Fence_Gate = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Bebusn_Button = new WoodenButtonBlocks(FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
     public static final Block Bebusn_Pressure_Plate = new PressurePlateBlocks(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
-
+    public static final Block Bebusn_Standing_Sign = new CharlsensideasSignBlock(new Identifier("charlsensideas", "entity/signs/bebusn.png"), FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
+    public static final Block Bebusn_Wall_Sign = new CharlsensideasWallSignBlock(new Identifier("charlsensideas", "entity/signs/bebusn.png"), FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -192,13 +195,14 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_pressure_plate"), Umbra_Pressure_Plate);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_door"), Bebusn_Door);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_trapdoor"), Bebusn_Trapdoor);
-
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_slab"), Bebusn_Slab);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_stairs"), Bebusn_Stairs);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence"), Bebusn_Fence);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_fence_gate"), Bebusn_Fence_Gate);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_button"), Bebusn_Button);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), Bebusn_Pressure_Plate);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_standing_sign"), Bebusn_Standing_Sign);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_wall_sign"), Bebusn_Wall_Sign);
 
         /*
         *BlockItem
@@ -285,7 +289,7 @@ public class CharlsensideasBlocks {
 
         //PressurePlates
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_pressure_plate"), new BlockItem(CharlsensideasBlocks.Umbra_Pressure_Plate, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
-        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), new BlockItem(CharlsensideasBlocks.Bebusn_Button, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), new BlockItem(CharlsensideasBlocks.Bebusn_Pressure_Plate, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //Doors
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_door"), new BlockItem(CharlsensideasBlocks.Bebusn_Door, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
