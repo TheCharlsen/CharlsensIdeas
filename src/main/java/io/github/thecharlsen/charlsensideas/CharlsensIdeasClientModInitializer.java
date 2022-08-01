@@ -2,6 +2,7 @@ package io.github.thecharlsen.charlsensideas;
 
 import io.github.thecharlsen.charlsensideas.Items.MusicPlayerGuiItem;
 import io.github.thecharlsen.charlsensideas.Models.Entitys.CubeEntityModel;
+import io.github.thecharlsen.charlsensideas.Registry.SpriteIdentifierRegistry;
 import io.github.thecharlsen.charlsensideas.Render.Entitys.CubeEntityRenderer;
 import io.github.thecharlsen.charlsensideas.Render.TenebrisSkyRenderer;
 import io.github.thecharlsen.charlsensideas.Screens.PressScreen;
@@ -26,9 +27,11 @@ import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
@@ -70,6 +73,9 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.ThornsPlant, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Bebusn_Trapdoor, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Bebusn_Door, RenderLayer.getCutout());
+        registerTextures();
+
+
 
         ScreenRegistry.register(CharlsensideasScreenHandlers.PRESS_SCREEN_HANDLER, PressScreen::new);
 
@@ -119,6 +125,13 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
         setupFluidRendering(CharlsensideasFluids.Still_Oil, CharlsensideasFluids.Flowing_Oil, new Identifier("charlsensideas", "oil"), 0x0a0a0a);
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CharlsensideasFluids.Still_Oil, CharlsensideasFluids.Flowing_Oil);
 
+    }
+
+    private static void registerTextures() {
+        Identifier bebusn_standing_signTexture = CharlsensideasBlocks.Bebusn_Standing_Sign.getTexture();
+        Identifier umbra_standing_signTexture = CharlsensideasBlocks.Umbra_Standing_Sign.getTexture();
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, bebusn_standing_signTexture));
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, umbra_standing_signTexture));
     }
 
 

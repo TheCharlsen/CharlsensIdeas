@@ -37,6 +37,7 @@ public class CharlsensideasItems {
     public static final Item Plastic_Granules = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(0));
     public static final Item Steel_Ingot = new Item(new OwoItemSettings().group(Charlsensideas.MAIN).tab(4));
     public static final Item Bebusn_Sign = new SignItem(new OwoItemSettings().group(Charlsensideas.MAIN).tab(1).maxCount(16), CharlsensideasBlocks.Bebusn_Standing_Sign, CharlsensideasBlocks.Bebusn_Wall_Sign);
+    public static final Item Umbra_Sign = new SignItem(new OwoItemSettings().group(Charlsensideas.MAIN).tab(1).maxCount(16), CharlsensideasBlocks.Umbra_Standing_Sign, CharlsensideasBlocks.Umbra_Wall_Sign);
 
     private static Item register(Block block, ItemGroup group) {
         return register(new BlockItem(block, (new Item.Settings()).group(group)));
@@ -80,5 +81,6 @@ public class CharlsensideasItems {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "plastic_granules"), Plastic_Granules);
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "steel_ingot"), Steel_Ingot);
         Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "bebusn_sign"), Bebusn_Sign);
+        Registry.register(Registry.ITEM, new Identifier(Charlsensideas.MOD_ID, "umbra_sign"), Umbra_Sign);
     }
 }

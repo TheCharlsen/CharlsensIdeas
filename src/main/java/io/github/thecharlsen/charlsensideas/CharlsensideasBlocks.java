@@ -99,8 +99,10 @@ public class CharlsensideasBlocks {
     public static final Block Bebusn_Fence_Gate = new FenceGateBlock(FabricBlockSettings.of(Material.WOOD).strength(2.0F, 2.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block Bebusn_Button = new WoodenButtonBlocks(FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
     public static final Block Bebusn_Pressure_Plate = new PressurePlateBlocks(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
-    public static final Block Bebusn_Standing_Sign = new CharlsensideasSignBlock(new Identifier("charlsensideas", "entity/signs/bebusn.png"), FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
-    public static final Block Bebusn_Wall_Sign = new CharlsensideasWallSignBlock(new Identifier("charlsensideas", "entity/signs/bebusn.png"), FabricBlockSettings.of(Material.WOOD).strength(0.5F).sounds(BlockSoundGroup.WOOD).noCollision());
+    public static final CharlsensideasSignBlock Bebusn_Standing_Sign = new CharlsensideasSignBlock(new Identifier("charlsensideas", "entity/sign/bebusn"), FabricBlockSettings.copyOf(Blocks.OAK_SIGN));
+    public static final Block Bebusn_Wall_Sign = new CharlsensideasWallSignBlock(new Identifier("charlsensideas", "entity/sign/bebusn"), FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN));
+    public static final CharlsensideasSignBlock Umbra_Standing_Sign = new CharlsensideasSignBlock(new Identifier("charlsensideas", "entity/sign/umbra"), FabricBlockSettings.copyOf(Blocks.OAK_SIGN));
+    public static final Block Umbra_Wall_Sign = new CharlsensideasWallSignBlock(new Identifier("charlsensideas", "entity/sign/umbra"), FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN));
 
     public static boolean never(BlockState blockState, BlockView blockView, BlockPos blockPos) {
         return false;
@@ -203,6 +205,9 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_pressure_plate"), Bebusn_Pressure_Plate);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_standing_sign"), Bebusn_Standing_Sign);
         Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "bebusn_wall_sign"), Bebusn_Wall_Sign);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_standing_sign"), Umbra_Standing_Sign);
+        Registry.register(Registry.BLOCK, new Identifier(Charlsensideas.MOD_ID, "umbra_wall_sign"), Umbra_Wall_Sign);
+
 
         /*
         *BlockItem
