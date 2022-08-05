@@ -3,7 +3,6 @@ package io.github.thecharlsen.charlsensideas;
 import com.glisco.owo.itemgroup.OwoItemSettings;
 import io.github.thecharlsen.charlsensideas.Blocks.*;
 import io.github.thecharlsen.charlsensideas.Blocks.Interfaces.NightShade;
-import io.github.thecharlsen.charlsensideas.Generators.PineTreeGenerator;
 import io.github.thecharlsen.charlsensideas.Generators.UmbraTreeGenerator;
 import io.github.thecharlsen.charlsensideas.ProtectedAcces.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -11,11 +10,8 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.SignType;
-import net.minecraft.util.dynamic.RegistryOps;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
@@ -29,7 +25,6 @@ public class CharlsensideasBlocks {
     public static final Block Bornite_Ore = new BorniteOreBlock(FabricBlockSettings.of(Material.STONE).strength(1F, 1F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().luminance((state) -> { return 15;}));
     public static final Block Black_Tourmaline_Stone = new Block(FabricBlockSettings.of(Material.STONE).strength(6F, 6F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2));
     public static final Block PineLeaves = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).of(Material.LEAVES).sounds(BlockSoundGroup.GRASS).strength(0.5F, 0.5F).nonOpaque());
-    public static final SaplingBlock PineSapling = new SaplingBlocks(new PineTreeGenerator(), AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS));
     public static final Block PineLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD).strength(1.5F, 1.5F).sounds(BlockSoundGroup.WOOD));
     public static final Block Weirdly_Black_Tourmaline_Stone = new WeirdlyDeepStoneBlock(FabricBlockSettings.of(Material.STONE).strength(14F, 13F).sounds(BlockSoundGroup.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2).luminance((state) -> { return 4;}));
     public static Block Weird_Water;
@@ -134,7 +129,6 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "mudded_dirt"), MuddedDirt);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "hardened_mudded_dirt"), HardenedMuddedDirt);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "black_tourmaline_stone"), Black_Tourmaline_Stone);
-        Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_sapling"), PineSapling);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_leaves"), PineLeaves);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "pine_log"), PineLog);
         Registry.register(Registry.BLOCK, new Identifier("charlsensideas", "weirdly_black_tourmaline_stone"), Weirdly_Black_Tourmaline_Stone);
@@ -220,7 +214,6 @@ public class CharlsensideasBlocks {
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "weird_dirt"),  new BlockItem(CharlsensideasBlocks.Weird_Dirt, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
 
         //Saplings
-        Registry.register(Registry.ITEM, new Identifier("charlsensideas", "pine_sapling"), new BlockItem(PineSapling, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)));
         Registry.register(Registry.ITEM, new Identifier("charlsensideas", "umbra_sapling"), new BlockItem(CharlsensideasBlocks.Umbra_Sapling, new OwoItemSettings().group(Charlsensideas.MAIN).tab(1)) );
 
         //Leaves

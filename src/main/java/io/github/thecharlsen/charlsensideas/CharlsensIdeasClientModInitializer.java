@@ -55,7 +55,6 @@ public class CharlsensIdeasClientModInitializer implements ClientModInitializer 
     @Override
     public void onInitializeClient() {
         CharlsensideasParticleTypes.initClient();
-        BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.PineSapling, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Pompon, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.CloudBlock, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CharlsensideasBlocks.Alpine_Strawberry_Bush, RenderLayer.getCutout());
