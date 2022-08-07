@@ -18,69 +18,7 @@
   "generator": {
     "type": "minecraft:noise",
     "seed": -2088259265,
-    "settings": {
-      "sea_level": 40,
-      "disable_mob_generation": false,
-      "noise_caves_enabled": true,
-      "noodle_caves_enabled": true,
-      "aquifers_enabled": true,
-      "ore_veins_enabled": false,
-      "legacy_random_source": false,
-      "default_block": {
-        "Name": "charlsensideas:cobbled_black_tourmaline_stone",
-        "Properties": {
-          "dirtotp": "false"
-        }
-      },
-      "default_fluid": {
-        "Name": "charlsensideas:weird_water",
-        "Properties": {
-          "level": "0"
-        }
-      },
-      "noise": {
-        "min_y": -32,
-        "height": 288,
-        "size_horizontal": 1,
-        "size_vertical": 2,
-        "island_noise_override": false,
-        "amplified": false,
-        "large_biomes": false,
-        "sampling": {
-          "xz_scale": 1,
-          "y_scale": 1,
-          "xz_factor": 125,
-          "y_factor": 50
-        },
-        "bottom_slide": {
-          "target": -2.34375,
-          "size": 0,
-          "offset": 2
-        },
-        "top_slide": {
-          "target": -0.78125,
-          "size": 3,
-          "offset": 5
-        },
-        "terrain_shaper": {
-          "offset": 0,
-          "factor": 0,
-          "jaggedness": 0
-        }
-      },
-      "surface_rule": {
-        "type": "minecraft:sequence",
-        "sequence": []
-      },
-      "structures": {
-        "stronghold": {
-          "distance": 32,
-          "spread": 3,
-          "count": 128
-        },
-        "structures": {}
-      }
-    },
+    "settings": "charlsensideas:tenebris_noise",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
@@ -118,18 +56,6 @@
             "weirdness": 0.2,
             "depth": 0.15,
             "offset": 0.2
-          }
-        },
-        {
-          "biome": "minecraft:meadow",
-          "parameters": {
-            "temperature": -0.1,
-            "humidity": 0.2,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0.3,
-            "depth": 0.2,
-            "offset": 0.1
           }
         }
       ]
